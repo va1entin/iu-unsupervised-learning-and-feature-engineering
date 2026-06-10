@@ -1,0 +1,86 @@
+topic_id;words
+0;galaxies, galaxy, stars, stellar, star, formation, clusters, dwarf, galactic, dust
+1;hall, magnetic, spin, superconductivity, films, superconductors, superconducting, metal, thin, waals
+2;collisions, qcd, production, decays, lhc, quark, higgs, tev, heavy, nuclear
+3;curvature, surfaces, curves, manifolds, bundles, varieties, conjecture, polynomials, forms, moduli
+4;gravity, gauge, theories, inflation, cosmological, holographic, cosmology, string, quantum gravity, holography
+5;mimo, wireless, communications, beamforming, communication, iot, massive, intelligent, 6g, 5g
+6;graphs, trees, hypergraphs, coloring, cycles, ramsey, chromatic, spanning, bipartite, subgraphs
+7;language, language models, large language, reasoning, translation, machine translation, language model, multilingual, llms, word
+8;segmentation, medical, mri, medical image, image segmentation, cancer, ct, ultrasound, tumor, brain
+9;black, black hole, hole, black holes, holes, gravitational, gravitational wave, gravitational waves, waves, primordial
+10;speech, audio, music, speech recognition, speaker, recognition, voice, sound, asr, audiovisual
+11;quantum, circuits, quantum circuits, quantum computing, quantum systems, variational quantum, circuit, quantum circuit, manybody, quantum error
+12;time series, forecasting, series forecasting, highdimensional, multivariate, carlo, monte carlo, monte, gaussian processes, nonparametric
+13;ai, agents, intelligence, artificial intelligence, agent, generative ai, agentic, education, llm, humanai
+14;nonconvex, descent, convex, gradient descent, multiobjective, optimization problems, proximal, convex optimization, bayesian optimization, programming
+15;algebras, categories, lie, modules, algebra, rings, ideals, graded, hopf, category
+16;photonic, optical, cavity, laser, waveguide, photon, fiber, optomechanical, lithium, resonators
+17;protein, molecular, dna, drug, cell, chemical, gene, reaction, singlecell, rna
+18;spiking, brain, eeg, spiking neural, disease, alzheimers, neuromorphic, alzheimers disease, neurons, neuronal
+19;financial, market, pricing, portfolio, stock, volatility, markets, price, trading, risk
+20;deep neural, pruning, architecture search, neural architecture, training, architecture, dnn, quantization, relu, convolutional
+21;reinforcement learning, reinforcement, policy, offline, multiagent, multiagent reinforcement, deep reinforcement, offline reinforcement, reward, markov decision
+22;granular, porous, polymer, droplet, droplets, fracture, suspensions, colloidal, media, polymers
+23;electricity, grid, wind, charging, load, power systems, electric, renewable, storage, voltage
+24;driving, autonomous, traffic, autonomous driving, planning, trajectory, vehicles, motion planning, trajectory prediction, motion
+25;object detection, object, point cloud, cloud, lidar, 3d object, slam, point clouds, odometry, clouds
+26;covid19, epidemic, pandemic, covid19 pandemic, infection, spread, disease, sir, virus, transmission
+27;domain adaptation, adaptation, label, multilabel, contrastive, domain generalization, semisupervised, augmentation, unsupervised domain, metalearning
+28;manipulation, robot, robotic, imitation, locomotion, tactile, robots, imitation learning, grasping, humanoid
+29;causal, treatment, causal inference, trials, imputation, survival, quantile, treatment effects, causal discovery, missing
+30;dark, dark matter, dark energy, axion, halos, searches, axionlike, ultralight, direct detection, selfinteracting
+31;predictive control, optimal control, predictive, model predictive, nonlinear systems, kalman, control problems, control barrier, barrier, linear systems
+32;navierstokes, navierstokes equations, galerkin, equations, compressible, element, finite element, discontinuous galerkin, discontinuous, incompressible
+33;pulsar, gammaray, xray, bursts, pulsars, grb, radio, burst, timing, emission
+34;software, code generation, vulnerability, repair, bug, program, requirements, engineering, software engineering, language
+35;splatting, gaussian splatting, depth, depth estimation, 3d gaussian, stereo, monocular, scene, rendering, view synthesis
+36;gpu, serverless, cloud, hpc, encryption, riscv, secure, gpus, homomorphic, workloads
+37;adversarial, attacks, attack, adversarial attacks, backdoor, adversarial robustness, adversarial examples, adversarial training, defense, examples
+38;elliptic, fractional, equations, laplacian, elliptic equations, parabolic, regularity, nonlocal, estimates, singular
+39;operators, sobolev, inequalities, banach, inequality, banach spaces, hardy, operator, fourier, weighted
+40;clinical, health, medical, depression, healthcare, mental, biomedical, electronic health, language, records
+41;face, facial, face recognition, recognition, deepfake, expression, head, talking, avatars, avatar
+42;graph neural, node, graphs, link prediction, graph convolutional, graph learning, representation learning, graph representation, convolutional, node classification
+43;neutrino, neutrinos, oscillations, mass, dark, flavor, dark matter, decay, oscillation, masses
+44;superresolution, image superresolution, restoration, image restoration, video, denoising, image compression, quality, quality assessment, image quality
+45;logic, automata, boolean, logics, modal, semantics, proof, proofs, checking, sat
+46;solar, coronal, flare, wind, magnetic, observations, flares, corona, flux, sun
+47;recommendation, recommender, recommender systems, recommendations, collaborative filtering, collaborative, user, recommendation systems, personalized, item
+48;plasma, plasmas, laser, electron, ionization, ion, acceleration, magnetized, turbulence, beam
+49;federated, federated learning, client, learning federated, personalized federated, personalized, privacy, heterogeneous, aggregation, decentralized
+50;bilayer, twisted, graphite, hall, moire, electronic, tunable, quantum hall, superconductivity, valley
+51;question, answering, question answering, knowledge, knowledge graph, retrieval, retrievalaugmented, retrievalaugmented generation, knowledge graphs, comprehension
+52;schrodinger, nonlinear schrodinger, equations, wave, operators, wave equations, wellposedness, blowup, kdv, potentials
+53;action, action recognition, recognition, reality, activity recognition, activity, gaze, human activity, hand, human
+54;visionlanguage, multimodal, visionlanguage models, reasoning, visual, multimodal large, language, vision language, video, vision
+55;climate, seismic, weather, assimilation, precipitation, earthquake, ocean, inversion, forecasting, sea
+56;turbulence, turbulent, convection, vortex, waves, turbulent flows, reynolds, water, stratified, instability
+57;transformers, attention, transformer, vision, vision transformers, vision transformer, gans, generative adversarial, adversarial networks, gan
+58;uav, aerial, drone, uavs, swarm, trajectory, unmanned, swarms, unmanned aerial, flight
+59;texttoimage, editing, image generation, video, video generation, diffusion models, style, texttoimage diffusion, style transfer, scene graph
+60;groups, subgroups, finite groups, finite, abelian, abelian groups, conjugacy, subgroup, nilpotent, automorphism
+61;blockchain, smart, smart contracts, contracts, fraud, contract, transaction, decentralized, transactions, secure
+62;privacy, private, differentially private, differentially, differential privacy, privacypreserving, privacy preserving, preserving, utility, privacyaware
+63;games, game, nash, mean field, equilibria, mean, equilibrium, nash equilibrium, zerosum, stackelberg
+64;brownian, brownian motion, stochastic differential, sdes, equations, differential equations, motion, reactiondiffusion, spdes, fractional
+65;codes, decoding, polar, coding, cyclic, constructions, list, decoder, weight, selfdual
+66;dialogue, chatgpt, dialog, conversational, taskoriented, gender, state tracking, conversation, gender bias, personality
+67;anomaly, anomaly detection, outlier, outlier detection, time series, unsupervised, anomalies, industrial, outliers, novelty
+68;physicsinformed, physicsinformed neural, differential equations, partial differential, pdes, equations, pde, operator, physics informed, reduced order
+69;segmentation, semantic segmentation, semantic, instance segmentation, instance, object segmentation, video object, video, image segmentation, object
+70;community, community detection, complex networks, centrality, social networks, social, communities, multiplex, temporal networks, multiplex networks
+71;metamaterials, plasmonic, metamaterial, plasmon, surface, dielectric, mechanical, tunable, optical, acoustic
+72;news, fake, opinion, social, misinformation, media, social media, twitter, political, moderation
+73;diffusion models, inverse problems, flow matching, normalizing, diffusion model, normalizing flows, bayesian inverse, linear inverse, generative, guidance
+74;supernova, ia, sn, remnant, remnants, explosion, type ii, progenitors, ii, ejecta
+75;entanglement, multipartite, entanglement entropy, entangled, quantum entanglement, quantum, bipartite, genuine, maximally, witnesses
+76;boseeinstein, bose, condensates, condensate, superfluid, gas, gases, condensation, dipolar, vortex
+77;neutron, neutron stars, star, stars, mergers, merger, gravitational, nuclear, quark, equations state
+78;matrices, markov, random matrices, markov chains, chains, levy, central limit, levy processes, random variables, limit
+79;telescope, astronomy, astronomical, sky, observatory, telescopes, radio, science, astrophysics, space telescope
+80;detector, detectors, readout, liquid, pixel, argon, silicon, chamber, xenon, prototype
+81;knots, knot, links, braid, homology, invariants, torus, concordance, groups, virtual
+82;materials, interatomic, potentials, additive manufacturing, molecular, manufacturing, crystal, material, molecular dynamics, force
+83;remote sensing, remote, sensing, crop, plant, imagery, sensing image, leaf, segmentation, satellite
+84;summarization, sentiment, sentiment analysis, topic, abstractive, topic modeling, aspect, sentiment classification, text, multidocument

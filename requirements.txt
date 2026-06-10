@@ -1,0 +1,12 @@
+bertopic==0.17.4
+bokeh>=3.1.0 # for dask dashboard
+dask[dataframe,distributed]>=2026.3.0
+gensim==4.4.0
+hdbscan==0.8.42
+ipykernel==7.2.0
+ipywidgets==8.1.8
+matplotlib>=3.10.8
+nbformat==5.10.4
+nltk==3.9.4
+scikit-learn==1.8.0
+wordcloud==1.9.6

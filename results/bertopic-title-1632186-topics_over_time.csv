@@ -1,0 +1,1721 @@
+Topic,Words,Frequency,Timestamp
+-1,"quantum, equations, magnetic, spin, finite",25223,2018-12-29 08:05:16.800
+0,"galaxies, galaxy, stars, stellar, star",2346,2018-12-29 08:05:16.800
+1,"spin, magnetic, superconductivity, hall, films",1866,2018-12-29 08:05:16.800
+2,"collisions, qcd, production, lhc, tev",1641,2018-12-29 08:05:16.800
+3,"surfaces, curves, curvature, manifolds, varieties",1675,2018-12-29 08:05:16.800
+4,"gravity, gauge, theories, inflation, holographic",1260,2018-12-29 08:05:16.800
+5,"mimo, wireless, massive, 5g, communications",900,2018-12-29 08:05:16.800
+6,"graphs, hypergraphs, trees, coloring, cycles",892,2018-12-29 08:05:16.800
+7,"language, translation, word, machine translation, neural machine",277,2018-12-29 08:05:16.800
+8,"segmentation, mri, medical, medical image, ultrasound",494,2018-12-29 08:05:16.800
+9,"black, black holes, black hole, holes, hole",643,2018-12-29 08:05:16.800
+10,"speech, speaker, speech recognition, music, audio",376,2018-12-29 08:05:16.800
+11,"quantum, quantum systems, quantum circuits, circuits, quantum annealing",430,2018-12-29 08:05:16.800
+12,"time series, forecasting, carlo, highdimensional, multivariate",543,2018-12-29 08:05:16.800
+13,"ai, intelligence, artificial intelligence, agents, citation",198,2018-12-29 08:05:16.800
+14,"nonconvex, convex, descent, optimization problems, nonconvex optimization",428,2018-12-29 08:05:16.800
+15,"algebras, categories, lie, modules, algebra",587,2018-12-29 08:05:16.800
+16,"photonic, optical, cavity, optomechanical, laser",441,2018-12-29 08:05:16.800
+17,"protein, cell, dna, molecular, reaction",342,2018-12-29 08:05:16.800
+18,"brain, spiking, eeg, spiking neural, neuromorphic",275,2018-12-29 08:05:16.800
+19,"financial, pricing, market, volatility, portfolio",267,2018-12-29 08:05:16.800
+20,"deep neural, pruning, architecture search, training, architecture",412,2018-12-29 08:05:16.800
+21,"reinforcement learning, reinforcement, policy, deep reinforcement, markov decision",224,2018-12-29 08:05:16.800
+22,"granular, polymer, porous, suspensions, fracture",390,2018-12-29 08:05:16.800
+23,"grid, load, electricity, optimal power, voltage",272,2018-12-29 08:05:16.800
+24,"traffic, driving, autonomous, planning, motion planning",223,2018-12-29 08:05:16.800
+25,"object detection, object, point cloud, cloud, point clouds",226,2018-12-29 08:05:16.800
+26,"epidemic, covid19, infection, virus, spread",115,2018-12-29 08:05:16.800
+27,"domain adaptation, adaptation, multilabel, label, semisupervised",229,2018-12-29 08:05:16.800
+28,"manipulation, robotic, robot, imitation, locomotion",155,2018-12-29 08:05:16.800
+29,"causal, treatment, causal inference, quantile, survival",207,2018-12-29 08:05:16.800
+30,"dark, dark matter, dark energy, axion, searches",339,2018-12-29 08:05:16.800
+31,"optimal control, predictive control, model predictive, predictive, control problems",201,2018-12-29 08:05:16.800
+32,"navierstokes, navierstokes equations, galerkin, equations, compressible",319,2018-12-29 08:05:16.800
+33,"pulsar, gammaray, xray, pulsars, bursts",313,2018-12-29 08:05:16.800
+34,"software, agile, program, repair, requirements",163,2018-12-29 08:05:16.800
+35,"depth, stereo, depth estimation, monocular, splatting",143,2018-12-29 08:05:16.800
+36,"serverless, cloud, gpu, storage, stream",262,2018-12-29 08:05:16.800
+37,"adversarial, attacks, adversarial examples, adversarial attacks, examples",182,2018-12-29 08:05:16.800
+38,"elliptic, fractional, equations, elliptic equations, laplacian",338,2018-12-29 08:05:16.800
+39,"operators, sobolev, inequalities, inequality, hardy",306,2018-12-29 08:05:16.800
+40,"health, clinical, medical, electronic health, records",106,2018-12-29 08:05:16.800
+41,"face, facial, face recognition, recognition, expression",204,2018-12-29 08:05:16.800
+42,"graph neural, graph convolutional, graphs, link prediction, node",123,2018-12-29 08:05:16.800
+43,"neutrino, neutrinos, mass, oscillations, dark",287,2018-12-29 08:05:16.800
+44,"superresolution, image superresolution, denoising, restoration, image compression",149,2018-12-29 08:05:16.800
+45,"logic, automata, boolean, logics, modal",286,2018-12-29 08:05:16.800
+46,"solar, coronal, flare, magnetic, wind",277,2018-12-29 08:05:16.800
+47,"recommendation, recommender, recommender systems, collaborative filtering, recommendations",97,2018-12-29 08:05:16.800
+48,"plasma, plasmas, laser, electron, ion",227,2018-12-29 08:05:16.800
+49,"federated, federated learning, client, requirements, noniid",19,2018-12-29 08:05:16.800
+50,"bilayer, twisted, hall, electronic, quantum hall",318,2018-12-29 08:05:16.800
+51,"question, answering, question answering, knowledge, knowledge graph",102,2018-12-29 08:05:16.800
+52,"schrodinger, nonlinear schrodinger, equations, wave, operators",247,2018-12-29 08:05:16.800
+53,"action, action recognition, recognition, activity recognition, activity",166,2018-12-29 08:05:16.800
+54,"visual, visual reasoning, multimodal, reasoning, visionlanguage",27,2018-12-29 08:05:16.800
+55,"seismic, climate, precipitation, earthquake, weather",135,2018-12-29 08:05:16.800
+56,"turbulence, turbulent, convection, vortex, waves",223,2018-12-29 08:05:16.800
+57,"generative adversarial, adversarial networks, attention, gans, transformers",81,2018-12-29 08:05:16.800
+58,"uav, aerial, unmanned, uavs, unmanned aerial",145,2018-12-29 08:05:16.800
+59,"imagetoimage translation, imagetoimage, translation, style, style transfer",66,2018-12-29 08:05:16.800
+60,"groups, subgroups, finite, finite groups, abelian",265,2018-12-29 08:05:16.800
+61,"blockchain, contracts, smart contracts, smart, fraud",180,2018-12-29 08:05:16.800
+62,"privacy, private, differentially private, differentially, differential privacy",103,2018-12-29 08:05:16.800
+63,"games, game, mean field, equilibria, nash",127,2018-12-29 08:05:16.800
+64,"brownian, brownian motion, stochastic differential, differential equations, equations",168,2018-12-29 08:05:16.800
+65,"codes, decoding, polar, coding, decoder",214,2018-12-29 08:05:16.800
+66,"dialogue, dialog, conversation, conversational, gender bias",49,2018-12-29 08:05:16.800
+67,"anomaly detection, anomaly, outlier, outlier detection, novelty",68,2018-12-29 08:05:16.800
+68,"physicsinformed, differential equations, physicsinformed neural, physics machine, order reduction",38,2018-12-29 08:05:16.800
+69,"segmentation, semantic segmentation, semantic, instance, instance segmentation",80,2018-12-29 08:05:16.800
+70,"community, community detection, complex networks, centrality, social networks",179,2018-12-29 08:05:16.800
+71,"plasmonic, metamaterials, plasmon, metamaterial, surface",167,2018-12-29 08:05:16.800
+72,"news, fake, opinion, social, twitter",102,2018-12-29 08:05:16.800
+73,"inverse problems, diffusion models, solutions inverse, regularization, study robust",29,2018-12-29 08:05:16.800
+74,"supernova, ia, sn, remnant, remnants",162,2018-12-29 08:05:16.800
+75,"entanglement, entanglement entropy, multipartite, entangled, quantum",112,2018-12-29 08:05:16.800
+76,"boseeinstein, condensate, bose, condensates, superfluid",160,2018-12-29 08:05:16.800
+77,"neutron, neutron stars, star, stars, mergers",136,2018-12-29 08:05:16.800
+78,"matrices, markov, random matrices, markov chains, levy",162,2018-12-29 08:05:16.800
+79,"telescope, astronomy, astronomical, sky, astrophysics",126,2018-12-29 08:05:16.800
+80,"detector, detectors, liquid, readout, silicon",104,2018-12-29 08:05:16.800
+81,"knots, knot, links, braid, homology",170,2018-12-29 08:05:16.800
+82,"materials, molecular, force fields, interatomic, force",66,2018-12-29 08:05:16.800
+83,"remote sensing, remote, leaf, sensing, satellite",41,2018-12-29 08:05:16.800
+84,"sentiment, summarization, sentiment analysis, topic, sentiment classification",64,2018-12-29 08:05:16.800
+-1,"quantum, spin, equations, magnetic, optical",28011,2019-05-14 03:36:00.000
+0,"galaxies, galaxy, stars, stellar, star",2392,2019-05-14 03:36:00.000
+1,"hall, magnetic, spin, superconductivity, films",2003,2019-05-14 03:36:00.000
+2,"collisions, production, decays, qcd, lhc",4312,2019-05-14 03:36:00.000
+3,"curvature, surfaces, curves, manifolds, bundles",1459,2019-05-14 03:36:00.000
+4,"gravity, gauge, theories, inflation, cosmological",1353,2019-05-14 03:36:00.000
+5,"mimo, wireless, massive, iot, 5g",815,2019-05-14 03:36:00.000
+6,"graphs, trees, hypergraphs, domination, ramsey",933,2019-05-14 03:36:00.000
+7,"machine translation, translation, language, neural machine, word",544,2019-05-14 03:36:00.000
+8,"segmentation, mri, ct, medical, medical image",604,2019-05-14 03:36:00.000
+9,"black, black hole, hole, black holes, holes",706,2019-05-14 03:36:00.000
+10,"speech, music, speech recognition, audio, speaker",470,2019-05-14 03:36:00.000
+11,"quantum, quantum systems, circuits, quantum circuits, quantum mechanics",408,2019-05-14 03:36:00.000
+12,"time series, carlo, forecasting, monte carlo, monte",597,2019-05-14 03:36:00.000
+13,"ai, intelligence, citation, artificial intelligence, creativity",258,2019-05-14 03:36:00.000
+14,"nonconvex, convex, descent, gradient descent, proximal",483,2019-05-14 03:36:00.000
+15,"algebras, lie, modules, categories, algebra",529,2019-05-14 03:36:00.000
+16,"photonic, optical, cavity, fiber, laser",457,2019-05-14 03:36:00.000
+17,"protein, cell, dna, molecular, gene",339,2019-05-14 03:36:00.000
+18,"brain, spiking, eeg, spiking neural, neuromorphic",305,2019-05-14 03:36:00.000
+19,"market, volatility, financial, stock, portfolio",322,2019-05-14 03:36:00.000
+20,"deep neural, architecture search, pruning, neural architecture, training",394,2019-05-14 03:36:00.000
+21,"reinforcement learning, reinforcement, policy, deep reinforcement, markov decision",281,2019-05-14 03:36:00.000
+22,"granular, porous, polymer, droplets, droplet",435,2019-05-14 03:36:00.000
+23,"load, grid, electricity, power systems, electric",319,2019-05-14 03:36:00.000
+24,"traffic, autonomous, driving, planning, autonomous driving",229,2019-05-14 03:36:00.000
+25,"object detection, object, point cloud, cloud, lidar",261,2019-05-14 03:36:00.000
+26,"epidemic, covid19, infection, disease, viral",99,2019-05-14 03:36:00.000
+27,"domain adaptation, adaptation, label, multilabel, semisupervised",281,2019-05-14 03:36:00.000
+28,"imitation, robot, imitation learning, grasping, grasp",179,2019-05-14 03:36:00.000
+29,"causal, treatment, quantile, causal inference, survival",194,2019-05-14 03:36:00.000
+30,"dark, dark matter, dark energy, axion, searches",408,2019-05-14 03:36:00.000
+31,"optimal control, predictive control, model predictive, predictive, kalman",221,2019-05-14 03:36:00.000
+32,"navierstokes, navierstokes equations, compressible, galerkin, equations",292,2019-05-14 03:36:00.000
+33,"gammaray, pulsar, bursts, pulsars, xray",696,2019-05-14 03:36:00.000
+34,"software, repair, program, agile, bug",168,2019-05-14 03:36:00.000
+35,"depth, depth estimation, stereo, monocular, splatting",187,2019-05-14 03:36:00.000
+36,"gpu, cloud, serverless, hpc, persistent memory",277,2019-05-14 03:36:00.000
+37,"adversarial, attacks, adversarial attacks, adversarial examples, examples",239,2019-05-14 03:36:00.000
+38,"elliptic, fractional, equations, elliptic equations, laplacian",332,2019-05-14 03:36:00.000
+39,"operators, sobolev, inequalities, banach, inequality",318,2019-05-14 03:36:00.000
+40,"clinical, health, medical, records, biomedical",160,2019-05-14 03:36:00.000
+41,"face, facial, face recognition, fashion, recognition",220,2019-05-14 03:36:00.000
+42,"graph neural, network embedding, graph convolutional, node, convolutional",177,2019-05-14 03:36:00.000
+43,"neutrino, neutrinos, experiment, oscillations, highenergy",624,2019-05-14 03:36:00.000
+44,"superresolution, image superresolution, denoising, image compression, image restoration",184,2019-05-14 03:36:00.000
+45,"logic, automata, boolean, logics, semantics",282,2019-05-14 03:36:00.000
+46,"solar, coronal, flare, magnetic, wind",253,2019-05-14 03:36:00.000
+47,"recommendation, recommender, recommender systems, collaborative filtering, recommendations",189,2019-05-14 03:36:00.000
+48,"plasma, plasmas, laser, electron, ionization",261,2019-05-14 03:36:00.000
+49,"federated, federated learning, learning federated, decentralized, heterogeneous",27,2019-05-14 03:36:00.000
+50,"bilayer, twisted, graphite, electronic, hall",314,2019-05-14 03:36:00.000
+51,"question, answering, question answering, knowledge, reading comprehension",192,2019-05-14 03:36:00.000
+52,"schrodinger, nonlinear schrodinger, equations, wave, wave equations",250,2019-05-14 03:36:00.000
+53,"action, action recognition, recognition, activity recognition, activity",182,2019-05-14 03:36:00.000
+54,"multimodal, visual, visionlanguage, reasoning, video",47,2019-05-14 03:36:00.000
+55,"seismic, climate, earthquake, assimilation, weather",146,2019-05-14 03:36:00.000
+56,"turbulence, turbulent, convection, vortex, waves",202,2019-05-14 03:36:00.000
+57,"generative adversarial, attention, adversarial networks, gans, transformers",96,2019-05-14 03:36:00.000
+58,"uav, uavs, aerial, swarm, trajectory",165,2019-05-14 03:36:00.000
+59,"style, style transfer, translation, image synthesis, imagetoimage translation",61,2019-05-14 03:36:00.000
+60,"groups, subgroups, finite, finite groups, abelian",216,2019-05-14 03:36:00.000
+61,"blockchain, smart contracts, contracts, smart, fraud",201,2019-05-14 03:36:00.000
+62,"privacy, private, differential privacy, differentially private, differentially",118,2019-05-14 03:36:00.000
+63,"games, game, mean field, equilibria, nash",147,2019-05-14 03:36:00.000
+64,"brownian, brownian motion, stochastic differential, equations, differential equations",182,2019-05-14 03:36:00.000
+65,"codes, decoding, coding, polar, selfdual",177,2019-05-14 03:36:00.000
+66,"dialogue, dialog, taskoriented, conversational, gender",159,2019-05-14 03:36:00.000
+67,"anomaly, anomaly detection, outlier, outlier detection, anomalies",77,2019-05-14 03:36:00.000
+68,"differential equations, physicsinformed, partial differential, physicsinformed neural, equations",50,2019-05-14 03:36:00.000
+69,"segmentation, semantic segmentation, semantic, instance, instance segmentation",122,2019-05-14 03:36:00.000
+70,"community, community detection, complex networks, centrality, social networks",168,2019-05-14 03:36:00.000
+71,"plasmonic, metamaterials, plasmon, metamaterial, surface",161,2019-05-14 03:36:00.000
+72,"news, opinion, fake, social, media",76,2019-05-14 03:36:00.000
+73,"inverse problems, diffusion models, bayesian inverse, normalizing, normalizing flows",53,2019-05-14 03:36:00.000
+74,"supernova, ia, remnant, remnants, sn",205,2019-05-14 03:36:00.000
+75,"entanglement, entangled, multipartite, entanglement entropy, bipartite",130,2019-05-14 03:36:00.000
+76,"boseeinstein, bose, condensates, condensate, superfluid",174,2019-05-14 03:36:00.000
+77,"neutron, neutron stars, star, stars, mergers",152,2019-05-14 03:36:00.000
+78,"matrices, markov, random matrices, levy, markov chains",132,2019-05-14 03:36:00.000
+79,"telescope, astronomy, astronomical, sky, observatory",218,2019-05-14 03:36:00.000
+80,"detector, detectors, readout, pixel, silicon",262,2019-05-14 03:36:00.000
+81,"knots, knot, links, braid, homology",126,2019-05-14 03:36:00.000
+82,"materials, molecular, force, additive manufacturing, manufacturing",74,2019-05-14 03:36:00.000
+83,"remote sensing, remote, crop, sensing, yield",56,2019-05-14 03:36:00.000
+84,"summarization, sentiment, sentiment analysis, topic, abstractive",152,2019-05-14 03:36:00.000
+-1,"quantum, equations, magnetic, optical, spin",26430,2019-09-24 07:12:00.000
+0,"galaxies, galaxy, stellar, stars, star",2295,2019-09-24 07:12:00.000
+1,"magnetic, spin, hall, superconductivity, films",1961,2019-09-24 07:12:00.000
+2,"collisions, qcd, production, higgs, decays",1670,2019-09-24 07:12:00.000
+3,"surfaces, curvature, curves, manifolds, forms",1552,2019-09-24 07:12:00.000
+4,"gravity, gauge, inflation, theories, cosmological",1564,2019-09-24 07:12:00.000
+5,"mimo, wireless, iot, beamforming, communications",872,2019-09-24 07:12:00.000
+6,"graphs, trees, coloring, hypergraphs, domination",874,2019-09-24 07:12:00.000
+7,"machine translation, translation, language, neural machine, word",425,2019-09-24 07:12:00.000
+8,"segmentation, mri, ct, cancer, medical",616,2019-09-24 07:12:00.000
+9,"black, black hole, black holes, hole, holes",727,2019-09-24 07:12:00.000
+10,"speech, speech recognition, speaker, music, audio",474,2019-09-24 07:12:00.000
+11,"quantum, quantum systems, manybody, quantum circuits, circuits",431,2019-09-24 07:12:00.000
+12,"time series, carlo, monte carlo, monte, forecasting",588,2019-09-24 07:12:00.000
+13,"ai, intelligence, artificial intelligence, citation, science",223,2019-09-24 07:12:00.000
+14,"nonconvex, convex, descent, gradient descent, proximal",488,2019-09-24 07:12:00.000
+15,"algebras, categories, lie, modules, algebra",560,2019-09-24 07:12:00.000
+16,"photonic, optical, cavity, laser, photon",534,2019-09-24 07:12:00.000
+17,"protein, dna, cell, molecular, drug",315,2019-09-24 07:12:00.000
+18,"spiking, brain, eeg, spiking neural, neuromorphic",325,2019-09-24 07:12:00.000
+19,"financial, market, pricing, stock, portfolio",371,2019-09-24 07:12:00.000
+20,"deep neural, architecture search, training, pruning, architecture",483,2019-09-24 07:12:00.000
+21,"reinforcement learning, reinforcement, policy, deep reinforcement, multiagent",328,2019-09-24 07:12:00.000
+22,"granular, porous, polymer, suspensions, colloidal",431,2019-09-24 07:12:00.000
+23,"electricity, load, storage, wind, grid",376,2019-09-24 07:12:00.000
+24,"traffic, autonomous, driving, planning, trajectory",214,2019-09-24 07:12:00.000
+25,"object detection, object, point cloud, lidar, cloud",233,2019-09-24 07:12:00.000
+26,"epidemic, covid19, infection, disease, pandemic",122,2019-09-24 07:12:00.000
+27,"domain adaptation, adaptation, multilabel, unsupervised domain, label",255,2019-09-24 07:12:00.000
+28,"imitation, manipulation, imitation learning, robot, robots",164,2019-09-24 07:12:00.000
+29,"causal, treatment, quantile, imputation, causal inference",206,2019-09-24 07:12:00.000
+30,"dark, dark matter, dark energy, axion, direct detection",366,2019-09-24 07:12:00.000
+31,"predictive control, model predictive, predictive, optimal control, kalman",242,2019-09-24 07:12:00.000
+32,"navierstokes, navierstokes equations, galerkin, compressible, equations",335,2019-09-24 07:12:00.000
+33,"pulsar, xray, gammaray, bursts, pulsars",297,2019-09-24 07:12:00.000
+34,"software, repair, program, code generation, engineering",125,2019-09-24 07:12:00.000
+35,"depth, stereo, monocular, depth estimation, scene",124,2019-09-24 07:12:00.000
+36,"serverless, cloud, gpu, secure, execution",263,2019-09-24 07:12:00.000
+37,"adversarial, attacks, adversarial attacks, adversarial examples, adversarial robustness",242,2019-09-24 07:12:00.000
+38,"fractional, elliptic, equations, laplacian, elliptic equations",305,2019-09-24 07:12:00.000
+39,"operators, sobolev, inequalities, inequality, banach",339,2019-09-24 07:12:00.000
+40,"clinical, health, medical, records, biomedical",168,2019-09-24 07:12:00.000
+41,"face, facial, face recognition, recognition, expression",190,2019-09-24 07:12:00.000
+42,"graph neural, graph convolutional, convolutional networks, graphs, node",218,2019-09-24 07:12:00.000
+43,"neutrino, neutrinos, oscillations, decay, mass",303,2019-09-24 07:12:00.000
+44,"superresolution, image superresolution, denoising, deblurring, video",171,2019-09-24 07:12:00.000
+45,"logic, automata, logics, boolean, modal",221,2019-09-24 07:12:00.000
+46,"solar, coronal, flare, wind, magnetic",272,2019-09-24 07:12:00.000
+47,"recommendation, recommender, recommender systems, collaborative filtering, recommendations",111,2019-09-24 07:12:00.000
+48,"plasma, plasmas, laser, electron, ionization",227,2019-09-24 07:12:00.000
+49,"federated, federated learning, learning federated, privacy, vertical federated",70,2019-09-24 07:12:00.000
+50,"bilayer, twisted, graphite, electronic, tunable",315,2019-09-24 07:12:00.000
+51,"question, answering, question answering, knowledge, knowledge graph",155,2019-09-24 07:12:00.000
+52,"schrodinger, nonlinear schrodinger, wave, equations, operators",273,2019-09-24 07:12:00.000
+53,"action, action recognition, recognition, reality, gaze",159,2019-09-24 07:12:00.000
+54,"visual, multimodal, reasoning, visionlanguage, visual reasoning",34,2019-09-24 07:12:00.000
+55,"seismic, climate, assimilation, weather, earthquake",169,2019-09-24 07:12:00.000
+56,"turbulence, turbulent, convection, vortex, stratified",228,2019-09-24 07:12:00.000
+57,"attention, transformers, generative adversarial, gans, adversarial networks",103,2019-09-24 07:12:00.000
+58,"uav, aerial, unmanned, unmanned aerial, drone",132,2019-09-24 07:12:00.000
+59,"imagetoimage, imagetoimage translation, style, texttoimage, style transfer",67,2019-09-24 07:12:00.000
+60,"groups, subgroups, finite, finite groups, conjugacy",217,2019-09-24 07:12:00.000
+61,"blockchain, smart, smart contracts, contracts, fraud",197,2019-09-24 07:12:00.000
+62,"privacy, private, differential privacy, differentially private, differentially",120,2019-09-24 07:12:00.000
+63,"games, game, nash, equilibria, mean field",160,2019-09-24 07:12:00.000
+64,"brownian, brownian motion, sdes, stochastic differential, equations",200,2019-09-24 07:12:00.000
+65,"codes, decoding, polar, constructions, coding",206,2019-09-24 07:12:00.000
+66,"dialogue, dialog, conversation, conversational, taskoriented",124,2019-09-24 07:12:00.000
+67,"anomaly detection, anomaly, outlier, outlier detection, anomalies",83,2019-09-24 07:12:00.000
+68,"differential equations, physicsinformed, partial differential, physicsinformed neural, equations",83,2019-09-24 07:12:00.000
+69,"segmentation, semantic segmentation, semantic, instance segmentation, instance",109,2019-09-24 07:12:00.000
+70,"community, community detection, complex networks, centrality, communities",175,2019-09-24 07:12:00.000
+71,"plasmonic, metamaterials, plasmon, metamaterial, surface",171,2019-09-24 07:12:00.000
+72,"news, opinion, fake, social, twitter",112,2019-09-24 07:12:00.000
+73,"inverse problems, diffusion models, solving inverse, normalizing, bayesian inverse",43,2019-09-24 07:12:00.000
+74,"supernova, ia, remnants, remnant, sn",157,2019-09-24 07:12:00.000
+75,"entanglement, entanglement entropy, multipartite, entangled, bipartite",126,2019-09-24 07:12:00.000
+76,"boseeinstein, condensates, superfluid, bose, condensate",163,2019-09-24 07:12:00.000
+77,"neutron, neutron stars, star, stars, mergers",139,2019-09-24 07:12:00.000
+78,"matrices, markov, markov chains, random matrices, levy",165,2019-09-24 07:12:00.000
+79,"astronomy, astronomical, telescope, sky, observatory",130,2019-09-24 07:12:00.000
+80,"detector, detectors, liquid, readout, pixel",122,2019-09-24 07:12:00.000
+81,"knots, knot, links, homology, braid",117,2019-09-24 07:12:00.000
+82,"materials, molecular, additive manufacturing, printing, manufacturing",60,2019-09-24 07:12:00.000
+83,"remote sensing, remote, sensing, crop, plant",63,2019-09-24 07:12:00.000
+84,"sentiment, summarization, sentiment analysis, topic, abstractive",106,2019-09-24 07:12:00.000
+-1,"quantum, equations, spin, optical, finite",28146,2020-02-04 10:48:00.000
+0,"galaxies, galaxy, stars, stellar, star",2309,2020-02-04 10:48:00.000
+1,"magnetic, hall, spin, superconductivity, films",2029,2020-02-04 10:48:00.000
+2,"collisions, qcd, production, decays, quark",1364,2020-02-04 10:48:00.000
+3,"curvature, surfaces, curves, manifolds, polynomials",1491,2020-02-04 10:48:00.000
+4,"gravity, gauge, theories, inflation, cosmological",1308,2020-02-04 10:48:00.000
+5,"mimo, wireless, communications, iot, beamforming",1044,2020-02-04 10:48:00.000
+6,"graphs, trees, hypergraphs, tree, coloring",986,2020-02-04 10:48:00.000
+7,"language, machine translation, translation, neural machine, language models",578,2020-02-04 10:48:00.000
+8,"segmentation, mri, medical, medical image, cancer",665,2020-02-04 10:48:00.000
+9,"black, black hole, hole, black holes, holes",753,2020-02-04 10:48:00.000
+10,"speech, speech recognition, speaker, recognition, music",579,2020-02-04 10:48:00.000
+11,"quantum, quantum systems, circuits, manybody, quantum circuits",467,2020-02-04 10:48:00.000
+12,"time series, carlo, monte, monte carlo, forecasting",632,2020-02-04 10:48:00.000
+13,"ai, intelligence, citation, education, agents",284,2020-02-04 10:48:00.000
+14,"nonconvex, convex, descent, stochastic gradient, gradient descent",583,2020-02-04 10:48:00.000
+15,"algebras, lie, categories, modules, algebra",570,2020-02-04 10:48:00.000
+16,"photonic, optical, cavity, fiber, waveguide",491,2020-02-04 10:48:00.000
+17,"protein, dna, cell, drug, molecular",353,2020-02-04 10:48:00.000
+18,"spiking, brain, eeg, spiking neural, neuromorphic",395,2020-02-04 10:48:00.000
+19,"financial, pricing, volatility, market, stock",393,2020-02-04 10:48:00.000
+20,"deep neural, pruning, architecture search, neural architecture, dnn",497,2020-02-04 10:48:00.000
+21,"reinforcement learning, reinforcement, policy, deep reinforcement, multiagent",310,2020-02-04 10:48:00.000
+22,"porous, granular, polymer, droplets, fracture",442,2020-02-04 10:48:00.000
+23,"electricity, voltage, load, power systems, optimal power",387,2020-02-04 10:48:00.000
+24,"driving, traffic, autonomous, planning, vehicles",310,2020-02-04 10:48:00.000
+25,"object detection, object, point cloud, lidar, cloud",317,2020-02-04 10:48:00.000
+26,"covid19, epidemic, pandemic, covid19 pandemic, coronavirus",844,2020-02-04 10:48:00.000
+27,"domain adaptation, adaptation, label, multilabel, unsupervised domain",360,2020-02-04 10:48:00.000
+28,"manipulation, robot, imitation, locomotion, grasping",220,2020-02-04 10:48:00.000
+29,"causal, treatment, quantile, causal inference, imputation",255,2020-02-04 10:48:00.000
+30,"dark, dark matter, dark energy, axion, halos",361,2020-02-04 10:48:00.000
+31,"predictive control, model predictive, predictive, optimal control, nonlinear systems",361,2020-02-04 10:48:00.000
+32,"navierstokes, navierstokes equations, galerkin, equations, compressible",336,2020-02-04 10:48:00.000
+33,"gammaray, pulsar, bursts, xray, grb",323,2020-02-04 10:48:00.000
+34,"software, software engineering, code generation, requirements, agile",154,2020-02-04 10:48:00.000
+35,"depth, stereo, depth estimation, monocular, splatting",194,2020-02-04 10:48:00.000
+36,"cloud, serverless, encryption, gpu, secure",304,2020-02-04 10:48:00.000
+37,"adversarial, attacks, adversarial attacks, adversarial examples, attack",267,2020-02-04 10:48:00.000
+38,"elliptic, fractional, equations, laplacian, elliptic equations",383,2020-02-04 10:48:00.000
+39,"operators, sobolev, banach, inequality, inequalities",375,2020-02-04 10:48:00.000
+40,"health, clinical, medical, electronic health, depression",157,2020-02-04 10:48:00.000
+41,"face, facial, face recognition, recognition, expression",259,2020-02-04 10:48:00.000
+42,"graph neural, graph convolutional, link prediction, graphs, convolutional networks",211,2020-02-04 10:48:00.000
+43,"neutrino, neutrinos, mass, oscillations, dark",254,2020-02-04 10:48:00.000
+44,"superresolution, image superresolution, denoising, video, image compression",241,2020-02-04 10:48:00.000
+45,"logic, automata, boolean, logics, modal",288,2020-02-04 10:48:00.000
+46,"solar, coronal, flare, wind, magnetic",295,2020-02-04 10:48:00.000
+47,"recommendation, recommender, recommender systems, collaborative filtering, collaborative",136,2020-02-04 10:48:00.000
+48,"plasma, plasmas, electron, laser, ionization",273,2020-02-04 10:48:00.000
+49,"federated, federated learning, learning federated, privacypreserving, privacy",88,2020-02-04 10:48:00.000
+50,"bilayer, twisted, electronic, graphite, valley",312,2020-02-04 10:48:00.000
+51,"question, answering, question answering, knowledge, knowledge graph",175,2020-02-04 10:48:00.000
+52,"schrodinger, nonlinear schrodinger, equations, operators, wave",253,2020-02-04 10:48:00.000
+53,"action, action recognition, recognition, activity recognition, activity",205,2020-02-04 10:48:00.000
+54,"multimodal, visual, reasoning, visionlanguage, vision language",25,2020-02-04 10:48:00.000
+55,"climate, seismic, earthquake, assimilation, precipitation",184,2020-02-04 10:48:00.000
+56,"turbulence, turbulent, convection, waves, water",237,2020-02-04 10:48:00.000
+57,"transformers, generative adversarial, gans, attention, adversarial networks",123,2020-02-04 10:48:00.000
+58,"uav, aerial, uavs, unmanned, unmanned aerial",198,2020-02-04 10:48:00.000
+59,"image generation, style, style transfer, imagetoimage translation, imagetoimage",59,2020-02-04 10:48:00.000
+60,"groups, subgroups, finite, finite groups, abelian groups",214,2020-02-04 10:48:00.000
+61,"blockchain, smart contracts, contracts, smart, fraud",230,2020-02-04 10:48:00.000
+62,"privacy, private, differentially private, differentially, differential privacy",129,2020-02-04 10:48:00.000
+63,"games, game, nash, equilibria, mean field",169,2020-02-04 10:48:00.000
+64,"brownian, brownian motion, stochastic differential, equations, differential equations",211,2020-02-04 10:48:00.000
+65,"codes, decoding, polar, coding, selfdual",202,2020-02-04 10:48:00.000
+66,"dialogue, dialog, taskoriented, conversational, opendomain",150,2020-02-04 10:48:00.000
+67,"anomaly, anomaly detection, outlier, outlier detection, anomalies",104,2020-02-04 10:48:00.000
+68,"physicsinformed, differential equations, partial differential, physicsinformed neural, equations",86,2020-02-04 10:48:00.000
+69,"segmentation, semantic segmentation, semantic, instance segmentation, instance",125,2020-02-04 10:48:00.000
+70,"community detection, community, centrality, complex networks, social networks",181,2020-02-04 10:48:00.000
+71,"metamaterials, plasmonic, plasmon, metamaterial, surface",175,2020-02-04 10:48:00.000
+72,"news, fake, opinion, social, misinformation",102,2020-02-04 10:48:00.000
+73,"inverse problems, diffusion models, normalizing, normalizing flows, bayesian inverse",67,2020-02-04 10:48:00.000
+74,"supernova, ia, sn, remnant, remnants",142,2020-02-04 10:48:00.000
+75,"entanglement, entangled, multipartite, entanglement entropy, genuine",120,2020-02-04 10:48:00.000
+76,"boseeinstein, bose, condensate, superfluid, condensates",133,2020-02-04 10:48:00.000
+77,"neutron, neutron stars, star, stars, mergers",176,2020-02-04 10:48:00.000
+78,"matrices, random matrices, markov, markov chains, chains",152,2020-02-04 10:48:00.000
+79,"telescope, astronomy, astronomical, sky, telescopes",122,2020-02-04 10:48:00.000
+80,"detector, detectors, argon, readout, liquid",117,2020-02-04 10:48:00.000
+81,"knots, knot, links, braid, homology",135,2020-02-04 10:48:00.000
+82,"materials, molecular, molecular dynamics, potentials, force",77,2020-02-04 10:48:00.000
+83,"remote sensing, remote, crop, plant, sensing",74,2020-02-04 10:48:00.000
+84,"summarization, sentiment, sentiment analysis, abstractive, topic",131,2020-02-04 10:48:00.000
+-1,"quantum, equations, optical, spin, magnetic",30554,2020-06-16 14:24:00.000
+0,"galaxies, galaxy, stellar, star, stars",2378,2020-06-16 14:24:00.000
+1,"magnetic, spin, hall, superconductivity, films",2270,2020-06-16 14:24:00.000
+2,"collisions, qcd, production, decays, lhc",1468,2020-06-16 14:24:00.000
+3,"surfaces, curvature, curves, manifolds, bundles",1557,2020-06-16 14:24:00.000
+4,"gravity, gauge, theories, cosmological, inflation",1328,2020-06-16 14:24:00.000
+5,"mimo, wireless, intelligent, communications, iot",970,2020-06-16 14:24:00.000
+6,"graphs, trees, hypergraphs, cycles, coloring",1022,2020-06-16 14:24:00.000
+7,"language, machine translation, translation, language models, neural machine",646,2020-06-16 14:24:00.000
+8,"segmentation, mri, medical, medical image, ct",789,2020-06-16 14:24:00.000
+9,"black, black hole, hole, black holes, holes",829,2020-06-16 14:24:00.000
+10,"speech, speaker, music, audio, speech recognition",767,2020-06-16 14:24:00.000
+11,"quantum, quantum systems, circuits, quantum circuits, manybody",524,2020-06-16 14:24:00.000
+12,"time series, forecasting, carlo, highdimensional, monte carlo",705,2020-06-16 14:24:00.000
+13,"ai, intelligence, artificial intelligence, citation, agents",304,2020-06-16 14:24:00.000
+14,"nonconvex, descent, convex, gradient descent, stochastic gradient",619,2020-06-16 14:24:00.000
+15,"algebras, categories, lie, modules, algebra",589,2020-06-16 14:24:00.000
+16,"photonic, optical, cavity, optomechanical, waveguide",537,2020-06-16 14:24:00.000
+17,"protein, cell, dna, molecular, drug",406,2020-06-16 14:24:00.000
+18,"brain, spiking, eeg, spiking neural, disease",415,2020-06-16 14:24:00.000
+19,"financial, market, pricing, markets, stock",442,2020-06-16 14:24:00.000
+20,"deep neural, architecture search, pruning, neural architecture, architecture",558,2020-06-16 14:24:00.000
+21,"reinforcement learning, reinforcement, policy, deep reinforcement, offpolicy",399,2020-06-16 14:24:00.000
+22,"polymer, granular, porous, droplets, fracture",520,2020-06-16 14:24:00.000
+23,"load, voltage, electricity, power systems, optimal power",397,2020-06-16 14:24:00.000
+24,"driving, autonomous, traffic, planning, vehicles",319,2020-06-16 14:24:00.000
+25,"object detection, object, point cloud, cloud, lidar",363,2020-06-16 14:24:00.000
+26,"covid19, epidemic, pandemic, covid19 pandemic, infection",954,2020-06-16 14:24:00.000
+27,"domain adaptation, adaptation, multilabel, label, metalearning",451,2020-06-16 14:24:00.000
+28,"imitation, manipulation, robot, robotic, robots",222,2020-06-16 14:24:00.000
+29,"causal, treatment, causal inference, quantile, survival",332,2020-06-16 14:24:00.000
+30,"dark, dark matter, dark energy, axion, searches",363,2020-06-16 14:24:00.000
+31,"optimal control, predictive control, model predictive, predictive, kalman",305,2020-06-16 14:24:00.000
+32,"navierstokes, galerkin, navierstokes equations, discontinuous, discontinuous galerkin",356,2020-06-16 14:24:00.000
+33,"gammaray, pulsar, bursts, xray, pulsars",344,2020-06-16 14:24:00.000
+34,"software, vulnerability, software engineering, source code, code generation",200,2020-06-16 14:24:00.000
+35,"depth, depth estimation, stereo, monocular, splatting",216,2020-06-16 14:24:00.000
+36,"hpc, serverless, cloud, gpu, encryption",361,2020-06-16 14:24:00.000
+37,"adversarial, attacks, adversarial attacks, attack, adversarial examples",327,2020-06-16 14:24:00.000
+38,"fractional, elliptic, equations, laplacian, elliptic equations",357,2020-06-16 14:24:00.000
+39,"operators, sobolev, inequalities, banach, inequality",322,2020-06-16 14:24:00.000
+40,"health, clinical, medical, healthcare, depression",198,2020-06-16 14:24:00.000
+41,"face, facial, face recognition, recognition, expression",292,2020-06-16 14:24:00.000
+42,"graph neural, graph convolutional, node, convolutional, convolutional networks",294,2020-06-16 14:24:00.000
+43,"neutrino, neutrinos, oscillations, mass, dark",273,2020-06-16 14:24:00.000
+44,"superresolution, image superresolution, denoising, video, image restoration",253,2020-06-16 14:24:00.000
+45,"logic, automata, boolean, logics, semantics",259,2020-06-16 14:24:00.000
+46,"solar, coronal, flare, wind, magnetic",319,2020-06-16 14:24:00.000
+47,"recommendation, recommender, recommender systems, recommendations, collaborative filtering",219,2020-06-16 14:24:00.000
+48,"plasma, plasmas, electron, laser, ionization",284,2020-06-16 14:24:00.000
+49,"federated, federated learning, privacy, learning federated, noniid",130,2020-06-16 14:24:00.000
+50,"bilayer, twisted, electronic, graphite, tunable",361,2020-06-16 14:24:00.000
+51,"question, answering, question answering, knowledge, knowledge graph",188,2020-06-16 14:24:00.000
+52,"schrodinger, nonlinear schrodinger, equations, wave, wave equations",254,2020-06-16 14:24:00.000
+53,"action, action recognition, recognition, reality, activity recognition",217,2020-06-16 14:24:00.000
+54,"multimodal, visionlanguage, video understanding, video, videos",43,2020-06-16 14:24:00.000
+55,"seismic, climate, precipitation, assimilation, weather",156,2020-06-16 14:24:00.000
+56,"turbulence, turbulent, convection, vortex, reynolds",247,2020-06-16 14:24:00.000
+57,"transformers, attention, generative adversarial, gans, gan",153,2020-06-16 14:24:00.000
+58,"uav, uavs, aerial, drone, unmanned",227,2020-06-16 14:24:00.000
+59,"imagetoimage, imagetoimage translation, scene graph, image generation, style",80,2020-06-16 14:24:00.000
+60,"groups, subgroups, finite groups, finite, conjugacy",229,2020-06-16 14:24:00.000
+61,"blockchain, smart, smart contracts, contracts, fraud",242,2020-06-16 14:24:00.000
+62,"privacy, private, differentially private, differentially, differential privacy",203,2020-06-16 14:24:00.000
+63,"games, game, nash, equilibria, mean field",198,2020-06-16 14:24:00.000
+64,"brownian, brownian motion, stochastic differential, sdes, equations",214,2020-06-16 14:24:00.000
+65,"codes, decoding, polar, list, decoder",178,2020-06-16 14:24:00.000
+66,"dialogue, dialog, state tracking, conversational, taskoriented",143,2020-06-16 14:24:00.000
+67,"anomaly, anomaly detection, outlier, outlier detection, anomalies",112,2020-06-16 14:24:00.000
+68,"physicsinformed, differential equations, physicsinformed neural, partial differential, equations",80,2020-06-16 14:24:00.000
+69,"segmentation, semantic segmentation, semantic, instance segmentation, instance",145,2020-06-16 14:24:00.000
+70,"community, community detection, centrality, complex networks, social networks",187,2020-06-16 14:24:00.000
+71,"plasmonic, metamaterials, plasmon, metamaterial, surface",192,2020-06-16 14:24:00.000
+72,"news, opinion, fake, twitter, social",142,2020-06-16 14:24:00.000
+73,"inverse problems, diffusion models, normalizing flows, normalizing, linear inverse",60,2020-06-16 14:24:00.000
+74,"supernova, ia, sn, remnant, remnants",173,2020-06-16 14:24:00.000
+75,"entanglement, multipartite, entanglement entropy, entangled, quantum entanglement",144,2020-06-16 14:24:00.000
+76,"boseeinstein, condensates, bose, condensate, superfluid",162,2020-06-16 14:24:00.000
+77,"neutron, neutron stars, star, stars, mergers",154,2020-06-16 14:24:00.000
+78,"matrices, random matrices, markov, markov chains, random variables",177,2020-06-16 14:24:00.000
+79,"astronomical, astronomy, telescope, sky, observatory",147,2020-06-16 14:24:00.000
+80,"detector, detectors, argon, readout, liquid",161,2020-06-16 14:24:00.000
+81,"knots, knot, links, braid, homology",121,2020-06-16 14:24:00.000
+82,"materials, crystal, atomistic, force fields, additive manufacturing",95,2020-06-16 14:24:00.000
+83,"remote sensing, remote, sensing, plant, imagery",78,2020-06-16 14:24:00.000
+84,"sentiment, summarization, sentiment analysis, topic, abstractive",170,2020-06-16 14:24:00.000
+-1,"quantum, equations, magnetic, optical, spin",31009,2020-10-27 18:00:00.000
+0,"galaxies, galaxy, stars, stellar, star",2373,2020-10-27 18:00:00.000
+1,"magnetic, hall, spin, superconductivity, films",2171,2020-10-27 18:00:00.000
+2,"collisions, qcd, production, decays, lhc",1646,2020-10-27 18:00:00.000
+3,"surfaces, curvature, curves, polynomials, manifolds",1626,2020-10-27 18:00:00.000
+4,"gravity, gauge, theories, inflation, cosmological",1405,2020-10-27 18:00:00.000
+5,"mimo, wireless, communications, intelligent, massive",985,2020-10-27 18:00:00.000
+6,"graphs, trees, hypergraphs, cycles, coloring",979,2020-10-27 18:00:00.000
+7,"language, translation, machine translation, language models, bert",548,2020-10-27 18:00:00.000
+8,"segmentation, mri, medical, ct, medical image",732,2020-10-27 18:00:00.000
+9,"black, black hole, black holes, holes, hole",853,2020-10-27 18:00:00.000
+10,"speech, speech recognition, speaker, audio, music",740,2020-10-27 18:00:00.000
+11,"quantum, quantum systems, circuits, quantum circuits, quantum computing",520,2020-10-27 18:00:00.000
+12,"time series, forecasting, gaussian processes, series forecasting, carlo",727,2020-10-27 18:00:00.000
+13,"ai, intelligence, artificial intelligence, students, ethics",334,2020-10-27 18:00:00.000
+14,"nonconvex, convex, descent, gradient descent, convex optimization",629,2020-10-27 18:00:00.000
+15,"algebras, lie, categories, modules, algebra",553,2020-10-27 18:00:00.000
+16,"photonic, optical, cavity, laser, waveguide",532,2020-10-27 18:00:00.000
+17,"protein, dna, molecular, cell, drug",441,2020-10-27 18:00:00.000
+18,"spiking, brain, eeg, spiking neural, disease",404,2020-10-27 18:00:00.000
+19,"financial, market, portfolio, pricing, stock",426,2020-10-27 18:00:00.000
+20,"deep neural, architecture search, neural architecture, pruning, architecture",541,2020-10-27 18:00:00.000
+21,"reinforcement learning, reinforcement, policy, deep reinforcement, offline",428,2020-10-27 18:00:00.000
+22,"granular, porous, droplet, polymer, droplets",522,2020-10-27 18:00:00.000
+23,"electricity, wind, electric, power systems, renewable",456,2020-10-27 18:00:00.000
+24,"traffic, driving, planning, autonomous, trajectory",327,2020-10-27 18:00:00.000
+25,"object detection, object, point cloud, cloud, lidar",335,2020-10-27 18:00:00.000
+26,"covid19, pandemic, epidemic, covid19 pandemic, infection",918,2020-10-27 18:00:00.000
+27,"domain adaptation, adaptation, label, multilabel, metalearning",386,2020-10-27 18:00:00.000
+28,"manipulation, robotic, imitation, robot, imitation learning",253,2020-10-27 18:00:00.000
+29,"causal, treatment, causal inference, quantile, imputation",313,2020-10-27 18:00:00.000
+30,"dark, dark matter, dark energy, axion, scalar",409,2020-10-27 18:00:00.000
+31,"predictive control, predictive, model predictive, optimal control, nonlinear systems",314,2020-10-27 18:00:00.000
+32,"navierstokes, navierstokes equations, galerkin, compressible, equations",377,2020-10-27 18:00:00.000
+33,"gammaray, pulsar, bursts, xray, pulsars",339,2020-10-27 18:00:00.000
+34,"software, code generation, requirements, software engineering, engineering",220,2020-10-27 18:00:00.000
+35,"depth, monocular, depth estimation, stereo, scene",173,2020-10-27 18:00:00.000
+36,"hpc, serverless, gpu, cloud, encryption",265,2020-10-27 18:00:00.000
+37,"adversarial, attacks, adversarial attacks, attack, adversarial examples",346,2020-10-27 18:00:00.000
+38,"fractional, elliptic, equations, elliptic equations, laplacian",342,2020-10-27 18:00:00.000
+39,"operators, sobolev, banach, inequalities, banach spaces",292,2020-10-27 18:00:00.000
+40,"clinical, health, medical, biomedical, diabetes",205,2020-10-27 18:00:00.000
+41,"face, facial, face recognition, recognition, deepfake",257,2020-10-27 18:00:00.000
+42,"graph neural, graph convolutional, node, graph representation, representation learning",272,2020-10-27 18:00:00.000
+43,"neutrino, neutrinos, mass, oscillations, flavor",307,2020-10-27 18:00:00.000
+44,"superresolution, denoising, image superresolution, restoration, image restoration",231,2020-10-27 18:00:00.000
+45,"logic, automata, logics, boolean, modal",250,2020-10-27 18:00:00.000
+46,"solar, coronal, flare, magnetic, wind",312,2020-10-27 18:00:00.000
+47,"recommendation, recommender, recommender systems, recommendations, collaborative filtering",204,2020-10-27 18:00:00.000
+48,"plasma, plasmas, electron, laser, ionization",314,2020-10-27 18:00:00.000
+49,"federated, federated learning, learning federated, privacy, personalized federated",170,2020-10-27 18:00:00.000
+50,"bilayer, twisted, graphite, moire, electronic",329,2020-10-27 18:00:00.000
+51,"question, answering, question answering, knowledge, knowledge graph",193,2020-10-27 18:00:00.000
+52,"schrodinger, nonlinear schrodinger, equations, wave, wave equations",286,2020-10-27 18:00:00.000
+53,"action, action recognition, recognition, activity recognition, reality",202,2020-10-27 18:00:00.000
+54,"multimodal, visionlanguage, visual, reasoning, vision language",37,2020-10-27 18:00:00.000
+55,"climate, earthquake, seismic, assimilation, weather",196,2020-10-27 18:00:00.000
+56,"turbulence, turbulent, convection, vortex, waves",269,2020-10-27 18:00:00.000
+57,"transformers, gans, attention, generative adversarial, transformer",142,2020-10-27 18:00:00.000
+58,"uav, aerial, drone, unmanned, swarm",194,2020-10-27 18:00:00.000
+59,"imagetoimage translation, image generation, imagetoimage, translation, texttoimage",67,2020-10-27 18:00:00.000
+60,"groups, subgroups, finite, finite groups, abelian",227,2020-10-27 18:00:00.000
+61,"blockchain, smart, smart contracts, contracts, fraud",245,2020-10-27 18:00:00.000
+62,"privacy, private, differentially private, differentially, differential privacy",162,2020-10-27 18:00:00.000
+63,"games, game, mean field, nash, equilibria",185,2020-10-27 18:00:00.000
+64,"brownian, brownian motion, equations, stochastic differential, differential equations",188,2020-10-27 18:00:00.000
+65,"codes, decoding, polar, selfdual, constructions",211,2020-10-27 18:00:00.000
+66,"dialogue, dialog, taskoriented, conversational, gender",127,2020-10-27 18:00:00.000
+67,"anomaly detection, anomaly, outlier, outlier detection, outliers",125,2020-10-27 18:00:00.000
+68,"physicsinformed, differential equations, physicsinformed neural, partial differential, pdes",131,2020-10-27 18:00:00.000
+69,"segmentation, semantic segmentation, semantic, instance segmentation, instance",123,2020-10-27 18:00:00.000
+70,"community, community detection, complex networks, centrality, social networks",233,2020-10-27 18:00:00.000
+71,"plasmonic, metamaterials, metamaterial, plasmon, surface",194,2020-10-27 18:00:00.000
+72,"news, fake, opinion, social, twitter",155,2020-10-27 18:00:00.000
+73,"inverse problems, diffusion models, linear inverse, normalizing, normalizing flows",53,2020-10-27 18:00:00.000
+74,"supernova, ia, remnant, sn, remnants",146,2020-10-27 18:00:00.000
+75,"entanglement, entanglement entropy, multipartite, entangled, quantum entanglement",116,2020-10-27 18:00:00.000
+76,"boseeinstein, condensates, bose, condensate, superfluid",181,2020-10-27 18:00:00.000
+77,"neutron, neutron stars, star, stars, mergers",146,2020-10-27 18:00:00.000
+78,"matrices, markov, markov chains, random matrices, chains",143,2020-10-27 18:00:00.000
+79,"telescope, astronomical, astronomy, observatory, sky",171,2020-10-27 18:00:00.000
+80,"detectors, detector, silicon, readout, argon",152,2020-10-27 18:00:00.000
+81,"knots, knot, links, braid, homology",163,2020-10-27 18:00:00.000
+82,"materials, molecular, material, crystal, force",102,2020-10-27 18:00:00.000
+83,"remote sensing, remote, crop, sensing, imagery",95,2020-10-27 18:00:00.000
+84,"sentiment, summarization, sentiment analysis, topic, abstractive",120,2020-10-27 18:00:00.000
+-1,"quantum, equations, optical, spin, magnetic",32493,2021-03-09 21:36:00.000
+0,"galaxies, galaxy, stars, stellar, star",2486,2021-03-09 21:36:00.000
+1,"magnetic, hall, spin, superconductivity, films",2201,2021-03-09 21:36:00.000
+2,"collisions, qcd, production, decays, higgs",1488,2021-03-09 21:36:00.000
+3,"curvature, curves, surfaces, manifolds, bundles",1581,2021-03-09 21:36:00.000
+4,"gravity, gauge, theories, inflation, cosmological",1538,2021-03-09 21:36:00.000
+5,"mimo, wireless, iot, communications, intelligent",1084,2021-03-09 21:36:00.000
+6,"graphs, trees, hypergraphs, coloring, chromatic",1080,2021-03-09 21:36:00.000
+7,"language, machine translation, translation, language models, bert",736,2021-03-09 21:36:00.000
+8,"segmentation, mri, medical, medical image, image segmentation",783,2021-03-09 21:36:00.000
+9,"black, black hole, hole, black holes, holes",868,2021-03-09 21:36:00.000
+10,"speech, speech recognition, speaker, audio, music",828,2021-03-09 21:36:00.000
+11,"quantum, quantum computing, circuits, quantum circuits, variational quantum",660,2021-03-09 21:36:00.000
+12,"time series, forecasting, series forecasting, highdimensional, gaussian processes",744,2021-03-09 21:36:00.000
+13,"ai, intelligence, artificial intelligence, citation, agents",393,2021-03-09 21:36:00.000
+14,"nonconvex, convex, descent, optimization problems, convex optimization",692,2021-03-09 21:36:00.000
+15,"algebras, lie, categories, algebra, modules",578,2021-03-09 21:36:00.000
+16,"photonic, optical, photon, laser, cavity",566,2021-03-09 21:36:00.000
+17,"protein, cell, molecular, drug, dna",387,2021-03-09 21:36:00.000
+18,"brain, spiking, eeg, spiking neural, neuromorphic",388,2021-03-09 21:36:00.000
+19,"financial, market, stock, pricing, markets",459,2021-03-09 21:36:00.000
+20,"architecture search, neural architecture, architecture, deep neural, pruning",617,2021-03-09 21:36:00.000
+21,"reinforcement learning, reinforcement, policy, deep reinforcement, multiagent",458,2021-03-09 21:36:00.000
+22,"granular, porous, polymer, droplets, droplet",523,2021-03-09 21:36:00.000
+23,"electricity, renewable, wind, grid, power systems",479,2021-03-09 21:36:00.000
+24,"driving, autonomous, traffic, planning, trajectory",389,2021-03-09 21:36:00.000
+25,"object detection, object, point cloud, cloud, lidar",433,2021-03-09 21:36:00.000
+26,"covid19, epidemic, pandemic, covid19 pandemic, spread",820,2021-03-09 21:36:00.000
+27,"domain adaptation, adaptation, label, metalearning, unsupervised domain",503,2021-03-09 21:36:00.000
+28,"manipulation, robot, imitation, robotic, locomotion",278,2021-03-09 21:36:00.000
+29,"causal, treatment, survival, causal inference, quantile",315,2021-03-09 21:36:00.000
+30,"dark, dark matter, dark energy, axion, axionlike",347,2021-03-09 21:36:00.000
+31,"predictive control, optimal control, predictive, model predictive, kalman",384,2021-03-09 21:36:00.000
+32,"navierstokes, navierstokes equations, galerkin, equations, element",399,2021-03-09 21:36:00.000
+33,"pulsar, gammaray, xray, bursts, pulsars",342,2021-03-09 21:36:00.000
+34,"software, code generation, repair, vulnerability, bug",323,2021-03-09 21:36:00.000
+35,"depth, stereo, depth estimation, monocular, splatting",246,2021-03-09 21:36:00.000
+36,"serverless, gpu, cloud, hpc, riscv",312,2021-03-09 21:36:00.000
+37,"adversarial, attacks, attack, adversarial attacks, adversarial robustness",373,2021-03-09 21:36:00.000
+38,"elliptic, fractional, equations, elliptic equations, laplacian",359,2021-03-09 21:36:00.000
+39,"operators, sobolev, banach, inequalities, banach spaces",329,2021-03-09 21:36:00.000
+40,"health, clinical, medical, depression, electronic health",198,2021-03-09 21:36:00.000
+41,"face, facial, face recognition, recognition, expression",331,2021-03-09 21:36:00.000
+42,"graph neural, graph convolutional, node, graphs, convolutional",283,2021-03-09 21:36:00.000
+43,"neutrino, neutrinos, oscillations, mass, flavor",281,2021-03-09 21:36:00.000
+44,"superresolution, image superresolution, video, denoising, restoration",287,2021-03-09 21:36:00.000
+45,"logic, automata, logics, boolean, modal",300,2021-03-09 21:36:00.000
+46,"solar, coronal, wind, flare, magnetic",332,2021-03-09 21:36:00.000
+47,"recommendation, recommender, recommender systems, recommendations, collaborative filtering",257,2021-03-09 21:36:00.000
+48,"plasma, plasmas, electron, laser, ionization",321,2021-03-09 21:36:00.000
+49,"federated, federated learning, learning federated, noniid, privacy",204,2021-03-09 21:36:00.000
+50,"bilayer, twisted, graphite, tunable, hall",331,2021-03-09 21:36:00.000
+51,"question, answering, question answering, knowledge, knowledge graph",239,2021-03-09 21:36:00.000
+52,"schrodinger, nonlinear schrodinger, equations, wave, wave equations",288,2021-03-09 21:36:00.000
+53,"action, action recognition, recognition, reality, gaze",245,2021-03-09 21:36:00.000
+54,"multimodal, visionlanguage, video understanding, video, visual",68,2021-03-09 21:36:00.000
+55,"seismic, climate, assimilation, weather, inversion",193,2021-03-09 21:36:00.000
+56,"turbulence, turbulent, convection, vortex, waves",256,2021-03-09 21:36:00.000
+57,"transformers, attention, transformer, generative adversarial, gans",218,2021-03-09 21:36:00.000
+58,"uav, aerial, uavs, drone, unmanned",218,2021-03-09 21:36:00.000
+59,"imagetoimage, imagetoimage translation, style, style transfer, texttoimage",105,2021-03-09 21:36:00.000
+60,"groups, subgroups, finite groups, finite, abelian",231,2021-03-09 21:36:00.000
+61,"blockchain, smart, contracts, smart contracts, fraud",229,2021-03-09 21:36:00.000
+62,"privacy, private, differential privacy, differentially private, differentially",191,2021-03-09 21:36:00.000
+63,"games, game, mean field, nash, equilibrium",203,2021-03-09 21:36:00.000
+64,"brownian, brownian motion, stochastic differential, sdes, differential equations",205,2021-03-09 21:36:00.000
+65,"codes, decoding, polar, cyclic, weight",197,2021-03-09 21:36:00.000
+66,"dialogue, dialog, taskoriented, state tracking, gender",166,2021-03-09 21:36:00.000
+67,"anomaly detection, anomaly, outlier, outlier detection, unsupervised",152,2021-03-09 21:36:00.000
+68,"physicsinformed, physicsinformed neural, differential equations, pdes, partial differential",143,2021-03-09 21:36:00.000
+69,"segmentation, semantic segmentation, semantic, instance, instance segmentation",192,2021-03-09 21:36:00.000
+70,"community, community detection, complex networks, centrality, social networks",180,2021-03-09 21:36:00.000
+71,"plasmonic, metamaterials, metamaterial, plasmon, optical",152,2021-03-09 21:36:00.000
+72,"news, opinion, fake, twitter, social",142,2021-03-09 21:36:00.000
+73,"inverse problems, diffusion models, normalizing, normalizing flows, linear inverse",61,2021-03-09 21:36:00.000
+74,"supernova, ia, sn, remnant, remnants",153,2021-03-09 21:36:00.000
+75,"entanglement, entangled, entanglement entropy, multipartite, bipartite",131,2021-03-09 21:36:00.000
+76,"boseeinstein, bose, condensates, condensate, superfluid",178,2021-03-09 21:36:00.000
+77,"neutron, neutron stars, star, stars, mergers",162,2021-03-09 21:36:00.000
+78,"matrices, random matrices, markov, markov chains, random variables",155,2021-03-09 21:36:00.000
+79,"telescope, astronomy, sky, astronomical, observatory",128,2021-03-09 21:36:00.000
+80,"detector, detectors, liquid, argon, readout",119,2021-03-09 21:36:00.000
+81,"knots, knot, links, braid, homology",145,2021-03-09 21:36:00.000
+82,"materials, molecular, additive manufacturing, manufacturing, molecular dynamics",122,2021-03-09 21:36:00.000
+83,"remote sensing, remote, sensing, crop, plant",104,2021-03-09 21:36:00.000
+84,"summarization, sentiment, sentiment analysis, abstractive, topic",170,2021-03-09 21:36:00.000
+-1,"quantum, equations, spin, optical, magnetic",31542,2021-07-21 01:12:00.000
+0,"galaxies, galaxy, stars, stellar, star",2130,2021-07-21 01:12:00.000
+1,"magnetic, superconductivity, spin, hall, superconductors",2144,2021-07-21 01:12:00.000
+2,"qcd, collisions, production, decays, higgs",1691,2021-07-21 01:12:00.000
+3,"curvature, surfaces, curves, conjecture, polynomials",1562,2021-07-21 01:12:00.000
+4,"gravity, gauge, theories, inflation, cosmological",1430,2021-07-21 01:12:00.000
+5,"mimo, wireless, communications, massive, intelligent",1053,2021-07-21 01:12:00.000
+6,"graphs, hypergraphs, trees, ramsey, chromatic",1003,2021-07-21 01:12:00.000
+7,"language, translation, machine translation, language models, neural machine",698,2021-07-21 01:12:00.000
+8,"segmentation, medical, mri, medical image, image segmentation",759,2021-07-21 01:12:00.000
+9,"black, black hole, hole, black holes, holes",905,2021-07-21 01:12:00.000
+10,"speech, speech recognition, speaker, music, audio",776,2021-07-21 01:12:00.000
+11,"quantum, manybody, quantum systems, circuits, quantum circuits",630,2021-07-21 01:12:00.000
+12,"time series, forecasting, series forecasting, gaussian processes, carlo",722,2021-07-21 01:12:00.000
+13,"ai, intelligence, artificial intelligence, agents, student",350,2021-07-21 01:12:00.000
+14,"nonconvex, convex, descent, optimization problems, bayesian optimization",602,2021-07-21 01:12:00.000
+15,"algebras, categories, modules, lie, algebra",518,2021-07-21 01:12:00.000
+16,"photonic, optical, laser, cavity, photon",466,2021-07-21 01:12:00.000
+17,"protein, cell, dna, molecular, gene",429,2021-07-21 01:12:00.000
+18,"spiking, brain, spiking neural, eeg, alzheimers",408,2021-07-21 01:12:00.000
+19,"financial, market, pricing, stock, portfolio",456,2021-07-21 01:12:00.000
+20,"architecture search, neural architecture, deep neural, architecture, pruning",482,2021-07-21 01:12:00.000
+21,"reinforcement learning, reinforcement, policy, offline, multiagent",388,2021-07-21 01:12:00.000
+22,"granular, porous, droplets, droplet, polymer",498,2021-07-21 01:12:00.000
+23,"electricity, load, grid, electric, wind",459,2021-07-21 01:12:00.000
+24,"driving, autonomous, traffic, planning, autonomous driving",418,2021-07-21 01:12:00.000
+25,"object detection, object, point cloud, cloud, lidar",439,2021-07-21 01:12:00.000
+26,"covid19, epidemic, pandemic, covid19 pandemic, infection",691,2021-07-21 01:12:00.000
+27,"domain adaptation, adaptation, label, multilabel, semisupervised",464,2021-07-21 01:12:00.000
+28,"manipulation, robot, imitation, robotic, tactile",277,2021-07-21 01:12:00.000
+29,"causal, treatment, quantile, causal inference, imputation",346,2021-07-21 01:12:00.000
+30,"dark, dark matter, dark energy, axion, axionlike",388,2021-07-21 01:12:00.000
+31,"predictive control, optimal control, predictive, model predictive, nonlinear systems",308,2021-07-21 01:12:00.000
+32,"navierstokes, navierstokes equations, compressible, equations, element",353,2021-07-21 01:12:00.000
+33,"gammaray, pulsar, bursts, xray, burst",372,2021-07-21 01:12:00.000
+34,"software, source code, vulnerability, software engineering, bug",249,2021-07-21 01:12:00.000
+35,"depth, depth estimation, monocular, stereo, splatting",261,2021-07-21 01:12:00.000
+36,"hpc, serverless, gpu, cloud, gpus",309,2021-07-21 01:12:00.000
+37,"adversarial, attacks, adversarial attacks, attack, adversarial robustness",392,2021-07-21 01:12:00.000
+38,"fractional, elliptic, equations, laplacian, elliptic equations",329,2021-07-21 01:12:00.000
+39,"operators, sobolev, banach, inequalities, inequality",372,2021-07-21 01:12:00.000
+40,"clinical, health, medical, electronic health, depression",196,2021-07-21 01:12:00.000
+41,"face, facial, face recognition, recognition, deepfake",286,2021-07-21 01:12:00.000
+42,"graph neural, node, graphs, graph convolutional, link prediction",295,2021-07-21 01:12:00.000
+43,"neutrino, neutrinos, mass, oscillations, flavor",287,2021-07-21 01:12:00.000
+44,"superresolution, denoising, video, image superresolution, image compression",261,2021-07-21 01:12:00.000
+45,"logic, automata, logics, boolean, semantics",262,2021-07-21 01:12:00.000
+46,"solar, coronal, wind, flare, magnetic",266,2021-07-21 01:12:00.000
+47,"recommendation, recommender, recommender systems, recommendations, collaborative filtering",238,2021-07-21 01:12:00.000
+48,"plasma, plasmas, laser, electron, ionization",266,2021-07-21 01:12:00.000
+49,"federated, federated learning, learning federated, noniid, communicationefficient",222,2021-07-21 01:12:00.000
+50,"bilayer, twisted, graphite, moire, hall",290,2021-07-21 01:12:00.000
+51,"question, answering, question answering, knowledge, knowledge graph",227,2021-07-21 01:12:00.000
+52,"schrodinger, nonlinear schrodinger, equations, wave, operators",267,2021-07-21 01:12:00.000
+53,"action, action recognition, recognition, activity recognition, reality",234,2021-07-21 01:12:00.000
+54,"multimodal, visionlanguage, reasoning, video understanding, visual",77,2021-07-21 01:12:00.000
+55,"climate, seismic, assimilation, inversion, weather",224,2021-07-21 01:12:00.000
+56,"turbulence, turbulent, convection, vortex, waves",252,2021-07-21 01:12:00.000
+57,"transformers, transformer, attention, vision, vision transformers",228,2021-07-21 01:12:00.000
+58,"uav, drone, aerial, uavs, swarm",228,2021-07-21 01:12:00.000
+59,"texttoimage, style, scene graph, image generation, translation",108,2021-07-21 01:12:00.000
+60,"groups, subgroups, finite groups, finite, abelian",235,2021-07-21 01:12:00.000
+61,"blockchain, smart, contracts, smart contracts, fraud",227,2021-07-21 01:12:00.000
+62,"privacy, private, differential privacy, differentially private, differentially",192,2021-07-21 01:12:00.000
+63,"games, game, nash, mean field, nash equilibrium",185,2021-07-21 01:12:00.000
+64,"brownian, brownian motion, stochastic differential, equations, differential equations",215,2021-07-21 01:12:00.000
+65,"codes, decoding, polar, constructions, coding",170,2021-07-21 01:12:00.000
+66,"dialogue, dialog, conversational, taskoriented, state tracking",166,2021-07-21 01:12:00.000
+67,"anomaly, anomaly detection, outlier, outlier detection, anomalies",174,2021-07-21 01:12:00.000
+68,"physicsinformed, differential equations, physicsinformed neural, partial differential, equations",158,2021-07-21 01:12:00.000
+69,"segmentation, semantic segmentation, semantic, instance segmentation, instance",196,2021-07-21 01:12:00.000
+70,"community, community detection, complex networks, centrality, social networks",157,2021-07-21 01:12:00.000
+71,"plasmonic, metamaterials, plasmon, metamaterial, surface",152,2021-07-21 01:12:00.000
+72,"news, fake, opinion, twitter, social",150,2021-07-21 01:12:00.000
+73,"inverse problems, diffusion models, normalizing, bayesian inverse, normalizing flows",68,2021-07-21 01:12:00.000
+74,"supernova, ia, sn, remnant, remnants",121,2021-07-21 01:12:00.000
+75,"entanglement, entanglement entropy, entangled, multipartite, quantum",156,2021-07-21 01:12:00.000
+76,"boseeinstein, bose, condensates, condensate, superfluid",143,2021-07-21 01:12:00.000
+77,"neutron, neutron stars, star, stars, mergers",169,2021-07-21 01:12:00.000
+78,"matrices, markov, random matrices, markov chains, chains",137,2021-07-21 01:12:00.000
+79,"astronomy, telescope, astronomical, sky, observatory",129,2021-07-21 01:12:00.000
+80,"detector, detectors, readout, argon, silicon",129,2021-07-21 01:12:00.000
+81,"knots, knot, links, braid, homology",129,2021-07-21 01:12:00.000
+82,"materials, additive manufacturing, potentials, force, manufacturing",107,2021-07-21 01:12:00.000
+83,"remote sensing, crop, remote, sensing, plant",115,2021-07-21 01:12:00.000
+84,"sentiment, summarization, sentiment analysis, abstractive, topic",167,2021-07-21 01:12:00.000
+-1,"quantum, equations, magnetic, spin, optical",31019,2021-12-01 04:48:00.000
+0,"galaxies, galaxy, stellar, stars, star",2508,2021-12-01 04:48:00.000
+1,"magnetic, hall, superconductivity, spin, films",2063,2021-12-01 04:48:00.000
+2,"collisions, qcd, production, decays, quark",1798,2021-12-01 04:48:00.000
+3,"surfaces, curvature, curves, forms, manifolds",1487,2021-12-01 04:48:00.000
+4,"gravity, gauge, theories, inflation, cosmological",1451,2021-12-01 04:48:00.000
+5,"mimo, wireless, communications, massive, iot",1058,2021-12-01 04:48:00.000
+6,"graphs, trees, coloring, hypergraphs, chromatic",1006,2021-12-01 04:48:00.000
+7,"language, language models, machine translation, translation, large language",583,2021-12-01 04:48:00.000
+8,"segmentation, mri, medical, medical image, image segmentation",803,2021-12-01 04:48:00.000
+9,"black, black holes, holes, black hole, hole",857,2021-12-01 04:48:00.000
+10,"speech, speaker, speech recognition, audio, music",856,2021-12-01 04:48:00.000
+11,"quantum, circuits, quantum computing, quantum circuits, quantum systems",665,2021-12-01 04:48:00.000
+12,"time series, forecasting, series forecasting, multivariate, highdimensional",657,2021-12-01 04:48:00.000
+13,"ai, intelligence, artificial intelligence, scientific, education",354,2021-12-01 04:48:00.000
+14,"nonconvex, convex, descent, multiobjective, optimization problems",615,2021-12-01 04:48:00.000
+15,"algebras, categories, lie, modules, algebra",546,2021-12-01 04:48:00.000
+16,"photonic, optical, cavity, laser, photon",522,2021-12-01 04:48:00.000
+17,"protein, molecular, dna, cell, drug",385,2021-12-01 04:48:00.000
+18,"spiking, eeg, brain, spiking neural, neuromorphic",406,2021-12-01 04:48:00.000
+19,"financial, portfolio, stock, market, volatility",436,2021-12-01 04:48:00.000
+20,"deep neural, pruning, architecture search, training, neural architecture",484,2021-12-01 04:48:00.000
+21,"reinforcement learning, reinforcement, policy, offline, multiagent",457,2021-12-01 04:48:00.000
+22,"granular, porous, polymer, droplet, fracture",467,2021-12-01 04:48:00.000
+23,"electricity, wind, grid, voltage, power systems",466,2021-12-01 04:48:00.000
+24,"driving, traffic, autonomous, planning, trajectory",362,2021-12-01 04:48:00.000
+25,"object detection, object, point cloud, cloud, lidar",433,2021-12-01 04:48:00.000
+26,"covid19, epidemic, pandemic, covid19 pandemic, infection",586,2021-12-01 04:48:00.000
+27,"domain adaptation, adaptation, contrastive, label, multilabel",425,2021-12-01 04:48:00.000
+28,"manipulation, robotic, imitation, locomotion, robot",322,2021-12-01 04:48:00.000
+29,"causal, treatment, causal inference, survival, imputation",363,2021-12-01 04:48:00.000
+30,"dark, dark matter, dark energy, axion, direct detection",431,2021-12-01 04:48:00.000
+31,"predictive control, optimal control, model predictive, predictive, nonlinear systems",360,2021-12-01 04:48:00.000
+32,"navierstokes, navierstokes equations, galerkin, equations, element",378,2021-12-01 04:48:00.000
+33,"pulsar, gammaray, xray, bursts, pulsars",372,2021-12-01 04:48:00.000
+34,"software, vulnerability, code generation, source code, repair",300,2021-12-01 04:48:00.000
+35,"depth, depth estimation, stereo, monocular, splatting",231,2021-12-01 04:48:00.000
+36,"gpu, serverless, cloud, encryption, hpc",310,2021-12-01 04:48:00.000
+37,"adversarial, attacks, adversarial attacks, attack, backdoor",351,2021-12-01 04:48:00.000
+38,"fractional, elliptic, equations, laplacian, elliptic equations",338,2021-12-01 04:48:00.000
+39,"operators, sobolev, inequalities, banach, fourier",317,2021-12-01 04:48:00.000
+40,"clinical, health, medical, depression, biomedical",192,2021-12-01 04:48:00.000
+41,"face, facial, face recognition, recognition, expression",333,2021-12-01 04:48:00.000
+42,"graph neural, graph convolutional, node, link prediction, graphs",340,2021-12-01 04:48:00.000
+43,"neutrino, neutrinos, dark, oscillations, dark matter",308,2021-12-01 04:48:00.000
+44,"superresolution, image superresolution, video, image compression, denoising",270,2021-12-01 04:48:00.000
+45,"logic, automata, boolean, logics, modal",228,2021-12-01 04:48:00.000
+46,"solar, coronal, wind, flare, magnetic",337,2021-12-01 04:48:00.000
+47,"recommendation, recommender, recommender systems, recommendations, collaborative filtering",257,2021-12-01 04:48:00.000
+48,"plasma, plasmas, laser, electron, ionization",284,2021-12-01 04:48:00.000
+49,"federated, federated learning, personalized federated, learning federated, personalized",253,2021-12-01 04:48:00.000
+50,"bilayer, twisted, graphite, electronic, hall",290,2021-12-01 04:48:00.000
+51,"question, answering, question answering, knowledge, knowledge graph",178,2021-12-01 04:48:00.000
+52,"schrodinger, nonlinear schrodinger, equations, wave, operators",280,2021-12-01 04:48:00.000
+53,"action, action recognition, recognition, reality, activity recognition",227,2021-12-01 04:48:00.000
+54,"multimodal, visionlanguage, visual, pretraining, reasoning",74,2021-12-01 04:48:00.000
+55,"climate, assimilation, weather, seismic, earthquake",206,2021-12-01 04:48:00.000
+56,"turbulence, turbulent, convection, vortex, reynolds",232,2021-12-01 04:48:00.000
+57,"transformers, transformer, attention, vision, vision transformers",226,2021-12-01 04:48:00.000
+58,"uav, aerial, uavs, drone, trajectory",236,2021-12-01 04:48:00.000
+59,"texttoimage, style, image synthesis, scene graph, imagetoimage translation",110,2021-12-01 04:48:00.000
+60,"groups, subgroups, finite groups, finite, abelian",216,2021-12-01 04:48:00.000
+61,"blockchain, smart, contracts, smart contracts, fraud",205,2021-12-01 04:48:00.000
+62,"privacy, private, differentially private, differential privacy, differentially",208,2021-12-01 04:48:00.000
+63,"games, game, nash, mean field, equilibria",183,2021-12-01 04:48:00.000
+64,"brownian, brownian motion, sdes, equations, stochastic differential",164,2021-12-01 04:48:00.000
+65,"codes, decoding, polar, list, decoder",193,2021-12-01 04:48:00.000
+66,"dialogue, dialog, taskoriented, conversational, gender",135,2021-12-01 04:48:00.000
+67,"anomaly detection, anomaly, outlier, time series, outlier detection",162,2021-12-01 04:48:00.000
+68,"physicsinformed, physicsinformed neural, differential equations, partial differential, pdes",133,2021-12-01 04:48:00.000
+69,"segmentation, semantic segmentation, semantic, instance, instance segmentation",189,2021-12-01 04:48:00.000
+70,"community, community detection, complex networks, centrality, social networks",159,2021-12-01 04:48:00.000
+71,"plasmonic, metamaterials, metamaterial, plasmon, dielectric",177,2021-12-01 04:48:00.000
+72,"news, fake, opinion, social, twitter",121,2021-12-01 04:48:00.000
+73,"inverse problems, diffusion models, bayesian inverse, normalizing flows, normalizing",85,2021-12-01 04:48:00.000
+74,"supernova, ia, sn, remnant, remnants",164,2021-12-01 04:48:00.000
+75,"entanglement, multipartite, entanglement entropy, entangled, quantum entanglement",128,2021-12-01 04:48:00.000
+76,"boseeinstein, bose, condensates, superfluid, condensate",147,2021-12-01 04:48:00.000
+77,"neutron, neutron stars, star, stars, mergers",148,2021-12-01 04:48:00.000
+78,"matrices, random matrices, markov, markov chains, chains",150,2021-12-01 04:48:00.000
+79,"telescope, astronomical, astronomy, observatory, sky",155,2021-12-01 04:48:00.000
+80,"detector, detectors, argon, liquid, pixel",157,2021-12-01 04:48:00.000
+81,"knots, knot, links, braid, homology",114,2021-12-01 04:48:00.000
+82,"materials, crystal, atomistic, additive manufacturing, manufacturing",120,2021-12-01 04:48:00.000
+83,"remote sensing, remote, sensing, crop, imagery",85,2021-12-01 04:48:00.000
+84,"summarization, sentiment, sentiment analysis, topic, abstractive",124,2021-12-01 04:48:00.000
+-1,"quantum, equations, optical, spin, visual",30804,2022-04-13 08:24:00.000
+0,"galaxies, galaxy, stars, stellar, star",2154,2022-04-13 08:24:00.000
+1,"superconductivity, magnetic, spin, hall, superconducting",1942,2022-04-13 08:24:00.000
+2,"collisions, qcd, production, higgs, decays",1428,2022-04-13 08:24:00.000
+3,"curvature, surfaces, curves, manifolds, bundles",1483,2022-04-13 08:24:00.000
+4,"gravity, gauge, theories, cosmological, inflation",1276,2022-04-13 08:24:00.000
+5,"mimo, wireless, communications, massive, intelligent",1058,2022-04-13 08:24:00.000
+6,"graphs, trees, hypergraphs, chromatic, spanning",1034,2022-04-13 08:24:00.000
+7,"language, language models, machine translation, translation, entity",625,2022-04-13 08:24:00.000
+8,"segmentation, medical, medical image, mri, image segmentation",876,2022-04-13 08:24:00.000
+9,"black, black holes, holes, black hole, hole",806,2022-04-13 08:24:00.000
+10,"speech, speaker, speech recognition, audio, music",853,2022-04-13 08:24:00.000
+11,"quantum, circuits, quantum circuits, quantum computing, quantum systems",691,2022-04-13 08:24:00.000
+12,"time series, forecasting, series forecasting, highdimensional, gaussian processes",648,2022-04-13 08:24:00.000
+13,"ai, intelligence, artificial intelligence, humanai, education",314,2022-04-13 08:24:00.000
+14,"nonconvex, convex, multiobjective, descent, optimization problems",567,2022-04-13 08:24:00.000
+15,"algebras, categories, lie, modules, algebra",481,2022-04-13 08:24:00.000
+16,"photonic, optical, cavity, fiber, laser",454,2022-04-13 08:24:00.000
+17,"protein, molecular, cell, drug, dna",423,2022-04-13 08:24:00.000
+18,"spiking, brain, eeg, spiking neural, disease",420,2022-04-13 08:24:00.000
+19,"financial, market, stock, portfolio, volatility",399,2022-04-13 08:24:00.000
+20,"pruning, architecture search, neural architecture, deep neural, training",478,2022-04-13 08:24:00.000
+21,"reinforcement learning, reinforcement, policy, offline, offline reinforcement",441,2022-04-13 08:24:00.000
+22,"granular, porous, fracture, droplets, polymer",467,2022-04-13 08:24:00.000
+23,"electricity, charging, wind, grid, power systems",442,2022-04-13 08:24:00.000
+24,"driving, autonomous, traffic, autonomous driving, planning",385,2022-04-13 08:24:00.000
+25,"object detection, object, point cloud, lidar, cloud",489,2022-04-13 08:24:00.000
+26,"covid19, epidemic, pandemic, covid19 pandemic, spread",469,2022-04-13 08:24:00.000
+27,"domain adaptation, adaptation, label, contrastive, multilabel",491,2022-04-13 08:24:00.000
+28,"manipulation, imitation, robot, tactile, imitation learning",334,2022-04-13 08:24:00.000
+29,"causal, treatment, causal inference, survival, trials",363,2022-04-13 08:24:00.000
+30,"dark, dark matter, dark energy, axion, sector",370,2022-04-13 08:24:00.000
+31,"predictive control, optimal control, predictive, model predictive, nonlinear systems",331,2022-04-13 08:24:00.000
+32,"navierstokes, navierstokes equations, equations, compressible, galerkin",372,2022-04-13 08:24:00.000
+33,"pulsar, gammaray, xray, pulsars, bursts",351,2022-04-13 08:24:00.000
+34,"software, source code, repair, code generation, bug",252,2022-04-13 08:24:00.000
+35,"depth, depth estimation, monocular, stereo, scene",274,2022-04-13 08:24:00.000
+36,"serverless, cloud, encryption, gpu, cryptography",299,2022-04-13 08:24:00.000
+37,"adversarial, attacks, attack, adversarial attacks, backdoor",372,2022-04-13 08:24:00.000
+38,"elliptic, fractional, equations, laplacian, regularity",315,2022-04-13 08:24:00.000
+39,"operators, sobolev, hardy, inequality, inequalities",372,2022-04-13 08:24:00.000
+40,"clinical, health, medical, depression, healthcare",206,2022-04-13 08:24:00.000
+41,"face, facial, face recognition, recognition, deepfake",341,2022-04-13 08:24:00.000
+42,"graph neural, node, link prediction, graphs, graph representation",278,2022-04-13 08:24:00.000
+43,"neutrino, neutrinos, mass, oscillations, decay",269,2022-04-13 08:24:00.000
+44,"superresolution, image superresolution, video, quality assessment, denoising",341,2022-04-13 08:24:00.000
+45,"logic, automata, logics, boolean, modal",293,2022-04-13 08:24:00.000
+46,"solar, coronal, wind, magnetic, flare",291,2022-04-13 08:24:00.000
+47,"recommendation, recommender, recommender systems, recommendations, collaborative filtering",297,2022-04-13 08:24:00.000
+48,"plasma, plasmas, electron, laser, ion",263,2022-04-13 08:24:00.000
+49,"federated, federated learning, personalized federated, learning federated, aggregation",315,2022-04-13 08:24:00.000
+50,"bilayer, twisted, graphite, hall, electronic",329,2022-04-13 08:24:00.000
+51,"question, knowledge, answering, knowledge graph, question answering",217,2022-04-13 08:24:00.000
+52,"schrodinger, nonlinear schrodinger, equations, wave, operators",212,2022-04-13 08:24:00.000
+53,"action, action recognition, recognition, reality, activity recognition",251,2022-04-13 08:24:00.000
+54,"visionlanguage, multimodal, visual, pretraining, visionlanguage models",96,2022-04-13 08:24:00.000
+55,"seismic, climate, earthquake, assimilation, weather",197,2022-04-13 08:24:00.000
+56,"turbulence, turbulent, convection, vortex, waves",235,2022-04-13 08:24:00.000
+57,"transformers, transformer, attention, vision transformers, vision",223,2022-04-13 08:24:00.000
+58,"uav, aerial, drone, uavs, unmanned",189,2022-04-13 08:24:00.000
+59,"texttoimage, image generation, scene graph, graph generation, editing",119,2022-04-13 08:24:00.000
+60,"groups, subgroups, finite groups, finite, abelian",187,2022-04-13 08:24:00.000
+61,"blockchain, smart, smart contracts, fraud, contracts",228,2022-04-13 08:24:00.000
+62,"privacy, private, differential privacy, differentially private, differentially",235,2022-04-13 08:24:00.000
+63,"games, nash, game, equilibria, mean field",205,2022-04-13 08:24:00.000
+64,"brownian, brownian motion, stochastic differential, sdes, equations",204,2022-04-13 08:24:00.000
+65,"codes, decoding, polar, coding, weight",209,2022-04-13 08:24:00.000
+66,"dialogue, taskoriented, dialog, conversational, gender",181,2022-04-13 08:24:00.000
+67,"anomaly, anomaly detection, outlier, outlier detection, time series",164,2022-04-13 08:24:00.000
+68,"physicsinformed, physicsinformed neural, differential equations, partial differential, equations",148,2022-04-13 08:24:00.000
+69,"segmentation, semantic segmentation, semantic, instance segmentation, instance",207,2022-04-13 08:24:00.000
+70,"community, community detection, complex networks, centrality, social networks",166,2022-04-13 08:24:00.000
+71,"metamaterials, plasmonic, metamaterial, plasmon, dielectric",159,2022-04-13 08:24:00.000
+72,"news, fake, opinion, political, misinformation",155,2022-04-13 08:24:00.000
+73,"inverse problems, diffusion models, normalizing, normalizing flows, bayesian inverse",62,2022-04-13 08:24:00.000
+74,"supernova, ia, sn, remnant, remnants",148,2022-04-13 08:24:00.000
+75,"entanglement, multipartite, entangled, entanglement entropy, quantum entanglement",134,2022-04-13 08:24:00.000
+76,"boseeinstein, bose, condensates, superfluid, condensate",147,2022-04-13 08:24:00.000
+77,"neutron, neutron stars, star, stars, mergers",159,2022-04-13 08:24:00.000
+78,"markov, markov chains, matrices, random variables, chains",155,2022-04-13 08:24:00.000
+79,"telescope, astronomy, observatory, astronomical, sky",153,2022-04-13 08:24:00.000
+80,"detectors, detector, argon, liquid, readout",118,2022-04-13 08:24:00.000
+81,"knots, knot, links, homology, braid",128,2022-04-13 08:24:00.000
+82,"materials, additive manufacturing, potentials, manufacturing, molecular",113,2022-04-13 08:24:00.000
+83,"remote sensing, remote, sensing, crop, imagery",113,2022-04-13 08:24:00.000
+84,"summarization, sentiment, sentiment analysis, topic, abstractive",122,2022-04-13 08:24:00.000
+-1,"quantum, equations, spin, language, optical",33081,2022-08-24 12:00:00.000
+0,"galaxies, galaxy, stars, star, stellar",2445,2022-08-24 12:00:00.000
+1,"spin, magnetic, superconductivity, hall, superconductors",1996,2022-08-24 12:00:00.000
+2,"qcd, collisions, production, decays, lhc",1718,2022-08-24 12:00:00.000
+3,"curvature, surfaces, curves, bundles, manifolds",1527,2022-08-24 12:00:00.000
+4,"gravity, gauge, theories, inflation, cosmological",1490,2022-08-24 12:00:00.000
+5,"mimo, wireless, communications, massive, communication",1111,2022-08-24 12:00:00.000
+6,"graphs, trees, hypergraphs, cycles, coloring",1011,2022-08-24 12:00:00.000
+7,"language, language models, translation, machine translation, large language",787,2022-08-24 12:00:00.000
+8,"segmentation, medical, mri, medical image, image segmentation",892,2022-08-24 12:00:00.000
+9,"black, black hole, hole, black holes, holes",959,2022-08-24 12:00:00.000
+10,"speech, speaker, speech recognition, audio, music",908,2022-08-24 12:00:00.000
+11,"quantum, circuits, quantum circuits, quantum systems, quantum computing",732,2022-08-24 12:00:00.000
+12,"time series, forecasting, series forecasting, highdimensional, carlo",727,2022-08-24 12:00:00.000
+13,"ai, intelligence, artificial intelligence, agents, education",362,2022-08-24 12:00:00.000
+14,"nonconvex, descent, convex, gradient descent, optimization problems",601,2022-08-24 12:00:00.000
+15,"algebras, lie, modules, categories, algebra",531,2022-08-24 12:00:00.000
+16,"photonic, optical, cavity, laser, waveguide",526,2022-08-24 12:00:00.000
+17,"protein, dna, drug, molecular, cell",483,2022-08-24 12:00:00.000
+18,"spiking, brain, spiking neural, eeg, alzheimers",470,2022-08-24 12:00:00.000
+19,"market, financial, stock, volatility, pricing",453,2022-08-24 12:00:00.000
+20,"deep neural, architecture search, pruning, dnn, neural architecture",502,2022-08-24 12:00:00.000
+21,"reinforcement learning, reinforcement, policy, offline, offline reinforcement",518,2022-08-24 12:00:00.000
+22,"granular, porous, droplets, suspensions, polymer",501,2022-08-24 12:00:00.000
+23,"electricity, charging, grid, electric, wind",495,2022-08-24 12:00:00.000
+24,"driving, traffic, autonomous, planning, autonomous driving",426,2022-08-24 12:00:00.000
+25,"object detection, object, point cloud, cloud, 3d object",528,2022-08-24 12:00:00.000
+26,"covid19, epidemic, pandemic, covid19 pandemic, infection",444,2022-08-24 12:00:00.000
+27,"domain adaptation, adaptation, label, multilabel, domain generalization",535,2022-08-24 12:00:00.000
+28,"manipulation, imitation, robot, robotic, locomotion",358,2022-08-24 12:00:00.000
+29,"causal, treatment, causal inference, trials, treatment effects",395,2022-08-24 12:00:00.000
+30,"dark, dark matter, dark energy, axion, halos",427,2022-08-24 12:00:00.000
+31,"predictive control, predictive, optimal control, nonlinear systems, model predictive",384,2022-08-24 12:00:00.000
+32,"navierstokes, galerkin, navierstokes equations, equations, discontinuous galerkin",385,2022-08-24 12:00:00.000
+33,"pulsar, gammaray, xray, bursts, pulsars",337,2022-08-24 12:00:00.000
+34,"software, code generation, vulnerability, repair, bug",254,2022-08-24 12:00:00.000
+35,"depth, depth estimation, monocular, stereo, rendering",257,2022-08-24 12:00:00.000
+36,"serverless, gpu, cloud, hpc, encryption",319,2022-08-24 12:00:00.000
+37,"adversarial, attacks, attack, backdoor, adversarial attacks",400,2022-08-24 12:00:00.000
+38,"elliptic, fractional, equations, laplacian, elliptic equations",347,2022-08-24 12:00:00.000
+39,"operators, sobolev, inequalities, banach, hardy",337,2022-08-24 12:00:00.000
+40,"clinical, health, medical, depression, biomedical",235,2022-08-24 12:00:00.000
+41,"face, facial, face recognition, recognition, deepfake",310,2022-08-24 12:00:00.000
+42,"graph neural, node, link prediction, graphs, graph convolutional",369,2022-08-24 12:00:00.000
+43,"neutrino, neutrinos, flavor, dark, oscillations",319,2022-08-24 12:00:00.000
+44,"superresolution, image superresolution, video, image compression, denoising",315,2022-08-24 12:00:00.000
+45,"logic, automata, boolean, logics, modal",227,2022-08-24 12:00:00.000
+46,"solar, coronal, flare, wind, magnetic",361,2022-08-24 12:00:00.000
+47,"recommendation, recommender, recommender systems, recommendations, user",260,2022-08-24 12:00:00.000
+48,"plasma, plasmas, electron, laser, ionization",276,2022-08-24 12:00:00.000
+49,"federated, federated learning, personalized federated, learning federated, client",301,2022-08-24 12:00:00.000
+50,"bilayer, twisted, graphite, hall, tunneling",287,2022-08-24 12:00:00.000
+51,"question, answering, question answering, knowledge, knowledge graph",264,2022-08-24 12:00:00.000
+52,"schrodinger, nonlinear schrodinger, equations, wave, wave equations",239,2022-08-24 12:00:00.000
+53,"action, action recognition, recognition, activity recognition, reality",263,2022-08-24 12:00:00.000
+54,"visionlanguage, visionlanguage models, multimodal, pretraining, visual",105,2022-08-24 12:00:00.000
+55,"climate, seismic, precipitation, assimilation, weather",246,2022-08-24 12:00:00.000
+56,"turbulence, turbulent, convection, vortex, waves",245,2022-08-24 12:00:00.000
+57,"transformers, transformer, attention, vision, vision transformers",243,2022-08-24 12:00:00.000
+58,"uav, aerial, drone, uavs, unmanned",249,2022-08-24 12:00:00.000
+59,"texttoimage, style, editing, scene graph, image generation",120,2022-08-24 12:00:00.000
+60,"groups, subgroups, finite groups, finite, abelian",189,2022-08-24 12:00:00.000
+61,"blockchain, smart, smart contracts, fraud, contracts",230,2022-08-24 12:00:00.000
+62,"privacy, private, differential privacy, differentially private, differentially",245,2022-08-24 12:00:00.000
+63,"games, game, nash, mean field, equilibria",190,2022-08-24 12:00:00.000
+64,"brownian, brownian motion, stochastic differential, sdes, equations",216,2022-08-24 12:00:00.000
+65,"codes, decoding, cyclic, polar, selfdual",188,2022-08-24 12:00:00.000
+66,"dialogue, taskoriented, dialog, state tracking, opendomain",168,2022-08-24 12:00:00.000
+67,"anomaly detection, anomaly, outlier, outlier detection, unsupervised",182,2022-08-24 12:00:00.000
+68,"physicsinformed, physicsinformed neural, differential equations, partial differential, equations",185,2022-08-24 12:00:00.000
+69,"segmentation, semantic segmentation, semantic, instance segmentation, instance",203,2022-08-24 12:00:00.000
+70,"community, community detection, complex networks, social networks, social",189,2022-08-24 12:00:00.000
+71,"metamaterials, plasmonic, plasmon, metamaterial, surface",158,2022-08-24 12:00:00.000
+72,"news, opinion, fake, social, misinformation",150,2022-08-24 12:00:00.000
+73,"inverse problems, diffusion models, normalizing, normalizing flows, denoising diffusion",99,2022-08-24 12:00:00.000
+74,"supernova, ia, sn, remnant, remnants",157,2022-08-24 12:00:00.000
+75,"entanglement, entangled, entanglement entropy, multipartite, quantum",156,2022-08-24 12:00:00.000
+76,"boseeinstein, bose, condensates, condensate, superfluid",154,2022-08-24 12:00:00.000
+77,"neutron, neutron stars, star, stars, mergers",155,2022-08-24 12:00:00.000
+78,"matrices, markov, markov chains, random matrices, chains",162,2022-08-24 12:00:00.000
+79,"telescope, astronomy, astronomical, sky, radio",172,2022-08-24 12:00:00.000
+80,"detectors, detector, readout, silicon, pixel",198,2022-08-24 12:00:00.000
+81,"knots, knot, links, braid, homology",133,2022-08-24 12:00:00.000
+82,"materials, interatomic, force fields, potentials, additive manufacturing",117,2022-08-24 12:00:00.000
+83,"remote sensing, remote, sensing, crop, plant",128,2022-08-24 12:00:00.000
+84,"summarization, sentiment, sentiment analysis, abstractive, topic",133,2022-08-24 12:00:00.000
+-1,"quantum, equations, optical, spin, language",33695,2023-01-04 15:36:00.000
+0,"galaxies, galaxy, stars, star, stellar",2480,2023-01-04 15:36:00.000
+1,"hall, magnetic, superconductivity, spin, films",2044,2023-01-04 15:36:00.000
+2,"qcd, collisions, production, decays, quark",1580,2023-01-04 15:36:00.000
+3,"surfaces, curvature, curves, bundles, manifolds",1566,2023-01-04 15:36:00.000
+4,"gravity, gauge, inflation, theories, cosmological",1589,2023-01-04 15:36:00.000
+5,"mimo, wireless, communications, beamforming, communication",1067,2023-01-04 15:36:00.000
+6,"graphs, trees, hypergraphs, coloring, cycles",1024,2023-01-04 15:36:00.000
+7,"language, language models, translation, large language, machine translation",612,2023-01-04 15:36:00.000
+8,"segmentation, mri, medical, medical image, image segmentation",890,2023-01-04 15:36:00.000
+9,"black, black hole, black holes, holes, hole",913,2023-01-04 15:36:00.000
+10,"speech, audio, speech recognition, music, speaker",752,2023-01-04 15:36:00.000
+11,"quantum, quantum computing, circuits, quantum circuits, quantum circuit",761,2023-01-04 15:36:00.000
+12,"time series, forecasting, series forecasting, highdimensional, multivariate",696,2023-01-04 15:36:00.000
+13,"ai, intelligence, artificial intelligence, ethics, students",396,2023-01-04 15:36:00.000
+14,"nonconvex, descent, convex, gradient descent, optimization problems",643,2023-01-04 15:36:00.000
+15,"algebras, categories, lie, modules, algebra",554,2023-01-04 15:36:00.000
+16,"photonic, optical, cavity, waveguide, laser",526,2023-01-04 15:36:00.000
+17,"protein, molecular, cell, drug, dna",446,2023-01-04 15:36:00.000
+18,"spiking, brain, spiking neural, eeg, neuromorphic",472,2023-01-04 15:36:00.000
+19,"market, financial, portfolio, pricing, stock",437,2023-01-04 15:36:00.000
+20,"deep neural, pruning, architecture search, training, dnn",507,2023-01-04 15:36:00.000
+21,"reinforcement learning, reinforcement, policy, offline, multiagent",517,2023-01-04 15:36:00.000
+22,"porous, granular, droplet, colloidal, polymer",482,2023-01-04 15:36:00.000
+23,"electricity, wind, load, grid, power systems",458,2023-01-04 15:36:00.000
+24,"driving, autonomous, traffic, planning, autonomous driving",424,2023-01-04 15:36:00.000
+25,"object detection, object, point cloud, cloud, 3d object",549,2023-01-04 15:36:00.000
+26,"covid19, epidemic, pandemic, covid19 pandemic, infection",406,2023-01-04 15:36:00.000
+27,"domain adaptation, adaptation, label, domain generalization, contrastive",455,2023-01-04 15:36:00.000
+28,"manipulation, imitation, robotic, robot, grasping",401,2023-01-04 15:36:00.000
+29,"causal, treatment, causal inference, imputation, trials",438,2023-01-04 15:36:00.000
+30,"dark, dark matter, dark energy, axion, ultralight",399,2023-01-04 15:36:00.000
+31,"predictive control, optimal control, predictive, model predictive, control problems",419,2023-01-04 15:36:00.000
+32,"navierstokes, navierstokes equations, galerkin, equations, element",401,2023-01-04 15:36:00.000
+33,"pulsar, gammaray, grb, xray, pulsars",382,2023-01-04 15:36:00.000
+34,"software, code generation, vulnerability, source code, repair",300,2023-01-04 15:36:00.000
+35,"depth, depth estimation, monocular, stereo, splatting",313,2023-01-04 15:36:00.000
+36,"gpu, encryption, serverless, hpc, cloud",328,2023-01-04 15:36:00.000
+37,"adversarial, attacks, backdoor, adversarial attacks, attack",332,2023-01-04 15:36:00.000
+38,"fractional, elliptic, equations, laplacian, parabolic",331,2023-01-04 15:36:00.000
+39,"operators, sobolev, banach, inequalities, inequality",332,2023-01-04 15:36:00.000
+40,"clinical, health, medical, biomedical, healthcare",271,2023-01-04 15:36:00.000
+41,"face, facial, face recognition, recognition, expression",356,2023-01-04 15:36:00.000
+42,"graph neural, node, graphs, link prediction, graph representation",347,2023-01-04 15:36:00.000
+43,"neutrino, neutrinos, oscillations, majorana, dark",304,2023-01-04 15:36:00.000
+44,"superresolution, denoising, image superresolution, video, image compression",346,2023-01-04 15:36:00.000
+45,"logic, automata, boolean, logics, proof",275,2023-01-04 15:36:00.000
+46,"solar, coronal, flare, wind, magnetic",333,2023-01-04 15:36:00.000
+47,"recommendation, recommender, recommender systems, recommendations, collaborative filtering",275,2023-01-04 15:36:00.000
+48,"plasma, plasmas, laser, electron, ion",267,2023-01-04 15:36:00.000
+49,"federated, federated learning, client, learning federated, personalized federated",345,2023-01-04 15:36:00.000
+50,"bilayer, twisted, graphite, moire, hall",255,2023-01-04 15:36:00.000
+51,"question, answering, knowledge, question answering, knowledge graph",193,2023-01-04 15:36:00.000
+52,"schrodinger, nonlinear schrodinger, equations, wave, wellposedness",274,2023-01-04 15:36:00.000
+53,"action, action recognition, recognition, reality, activity recognition",282,2023-01-04 15:36:00.000
+54,"visionlanguage, multimodal, visionlanguage models, visual, reasoning",140,2023-01-04 15:36:00.000
+55,"climate, seismic, weather, assimilation, earthquake",248,2023-01-04 15:36:00.000
+56,"turbulence, turbulent, convection, vortex, turbulent flows",255,2023-01-04 15:36:00.000
+57,"transformers, transformer, vision, vision transformers, attention",241,2023-01-04 15:36:00.000
+58,"uav, aerial, swarm, uavs, drone",231,2023-01-04 15:36:00.000
+59,"texttoimage, image generation, editing, diffusion models, video",185,2023-01-04 15:36:00.000
+60,"groups, subgroups, finite, finite groups, abelian",227,2023-01-04 15:36:00.000
+61,"blockchain, smart, smart contracts, contracts, fraud",256,2023-01-04 15:36:00.000
+62,"privacy, private, differentially private, differentially, differential privacy",215,2023-01-04 15:36:00.000
+63,"games, nash, game, mean field, nash equilibrium",231,2023-01-04 15:36:00.000
+64,"brownian, brownian motion, sdes, stochastic differential, equations",174,2023-01-04 15:36:00.000
+65,"codes, decoding, polar, coding, cyclic",198,2023-01-04 15:36:00.000
+66,"dialogue, chatgpt, taskoriented, dialog, conversational",213,2023-01-04 15:36:00.000
+67,"anomaly detection, anomaly, outlier, outlier detection, time series",171,2023-01-04 15:36:00.000
+68,"physicsinformed, physicsinformed neural, differential equations, pdes, partial differential",218,2023-01-04 15:36:00.000
+69,"segmentation, semantic segmentation, semantic, instance segmentation, instance",225,2023-01-04 15:36:00.000
+70,"community, community detection, complex networks, centrality, social networks",149,2023-01-04 15:36:00.000
+71,"metamaterials, plasmonic, plasmon, metamaterial, dielectric",152,2023-01-04 15:36:00.000
+72,"news, fake, opinion, twitter, misinformation",206,2023-01-04 15:36:00.000
+73,"inverse problems, diffusion models, normalizing, normalizing flows, bayesian inverse",124,2023-01-04 15:36:00.000
+74,"supernova, ia, sn, remnant, remnants",144,2023-01-04 15:36:00.000
+75,"entanglement, entangled, multipartite, entanglement entropy, quantum entanglement",168,2023-01-04 15:36:00.000
+76,"boseeinstein, bose, condensates, superfluid, condensate",142,2023-01-04 15:36:00.000
+77,"neutron, neutron stars, star, stars, mergers",163,2023-01-04 15:36:00.000
+78,"matrices, random matrices, markov, markov chains, central limit",143,2023-01-04 15:36:00.000
+79,"telescope, astronomy, astronomical, sky, observatory",145,2023-01-04 15:36:00.000
+80,"detector, detectors, pixel, silicon, liquid",149,2023-01-04 15:36:00.000
+81,"knots, links, knot, braid, homology",119,2023-01-04 15:36:00.000
+82,"materials, additive manufacturing, manufacturing, interatomic, molecular",148,2023-01-04 15:36:00.000
+83,"remote sensing, remote, sensing, sensing image, crop",106,2023-01-04 15:36:00.000
+84,"summarization, sentiment, sentiment analysis, topic, abstractive",121,2023-01-04 15:36:00.000
+-1,"quantum, language, equations, optical, theorem",37813,2023-05-17 19:12:00.000
+0,"galaxies, galaxy, stars, stellar, star",2776,2023-05-17 19:12:00.000
+1,"hall, superconductivity, spin, magnetic, superconductors",2262,2023-05-17 19:12:00.000
+2,"collisions, qcd, production, decays, higgs",1784,2023-05-17 19:12:00.000
+3,"curvature, surfaces, curves, bundles, varieties",1729,2023-05-17 19:12:00.000
+4,"gravity, gauge, theories, inflation, cosmological",1509,2023-05-17 19:12:00.000
+5,"mimo, communications, wireless, communication, beamforming",1123,2023-05-17 19:12:00.000
+6,"graphs, trees, hypergraphs, cycles, chromatic",1285,2023-05-17 19:12:00.000
+7,"language, language models, large language, translation, machine translation",1032,2023-05-17 19:12:00.000
+8,"segmentation, medical, medical image, image segmentation, mri",1151,2023-05-17 19:12:00.000
+9,"black, black holes, holes, black hole, hole",995,2023-05-17 19:12:00.000
+10,"speech, audio, speaker, speech recognition, music",1183,2023-05-17 19:12:00.000
+11,"quantum, circuits, quantum circuits, quantum computing, variational quantum",758,2023-05-17 19:12:00.000
+12,"time series, forecasting, series forecasting, carlo, multivariate",757,2023-05-17 19:12:00.000
+13,"ai, intelligence, artificial intelligence, education, agents",515,2023-05-17 19:12:00.000
+14,"nonconvex, convex, descent, optimization problems, proximal",676,2023-05-17 19:12:00.000
+15,"algebras, categories, lie, modules, algebra",694,2023-05-17 19:12:00.000
+16,"photonic, optical, cavity, waveguide, laser",643,2023-05-17 19:12:00.000
+17,"protein, molecular, cell, drug, dna",509,2023-05-17 19:12:00.000
+18,"spiking, brain, spiking neural, eeg, disease",575,2023-05-17 19:12:00.000
+19,"financial, market, stock, portfolio, pricing",481,2023-05-17 19:12:00.000
+20,"deep neural, dnn, architecture search, pruning, neural architecture",525,2023-05-17 19:12:00.000
+21,"reinforcement learning, reinforcement, policy, offline, multiagent",509,2023-05-17 19:12:00.000
+22,"granular, porous, polymer, droplet, droplets",581,2023-05-17 19:12:00.000
+23,"electricity, wind, charging, electric, grid",459,2023-05-17 19:12:00.000
+24,"driving, autonomous, traffic, planning, autonomous driving",545,2023-05-17 19:12:00.000
+25,"object detection, object, point cloud, cloud, lidar",524,2023-05-17 19:12:00.000
+26,"covid19, epidemic, pandemic, covid19 pandemic, spread",375,2023-05-17 19:12:00.000
+27,"domain adaptation, adaptation, label, contrastive, domain generalization",514,2023-05-17 19:12:00.000
+28,"manipulation, robots, robot, imitation, robotic",417,2023-05-17 19:12:00.000
+29,"causal, treatment, causal inference, imputation, quantile",425,2023-05-17 19:12:00.000
+30,"dark, dark matter, dark energy, axion, portal",452,2023-05-17 19:12:00.000
+31,"optimal control, predictive control, model predictive, predictive, kalman",378,2023-05-17 19:12:00.000
+32,"navierstokes, navierstokes equations, galerkin, equations, compressible",430,2023-05-17 19:12:00.000
+33,"pulsar, gammaray, xray, bursts, pulsars",464,2023-05-17 19:12:00.000
+34,"software, code generation, vulnerability, source code, requirements",352,2023-05-17 19:12:00.000
+35,"depth, depth estimation, stereo, monocular, splatting",313,2023-05-17 19:12:00.000
+36,"serverless, gpu, hpc, cloud, encryption",388,2023-05-17 19:12:00.000
+37,"adversarial, attacks, attack, adversarial attacks, backdoor",433,2023-05-17 19:12:00.000
+38,"elliptic, fractional, equations, elliptic equations, laplacian",367,2023-05-17 19:12:00.000
+39,"operators, sobolev, banach, hardy, inequalities",388,2023-05-17 19:12:00.000
+40,"clinical, health, medical, depression, biomedical",329,2023-05-17 19:12:00.000
+41,"face, facial, face recognition, recognition, deepfake",398,2023-05-17 19:12:00.000
+42,"graph neural, node, graphs, link prediction, representation learning",413,2023-05-17 19:12:00.000
+43,"neutrino, neutrinos, oscillations, highenergy, dark",361,2023-05-17 19:12:00.000
+44,"superresolution, image superresolution, denoising, video, lowlight",346,2023-05-17 19:12:00.000
+45,"logic, automata, logics, boolean, modal",494,2023-05-17 19:12:00.000
+46,"solar, coronal, wind, flare, magnetic",348,2023-05-17 19:12:00.000
+47,"recommendation, recommender, recommender systems, recommendations, collaborative filtering",377,2023-05-17 19:12:00.000
+48,"plasma, plasmas, electron, laser, ion",324,2023-05-17 19:12:00.000
+49,"federated, federated learning, learning federated, client, personalized federated",399,2023-05-17 19:12:00.000
+50,"bilayer, twisted, graphite, hall, electronic",328,2023-05-17 19:12:00.000
+51,"question, answering, question answering, knowledge, knowledge graph",274,2023-05-17 19:12:00.000
+52,"schrodinger, nonlinear schrodinger, equations, wave, operators",279,2023-05-17 19:12:00.000
+53,"action, action recognition, recognition, reality, activity recognition",294,2023-05-17 19:12:00.000
+54,"visionlanguage, visionlanguage models, multimodal, vision language, reasoning",227,2023-05-17 19:12:00.000
+55,"climate, seismic, earthquake, assimilation, weather",249,2023-05-17 19:12:00.000
+56,"turbulence, turbulent, convection, vortex, stratified",342,2023-05-17 19:12:00.000
+57,"transformers, transformer, vision, attention, vision transformers",276,2023-05-17 19:12:00.000
+58,"uav, aerial, drone, swarm, uavs",290,2023-05-17 19:12:00.000
+59,"texttoimage, editing, image generation, diffusion models, video",248,2023-05-17 19:12:00.000
+60,"groups, subgroups, finite groups, finite, abelian groups",273,2023-05-17 19:12:00.000
+61,"blockchain, smart, contracts, smart contracts, fraud",262,2023-05-17 19:12:00.000
+62,"private, privacy, differentially private, differentially, differential privacy",259,2023-05-17 19:12:00.000
+63,"games, game, nash, mean field, equilibria",236,2023-05-17 19:12:00.000
+64,"brownian, brownian motion, stochastic differential, sdes, equations",215,2023-05-17 19:12:00.000
+65,"codes, decoding, polar, cyclic, constructions",211,2023-05-17 19:12:00.000
+66,"dialogue, chatgpt, dialog, taskoriented, conversational",318,2023-05-17 19:12:00.000
+67,"anomaly detection, anomaly, outlier, unsupervised, outlier detection",204,2023-05-17 19:12:00.000
+68,"physicsinformed, physicsinformed neural, differential equations, partial differential, pdes",216,2023-05-17 19:12:00.000
+69,"segmentation, semantic segmentation, semantic, instance segmentation, instance",242,2023-05-17 19:12:00.000
+70,"community, community detection, complex networks, centrality, communities",179,2023-05-17 19:12:00.000
+71,"metamaterials, plasmonic, metamaterial, plasmon, surface",168,2023-05-17 19:12:00.000
+72,"news, fake, opinion, social, media",181,2023-05-17 19:12:00.000
+73,"diffusion models, inverse problems, diffusion model, normalizing, normalizing flows",123,2023-05-17 19:12:00.000
+74,"supernova, ia, sn, remnant, remnants",203,2023-05-17 19:12:00.000
+75,"entanglement, multipartite, entanglement entropy, entangled, bipartite",170,2023-05-17 19:12:00.000
+76,"boseeinstein, bose, condensates, superfluid, condensate",147,2023-05-17 19:12:00.000
+77,"neutron, neutron stars, star, stars, mergers",173,2023-05-17 19:12:00.000
+78,"matrices, random matrices, markov, central limit, markov chains",157,2023-05-17 19:12:00.000
+79,"telescope, astronomy, astronomical, sky, observatory",136,2023-05-17 19:12:00.000
+80,"detector, detectors, readout, pixel, liquid",138,2023-05-17 19:12:00.000
+81,"knots, knot, links, braid, homology",172,2023-05-17 19:12:00.000
+82,"materials, interatomic, additive manufacturing, potentials, manufacturing",159,2023-05-17 19:12:00.000
+83,"remote sensing, remote, sensing, crop, plant",149,2023-05-17 19:12:00.000
+84,"summarization, sentiment, sentiment analysis, topic, abstractive",181,2023-05-17 19:12:00.000
+-1,"quantum, language, language models, large language, equations",38093,2023-09-27 22:48:00.000
+0,"galaxies, galaxy, stars, stellar, star",2515,2023-09-27 22:48:00.000
+1,"magnetic, hall, superconductivity, spin, films",2240,2023-09-27 22:48:00.000
+2,"collisions, qcd, production, decays, quark",1703,2023-09-27 22:48:00.000
+3,"curvature, surfaces, bundles, curves, polynomials",1641,2023-09-27 22:48:00.000
+4,"gravity, gauge, inflation, theories, cosmological",1488,2023-09-27 22:48:00.000
+5,"mimo, communications, wireless, communication, beamforming",1272,2023-09-27 22:48:00.000
+6,"graphs, trees, hypergraphs, coloring, cycles",1121,2023-09-27 22:48:00.000
+7,"language, language models, large language, translation, language model",1319,2023-09-27 22:48:00.000
+8,"segmentation, medical, mri, medical image, image segmentation",1079,2023-09-27 22:48:00.000
+9,"black, black hole, hole, black holes, holes",1013,2023-09-27 22:48:00.000
+10,"speech, audio, speech recognition, music, speaker",1052,2023-09-27 22:48:00.000
+11,"quantum, quantum circuits, circuits, quantum computing, quantum systems",932,2023-09-27 22:48:00.000
+12,"time series, forecasting, series forecasting, multivariate, highdimensional",846,2023-09-27 22:48:00.000
+13,"ai, intelligence, artificial intelligence, generative ai, agents",591,2023-09-27 22:48:00.000
+14,"descent, convex, gradient descent, nonconvex, multiobjective",685,2023-09-27 22:48:00.000
+15,"algebras, categories, lie, modules, algebra",616,2023-09-27 22:48:00.000
+16,"photonic, optical, cavity, laser, fiber",524,2023-09-27 22:48:00.000
+17,"protein, molecular, drug, dna, cell",635,2023-09-27 22:48:00.000
+18,"spiking, brain, eeg, spiking neural, disease",570,2023-09-27 22:48:00.000
+19,"financial, market, portfolio, stock, volatility",528,2023-09-27 22:48:00.000
+20,"deep neural, pruning, training, dnn, relu",529,2023-09-27 22:48:00.000
+21,"reinforcement learning, reinforcement, policy, offline, offline reinforcement",574,2023-09-27 22:48:00.000
+22,"granular, porous, droplet, droplets, polymer",553,2023-09-27 22:48:00.000
+23,"electricity, wind, renewable, power systems, charging",596,2023-09-27 22:48:00.000
+24,"autonomous, driving, traffic, autonomous driving, planning",521,2023-09-27 22:48:00.000
+25,"object detection, object, point cloud, cloud, lidar",531,2023-09-27 22:48:00.000
+26,"covid19, epidemic, pandemic, covid19 pandemic, infection",358,2023-09-27 22:48:00.000
+27,"domain adaptation, adaptation, label, contrastive, domain generalization",505,2023-09-27 22:48:00.000
+28,"manipulation, robot, robotic, imitation, locomotion",464,2023-09-27 22:48:00.000
+29,"causal, treatment, causal inference, trials, imputation",488,2023-09-27 22:48:00.000
+30,"dark, dark matter, dark energy, axion, ultralight",386,2023-09-27 22:48:00.000
+31,"predictive control, optimal control, predictive, model predictive, kalman",392,2023-09-27 22:48:00.000
+32,"navierstokes, navierstokes equations, galerkin, equations, element",410,2023-09-27 22:48:00.000
+33,"pulsar, xray, gammaray, bursts, pulsars",433,2023-09-27 22:48:00.000
+34,"software, code generation, vulnerability, language, large language",444,2023-09-27 22:48:00.000
+35,"depth, depth estimation, splatting, gaussian splatting, monocular",372,2023-09-27 22:48:00.000
+36,"gpu, serverless, hpc, cloud, riscv",399,2023-09-27 22:48:00.000
+37,"adversarial, attacks, attack, adversarial attacks, backdoor",432,2023-09-27 22:48:00.000
+38,"elliptic, fractional, equations, laplacian, elliptic equations",358,2023-09-27 22:48:00.000
+39,"operators, sobolev, inequality, inequalities, banach",309,2023-09-27 22:48:00.000
+40,"clinical, health, medical, depression, biomedical",406,2023-09-27 22:48:00.000
+41,"face, facial, face recognition, recognition, deepfake",372,2023-09-27 22:48:00.000
+42,"graph neural, graphs, link prediction, graph learning, node",382,2023-09-27 22:48:00.000
+43,"neutrino, neutrinos, oscillations, flavor, dark",255,2023-09-27 22:48:00.000
+44,"superresolution, image superresolution, quality assessment, quality, video",342,2023-09-27 22:48:00.000
+45,"logic, automata, boolean, logics, modal",310,2023-09-27 22:48:00.000
+46,"solar, coronal, flare, wind, magnetic",302,2023-09-27 22:48:00.000
+47,"recommendation, recommender, recommender systems, recommendations, collaborative filtering",344,2023-09-27 22:48:00.000
+48,"plasma, plasmas, laser, electron, acceleration",300,2023-09-27 22:48:00.000
+49,"federated, federated learning, personalized federated, learning federated, personalized",456,2023-09-27 22:48:00.000
+50,"bilayer, twisted, graphite, moire, hall",250,2023-09-27 22:48:00.000
+51,"question, answering, question answering, knowledge, knowledge graph",321,2023-09-27 22:48:00.000
+52,"schrodinger, nonlinear schrodinger, equations, wave, operators",264,2023-09-27 22:48:00.000
+53,"action, action recognition, recognition, reality, activity recognition",307,2023-09-27 22:48:00.000
+54,"visionlanguage, multimodal, visionlanguage models, reasoning, visual",256,2023-09-27 22:48:00.000
+55,"seismic, climate, weather, precipitation, assimilation",335,2023-09-27 22:48:00.000
+56,"turbulence, turbulent, convection, vortex, waves",293,2023-09-27 22:48:00.000
+57,"transformers, transformer, attention, vision, vision transformers",305,2023-09-27 22:48:00.000
+58,"uav, aerial, uavs, drone, trajectory",281,2023-09-27 22:48:00.000
+59,"texttoimage, editing, diffusion models, image generation, video",343,2023-09-27 22:48:00.000
+60,"groups, subgroups, finite, finite groups, abelian",241,2023-09-27 22:48:00.000
+61,"blockchain, smart, contracts, fraud, smart contracts",234,2023-09-27 22:48:00.000
+62,"privacy, private, differentially private, differentially, differential privacy",252,2023-09-27 22:48:00.000
+63,"games, game, mean field, nash, mean",254,2023-09-27 22:48:00.000
+64,"brownian, sdes, brownian motion, equations, stochastic differential",222,2023-09-27 22:48:00.000
+65,"codes, decoding, polar, coding, weight",223,2023-09-27 22:48:00.000
+66,"dialogue, chatgpt, taskoriented, dialog, conversational",341,2023-09-27 22:48:00.000
+67,"anomaly detection, anomaly, outlier, time series, unsupervised",254,2023-09-27 22:48:00.000
+68,"physicsinformed, physicsinformed neural, differential equations, pdes, partial differential",262,2023-09-27 22:48:00.000
+69,"segmentation, semantic segmentation, semantic, instance segmentation, instance",226,2023-09-27 22:48:00.000
+70,"community, community detection, complex networks, centrality, social networks",180,2023-09-27 22:48:00.000
+71,"metamaterials, plasmonic, plasmon, metamaterial, surface",181,2023-09-27 22:48:00.000
+72,"news, opinion, fake, misinformation, social",210,2023-09-27 22:48:00.000
+73,"diffusion models, inverse problems, normalizing, diffusion model, flow matching",210,2023-09-27 22:48:00.000
+74,"supernova, ia, sn, remnant, remnants",162,2023-09-27 22:48:00.000
+75,"entanglement, entanglement entropy, multipartite, entangled, quantum entanglement",152,2023-09-27 22:48:00.000
+76,"boseeinstein, condensates, bose, superfluid, condensate",159,2023-09-27 22:48:00.000
+77,"neutron, neutron stars, star, stars, mergers",148,2023-09-27 22:48:00.000
+78,"matrices, random matrices, markov, markov chains, central limit",128,2023-09-27 22:48:00.000
+79,"telescope, astronomy, astronomical, sky, observatory",160,2023-09-27 22:48:00.000
+80,"detector, detectors, readout, argon, liquid",138,2023-09-27 22:48:00.000
+81,"knots, knot, braid, links, homology",129,2023-09-27 22:48:00.000
+82,"materials, additive manufacturing, manufacturing, molecular, potentials",172,2023-09-27 22:48:00.000
+83,"remote sensing, remote, sensing, crop, imagery",153,2023-09-27 22:48:00.000
+84,"summarization, sentiment, sentiment analysis, topic, abstractive",194,2023-09-27 22:48:00.000
+-1,"quantum, language, language models, large language, visual",41947,2024-02-08 02:24:00.000
+0,"galaxies, galaxy, stellar, star, stars",2261,2024-02-08 02:24:00.000
+1,"hall, magnetic, spin, superconductivity, films",2218,2024-02-08 02:24:00.000
+2,"collisions, qcd, production, decays, higgs",1605,2024-02-08 02:24:00.000
+3,"curvature, surfaces, curves, bundles, manifolds",1856,2024-02-08 02:24:00.000
+4,"gravity, gauge, theories, cosmological, inflation",1494,2024-02-08 02:24:00.000
+5,"mimo, communications, wireless, communication, beamforming",1322,2024-02-08 02:24:00.000
+6,"graphs, trees, hypergraphs, ramsey, coloring",1268,2024-02-08 02:24:00.000
+7,"language, language models, large language, language model, reasoning",1761,2024-02-08 02:24:00.000
+8,"segmentation, medical, medical image, mri, image segmentation",1183,2024-02-08 02:24:00.000
+9,"black, black hole, black holes, hole, holes",987,2024-02-08 02:24:00.000
+10,"speech, audio, music, speech recognition, speaker",976,2024-02-08 02:24:00.000
+11,"quantum, circuits, quantum computing, quantum circuits, quantum systems",1011,2024-02-08 02:24:00.000
+12,"time series, forecasting, series forecasting, multivariate, highdimensional",901,2024-02-08 02:24:00.000
+13,"ai, generative ai, intelligence, agents, artificial intelligence",752,2024-02-08 02:24:00.000
+14,"descent, nonconvex, convex, gradient descent, bayesian optimization",788,2024-02-08 02:24:00.000
+15,"algebras, categories, lie, modules, algebra",667,2024-02-08 02:24:00.000
+16,"photonic, optical, laser, cavity, lithium",624,2024-02-08 02:24:00.000
+17,"protein, molecular, cell, dna, drug",635,2024-02-08 02:24:00.000
+18,"spiking, brain, spiking neural, eeg, alzheimers",587,2024-02-08 02:24:00.000
+19,"financial, market, pricing, stock, portfolio",601,2024-02-08 02:24:00.000
+20,"deep neural, dnn, pruning, architecture search, training",548,2024-02-08 02:24:00.000
+21,"reinforcement learning, reinforcement, policy, offline, offline reinforcement",733,2024-02-08 02:24:00.000
+22,"granular, porous, droplets, polymer, droplet",570,2024-02-08 02:24:00.000
+23,"electricity, charging, grid, wind, electric",594,2024-02-08 02:24:00.000
+24,"driving, autonomous, traffic, autonomous driving, planning",668,2024-02-08 02:24:00.000
+25,"object detection, object, point cloud, lidar, cloud",590,2024-02-08 02:24:00.000
+26,"covid19, epidemic, pandemic, covid19 pandemic, infection",342,2024-02-08 02:24:00.000
+27,"domain adaptation, adaptation, label, multilabel, domain generalization",540,2024-02-08 02:24:00.000
+28,"manipulation, robot, imitation, robotic, tactile",522,2024-02-08 02:24:00.000
+29,"causal, treatment, causal inference, survival, quantile",531,2024-02-08 02:24:00.000
+30,"dark, dark matter, dark energy, axion, searches",386,2024-02-08 02:24:00.000
+31,"predictive control, optimal control, predictive, model predictive, nonlinear systems",498,2024-02-08 02:24:00.000
+32,"navierstokes, navierstokes equations, galerkin, equations, discontinuous galerkin",399,2024-02-08 02:24:00.000
+33,"pulsar, gammaray, xray, bursts, pulsars",339,2024-02-08 02:24:00.000
+34,"software, code generation, vulnerability, repair, language",505,2024-02-08 02:24:00.000
+35,"splatting, gaussian splatting, depth, depth estimation, scene",548,2024-02-08 02:24:00.000
+36,"gpu, hpc, encryption, serverless, riscv",419,2024-02-08 02:24:00.000
+37,"adversarial, attacks, backdoor, attack, adversarial attacks",483,2024-02-08 02:24:00.000
+38,"elliptic, fractional, equations, laplacian, regularity",367,2024-02-08 02:24:00.000
+39,"operators, sobolev, banach, inequalities, banach spaces",417,2024-02-08 02:24:00.000
+40,"health, clinical, medical, language, large language",479,2024-02-08 02:24:00.000
+41,"face, facial, face recognition, recognition, deepfake",456,2024-02-08 02:24:00.000
+42,"graph neural, graphs, link prediction, node, graph learning",498,2024-02-08 02:24:00.000
+43,"neutrino, neutrinos, mass, dark, dark matter",265,2024-02-08 02:24:00.000
+44,"superresolution, image superresolution, image restoration, restoration, image compression",447,2024-02-08 02:24:00.000
+45,"logic, automata, boolean, logics, modal",373,2024-02-08 02:24:00.000
+46,"solar, coronal, flare, wind, magnetic",298,2024-02-08 02:24:00.000
+47,"recommendation, recommender, recommender systems, recommendations, collaborative filtering",435,2024-02-08 02:24:00.000
+48,"plasma, plasmas, laser, electron, discharge",340,2024-02-08 02:24:00.000
+49,"federated, federated learning, client, personalized federated, personalized",542,2024-02-08 02:24:00.000
+50,"bilayer, twisted, moire, electronic, graphite",291,2024-02-08 02:24:00.000
+51,"question, answering, question answering, knowledge, knowledge graph",405,2024-02-08 02:24:00.000
+52,"schrodinger, nonlinear schrodinger, equations, wave, wave equations",305,2024-02-08 02:24:00.000
+53,"action, action recognition, recognition, reality, activity recognition",390,2024-02-08 02:24:00.000
+54,"visionlanguage, multimodal, visionlanguage models, multimodal large, reasoning",390,2024-02-08 02:24:00.000
+55,"climate, seismic, weather, assimilation, flood",300,2024-02-08 02:24:00.000
+56,"turbulence, turbulent, convection, vortex, waves",284,2024-02-08 02:24:00.000
+57,"transformers, transformer, attention, vision, vision transformers",353,2024-02-08 02:24:00.000
+58,"uav, aerial, uavs, drone, swarm",321,2024-02-08 02:24:00.000
+59,"texttoimage, editing, diffusion models, image generation, video",413,2024-02-08 02:24:00.000
+60,"groups, subgroups, finite groups, finite, abelian groups",271,2024-02-08 02:24:00.000
+61,"blockchain, smart, smart contracts, contracts, fraud",239,2024-02-08 02:24:00.000
+62,"private, privacy, differentially private, differentially, differential privacy",331,2024-02-08 02:24:00.000
+63,"games, game, nash, equilibria, mean field",287,2024-02-08 02:24:00.000
+64,"brownian, brownian motion, sdes, stochastic differential, equations",258,2024-02-08 02:24:00.000
+65,"codes, decoding, polar, cyclic, coding",238,2024-02-08 02:24:00.000
+66,"dialogue, chatgpt, conversational, dialog, taskoriented",284,2024-02-08 02:24:00.000
+67,"anomaly, anomaly detection, outlier, outlier detection, time series",234,2024-02-08 02:24:00.000
+68,"physicsinformed, physicsinformed neural, differential equations, partial differential, equations",253,2024-02-08 02:24:00.000
+69,"segmentation, semantic segmentation, semantic, instance segmentation, instance",299,2024-02-08 02:24:00.000
+70,"community, community detection, complex networks, centrality, social",185,2024-02-08 02:24:00.000
+71,"metamaterials, plasmonic, metamaterial, plasmon, surface",174,2024-02-08 02:24:00.000
+72,"news, opinion, social, fake, misinformation",237,2024-02-08 02:24:00.000
+73,"diffusion models, inverse problems, flow matching, diffusion model, normalizing",240,2024-02-08 02:24:00.000
+74,"supernova, ia, sn, remnant, explosion",156,2024-02-08 02:24:00.000
+75,"entanglement, entanglement entropy, entangled, multipartite, quantum entanglement",157,2024-02-08 02:24:00.000
+76,"boseeinstein, condensates, bose, condensate, superfluid",143,2024-02-08 02:24:00.000
+77,"neutron, neutron stars, star, stars, mergers",162,2024-02-08 02:24:00.000
+78,"matrices, random matrices, markov, markov chains, central limit",132,2024-02-08 02:24:00.000
+79,"telescope, astronomy, astronomical, observatory, science",152,2024-02-08 02:24:00.000
+80,"detector, detectors, liquid, pixel, silicon",151,2024-02-08 02:24:00.000
+81,"knots, knot, links, braid, homology",161,2024-02-08 02:24:00.000
+82,"materials, interatomic, material, additive manufacturing, potentials",173,2024-02-08 02:24:00.000
+83,"remote sensing, remote, sensing, sensing image, crop",176,2024-02-08 02:24:00.000
+84,"summarization, sentiment, sentiment analysis, topic, abstractive",184,2024-02-08 02:24:00.000
+-1,"quantum, language, large language, language models, multimodal",44505,2024-06-20 06:00:00.000
+0,"galaxies, galaxy, stars, stellar, star",2661,2024-06-20 06:00:00.000
+1,"hall, superconductivity, spin, magnetic, superconductors",2192,2024-06-20 06:00:00.000
+2,"collisions, qcd, production, decays, quark",1660,2024-06-20 06:00:00.000
+3,"curvature, surfaces, curves, manifolds, conjecture",1874,2024-06-20 06:00:00.000
+4,"gravity, inflation, gauge, theories, cosmological",1557,2024-06-20 06:00:00.000
+5,"mimo, wireless, communications, communication, beamforming",1637,2024-06-20 06:00:00.000
+6,"graphs, trees, hypergraphs, coloring, digraphs",1305,2024-06-20 06:00:00.000
+7,"language, language models, large language, reasoning, language model",1762,2024-06-20 06:00:00.000
+8,"segmentation, medical, medical image, mri, image segmentation",1617,2024-06-20 06:00:00.000
+9,"black, black holes, holes, black hole, hole",1130,2024-06-20 06:00:00.000
+10,"speech, audio, music, speech recognition, speaker",1330,2024-06-20 06:00:00.000
+11,"quantum, quantum computing, circuits, quantum circuits, quantum systems",1082,2024-06-20 06:00:00.000
+12,"time series, forecasting, series forecasting, highdimensional, multivariate",920,2024-06-20 06:00:00.000
+13,"ai, intelligence, agents, generative ai, artificial intelligence",877,2024-06-20 06:00:00.000
+14,"nonconvex, convex, descent, optimization problems, multiobjective",770,2024-06-20 06:00:00.000
+15,"algebras, categories, lie, modules, algebra",715,2024-06-20 06:00:00.000
+16,"photonic, optical, cavity, photon, waveguide",598,2024-06-20 06:00:00.000
+17,"protein, molecular, drug, dna, cell",701,2024-06-20 06:00:00.000
+18,"spiking, brain, eeg, spiking neural, neuromorphic",758,2024-06-20 06:00:00.000
+19,"financial, market, pricing, stock, portfolio",658,2024-06-20 06:00:00.000
+20,"deep neural, pruning, training, dnn, architecture search",546,2024-06-20 06:00:00.000
+21,"reinforcement learning, reinforcement, policy, offline, reward",595,2024-06-20 06:00:00.000
+22,"granular, porous, polymer, droplet, fracture",554,2024-06-20 06:00:00.000
+23,"electricity, grid, load, wind, charging",635,2024-06-20 06:00:00.000
+24,"driving, autonomous, traffic, autonomous driving, planning",657,2024-06-20 06:00:00.000
+25,"object detection, object, point cloud, cloud, lidar",735,2024-06-20 06:00:00.000
+26,"covid19, epidemic, pandemic, covid19 pandemic, disease",320,2024-06-20 06:00:00.000
+27,"domain adaptation, adaptation, label, multilabel, domain generalization",489,2024-06-20 06:00:00.000
+28,"manipulation, robot, robotic, imitation, locomotion",703,2024-06-20 06:00:00.000
+29,"causal, treatment, causal inference, imputation, trials",546,2024-06-20 06:00:00.000
+30,"dark, dark matter, dark energy, axion, sector",445,2024-06-20 06:00:00.000
+31,"predictive control, model predictive, optimal control, predictive, nonlinear systems",461,2024-06-20 06:00:00.000
+32,"navierstokes, navierstokes equations, element, equations, galerkin",419,2024-06-20 06:00:00.000
+33,"pulsar, gammaray, xray, grb, bursts",449,2024-06-20 06:00:00.000
+34,"software, code generation, vulnerability, repair, language",564,2024-06-20 06:00:00.000
+35,"splatting, gaussian splatting, depth, 3d gaussian, depth estimation",624,2024-06-20 06:00:00.000
+36,"serverless, cloud, riscv, gpu, hpc",445,2024-06-20 06:00:00.000
+37,"adversarial, attacks, attack, backdoor, adversarial attacks",450,2024-06-20 06:00:00.000
+38,"fractional, elliptic, equations, laplacian, regularity",370,2024-06-20 06:00:00.000
+39,"operators, sobolev, inequalities, banach, banach spaces",419,2024-06-20 06:00:00.000
+40,"clinical, medical, health, large language, depression",547,2024-06-20 06:00:00.000
+41,"face, facial, face recognition, recognition, deepfake",495,2024-06-20 06:00:00.000
+42,"graph neural, node, link prediction, graphs, graph convolutional",403,2024-06-20 06:00:00.000
+43,"neutrino, neutrinos, mass, oscillations, highenergy",282,2024-06-20 06:00:00.000
+44,"superresolution, image superresolution, image restoration, restoration, image compression",455,2024-06-20 06:00:00.000
+45,"logic, automata, boolean, logics, modal",360,2024-06-20 06:00:00.000
+46,"solar, coronal, flare, magnetic, flux",312,2024-06-20 06:00:00.000
+47,"recommendation, recommender, recommender systems, recommendations, collaborative filtering",438,2024-06-20 06:00:00.000
+48,"plasma, plasmas, laser, electron, ion",297,2024-06-20 06:00:00.000
+49,"federated, federated learning, personalized federated, learning federated, client",460,2024-06-20 06:00:00.000
+50,"bilayer, twisted, graphite, moire, electronic",289,2024-06-20 06:00:00.000
+51,"question, answering, question answering, knowledge, retrieval",460,2024-06-20 06:00:00.000
+52,"schrodinger, nonlinear schrodinger, equations, wave, wellposedness",314,2024-06-20 06:00:00.000
+53,"action, action recognition, recognition, activity recognition, reality",422,2024-06-20 06:00:00.000
+54,"visionlanguage, multimodal, visionlanguage models, multimodal large, visual",462,2024-06-20 06:00:00.000
+55,"seismic, weather, climate, assimilation, precipitation",391,2024-06-20 06:00:00.000
+56,"turbulence, turbulent, convection, vortex, boundary layer",265,2024-06-20 06:00:00.000
+57,"transformers, transformer, attention, vision, vision transformers",313,2024-06-20 06:00:00.000
+58,"uav, aerial, uavs, swarm, drone",360,2024-06-20 06:00:00.000
+59,"texttoimage, editing, diffusion models, image generation, video",417,2024-06-20 06:00:00.000
+60,"groups, subgroups, finite groups, finite, abelian groups",255,2024-06-20 06:00:00.000
+61,"blockchain, smart, smart contracts, contracts, fraud",297,2024-06-20 06:00:00.000
+62,"privacy, private, differentially private, differentially, differential privacy",294,2024-06-20 06:00:00.000
+63,"games, game, nash, mean field, nash equilibrium",247,2024-06-20 06:00:00.000
+64,"brownian, brownian motion, stochastic differential, equations, differential equations",226,2024-06-20 06:00:00.000
+65,"codes, decoding, polar, coding, decoder",235,2024-06-20 06:00:00.000
+66,"dialogue, chatgpt, conversational, dialog, taskoriented",275,2024-06-20 06:00:00.000
+67,"anomaly detection, anomaly, outlier, outlier detection, unsupervised",286,2024-06-20 06:00:00.000
+68,"physicsinformed, physicsinformed neural, differential equations, partial differential, equations",264,2024-06-20 06:00:00.000
+69,"segmentation, semantic segmentation, semantic, instance segmentation, instance",257,2024-06-20 06:00:00.000
+70,"community, community detection, complex networks, centrality, social networks",196,2024-06-20 06:00:00.000
+71,"metamaterials, plasmonic, plasmon, metamaterial, mechanical",211,2024-06-20 06:00:00.000
+72,"news, opinion, fake, misinformation, social",274,2024-06-20 06:00:00.000
+73,"diffusion models, inverse problems, flow matching, diffusion model, bayesian inverse",245,2024-06-20 06:00:00.000
+74,"supernova, ia, sn, remnant, remnants",176,2024-06-20 06:00:00.000
+75,"entanglement, multipartite, entanglement entropy, entangled, quantum entanglement",192,2024-06-20 06:00:00.000
+76,"boseeinstein, condensates, bose, superfluid, condensate",168,2024-06-20 06:00:00.000
+77,"neutron, neutron stars, star, stars, mergers",149,2024-06-20 06:00:00.000
+78,"matrices, markov, random matrices, markov chains, limit theorem",172,2024-06-20 06:00:00.000
+79,"telescope, astronomy, astronomical, observatory, sky",211,2024-06-20 06:00:00.000
+80,"detector, detectors, pixel, argon, liquid",152,2024-06-20 06:00:00.000
+81,"knots, knot, links, homology, braid",167,2024-06-20 06:00:00.000
+82,"materials, molecular, crystal, potentials, additive manufacturing",206,2024-06-20 06:00:00.000
+83,"remote sensing, remote, sensing, plant, crop",234,2024-06-20 06:00:00.000
+84,"summarization, sentiment, sentiment analysis, topic, abstractive",190,2024-06-20 06:00:00.000
+-1,"quantum, language, large language, language models, llms",47030,2024-10-31 09:36:00.000
+0,"galaxies, galaxy, stars, stellar, star",2575,2024-10-31 09:36:00.000
+1,"hall, spin, magnetic, superconductivity, films",2452,2024-10-31 09:36:00.000
+2,"qcd, collisions, production, decays, quark",1787,2024-10-31 09:36:00.000
+3,"curvature, surfaces, curves, bundles, manifolds",2169,2024-10-31 09:36:00.000
+4,"gravity, gauge, theories, inflation, cosmological",1620,2024-10-31 09:36:00.000
+5,"mimo, wireless, communications, beamforming, communication",1446,2024-10-31 09:36:00.000
+6,"graphs, trees, hypergraphs, cycles, coloring",1369,2024-10-31 09:36:00.000
+7,"language, language models, large language, reasoning, language model",1818,2024-10-31 09:36:00.000
+8,"segmentation, medical, mri, medical image, image segmentation",1432,2024-10-31 09:36:00.000
+9,"black, black hole, hole, black holes, holes",1183,2024-10-31 09:36:00.000
+10,"speech, audio, music, speaker, speech recognition",1027,2024-10-31 09:36:00.000
+11,"quantum, circuits, quantum circuits, circuit, quantum computing",1108,2024-10-31 09:36:00.000
+12,"time series, series forecasting, forecasting, multivariate, highdimensional",1000,2024-10-31 09:36:00.000
+13,"ai, agents, generative ai, intelligence, artificial intelligence",1114,2024-10-31 09:36:00.000
+14,"nonconvex, descent, convex, multiobjective, optimization problems",883,2024-10-31 09:36:00.000
+15,"algebras, categories, lie, modules, algebra",723,2024-10-31 09:36:00.000
+16,"photonic, optical, photon, cavity, laser",657,2024-10-31 09:36:00.000
+17,"protein, molecular, dna, drug, cell",792,2024-10-31 09:36:00.000
+18,"spiking, brain, eeg, spiking neural, disease",782,2024-10-31 09:36:00.000
+19,"financial, market, portfolio, stock, volatility",758,2024-10-31 09:36:00.000
+20,"pruning, deep neural, dnn, architecture search, training",529,2024-10-31 09:36:00.000
+21,"reinforcement learning, reinforcement, policy, offline, multiagent",667,2024-10-31 09:36:00.000
+22,"granular, porous, polymer, fracture, droplet",572,2024-10-31 09:36:00.000
+23,"electricity, charging, load, wind, grid",623,2024-10-31 09:36:00.000
+24,"driving, autonomous, traffic, autonomous driving, planning",656,2024-10-31 09:36:00.000
+25,"object detection, object, point cloud, cloud, lidar",602,2024-10-31 09:36:00.000
+26,"covid19, epidemic, pandemic, disease, covid19 pandemic",313,2024-10-31 09:36:00.000
+27,"domain adaptation, adaptation, label, multilabel, contrastive",510,2024-10-31 09:36:00.000
+28,"manipulation, robotic, tactile, robot, imitation",660,2024-10-31 09:36:00.000
+29,"causal, treatment, imputation, treatment effects, survival",574,2024-10-31 09:36:00.000
+30,"dark, dark matter, dark energy, axion, ultralight",468,2024-10-31 09:36:00.000
+31,"predictive control, optimal control, model predictive, predictive, nonlinear systems",482,2024-10-31 09:36:00.000
+32,"navierstokes, navierstokes equations, galerkin, element, equations",497,2024-10-31 09:36:00.000
+33,"pulsar, gammaray, xray, bursts, timing",459,2024-10-31 09:36:00.000
+34,"software, code generation, vulnerability, repair, llms",650,2024-10-31 09:36:00.000
+35,"splatting, gaussian splatting, depth, 3d gaussian, depth estimation",600,2024-10-31 09:36:00.000
+36,"serverless, gpu, cloud, riscv, hpc",447,2024-10-31 09:36:00.000
+37,"adversarial, attacks, backdoor, attack, adversarial attacks",498,2024-10-31 09:36:00.000
+38,"elliptic, fractional, equations, elliptic equations, parabolic",431,2024-10-31 09:36:00.000
+39,"operators, sobolev, inequalities, inequality, fourier",464,2024-10-31 09:36:00.000
+40,"clinical, health, medical, mental, depression",622,2024-10-31 09:36:00.000
+41,"face, facial, deepfake, face recognition, recognition",427,2024-10-31 09:36:00.000
+42,"graph neural, graphs, node, link prediction, graph learning",524,2024-10-31 09:36:00.000
+43,"neutrino, neutrinos, flavor, mass, dark",344,2024-10-31 09:36:00.000
+44,"superresolution, image superresolution, image restoration, restoration, quality assessment",405,2024-10-31 09:36:00.000
+45,"logic, automata, logics, boolean, modal",349,2024-10-31 09:36:00.000
+46,"solar, coronal, wind, flare, magnetic",337,2024-10-31 09:36:00.000
+47,"recommendation, recommender, recommender systems, recommendations, recommendation systems",428,2024-10-31 09:36:00.000
+48,"plasma, plasmas, electron, laser, acceleration",374,2024-10-31 09:36:00.000
+49,"federated, federated learning, personalized federated, personalized, client",493,2024-10-31 09:36:00.000
+50,"bilayer, twisted, hall, graphite, moire",299,2024-10-31 09:36:00.000
+51,"question, answering, question answering, retrievalaugmented, retrieval",450,2024-10-31 09:36:00.000
+52,"schrodinger, nonlinear schrodinger, equations, wave, operators",396,2024-10-31 09:36:00.000
+53,"action, action recognition, reality, recognition, activity recognition",359,2024-10-31 09:36:00.000
+54,"visionlanguage, multimodal, visionlanguage models, multimodal large, visual",518,2024-10-31 09:36:00.000
+55,"climate, seismic, weather, assimilation, precipitation",373,2024-10-31 09:36:00.000
+56,"turbulence, turbulent, convection, vortex, waves",332,2024-10-31 09:36:00.000
+57,"transformers, attention, transformer, vision, vision transformers",413,2024-10-31 09:36:00.000
+58,"uav, aerial, drone, uavs, swarm",378,2024-10-31 09:36:00.000
+59,"texttoimage, image generation, editing, video, video generation",573,2024-10-31 09:36:00.000
+60,"groups, subgroups, finite groups, finite, conjugacy",292,2024-10-31 09:36:00.000
+61,"blockchain, smart, smart contracts, contracts, fraud",288,2024-10-31 09:36:00.000
+62,"privacy, private, differentially private, differentially, differential privacy",269,2024-10-31 09:36:00.000
+63,"games, game, nash, mean field, equilibria",315,2024-10-31 09:36:00.000
+64,"brownian, brownian motion, sdes, equations, stochastic differential",265,2024-10-31 09:36:00.000
+65,"codes, decoding, polar, selfdual, cyclic",241,2024-10-31 09:36:00.000
+66,"dialogue, chatgpt, conversational, dialog, taskoriented",260,2024-10-31 09:36:00.000
+67,"anomaly, anomaly detection, outlier, outlier detection, time series",288,2024-10-31 09:36:00.000
+68,"physicsinformed, physicsinformed neural, differential equations, partial differential, equations",278,2024-10-31 09:36:00.000
+69,"segmentation, semantic segmentation, semantic, instance segmentation, instance",217,2024-10-31 09:36:00.000
+70,"community, community detection, complex networks, centrality, social",197,2024-10-31 09:36:00.000
+71,"metamaterials, plasmonic, metamaterial, plasmon, dielectric",194,2024-10-31 09:36:00.000
+72,"news, fake, opinion, misinformation, social",243,2024-10-31 09:36:00.000
+73,"diffusion models, inverse problems, flow matching, diffusion model, bayesian inverse",323,2024-10-31 09:36:00.000
+74,"supernova, ia, sn, remnant, remnants",175,2024-10-31 09:36:00.000
+75,"entanglement, multipartite, entangled, entanglement entropy, quantum entanglement",194,2024-10-31 09:36:00.000
+76,"boseeinstein, condensates, bose, condensate, superfluid",176,2024-10-31 09:36:00.000
+77,"neutron, neutron stars, star, stars, mergers",170,2024-10-31 09:36:00.000
+78,"matrices, random matrices, markov, markov chains, central limit",176,2024-10-31 09:36:00.000
+79,"telescope, astronomy, astronomical, observatory, telescopes",150,2024-10-31 09:36:00.000
+80,"detector, detectors, readout, pixel, silicon",186,2024-10-31 09:36:00.000
+81,"knots, links, knot, braid, homology",179,2024-10-31 09:36:00.000
+82,"materials, interatomic, potentials, additive manufacturing, manufacturing",222,2024-10-31 09:36:00.000
+83,"remote sensing, remote, sensing, crop, sensing image",272,2024-10-31 09:36:00.000
+84,"sentiment, summarization, sentiment analysis, topic, abstractive",173,2024-10-31 09:36:00.000
+-1,"quantum, language, llms, large language, language models",54636,2025-03-13 13:12:00.000
+0,"galaxies, galaxy, stars, stellar, star",2885,2025-03-13 13:12:00.000
+1,"hall, superconductivity, magnetic, spin, films",2596,2025-03-13 13:12:00.000
+2,"collisions, qcd, production, decays, quark",1789,2025-03-13 13:12:00.000
+3,"curvature, surfaces, curves, varieties, bundles",2327,2025-03-13 13:12:00.000
+4,"gravity, gauge, theories, inflation, cosmological",1692,2025-03-13 13:12:00.000
+5,"mimo, communications, wireless, communication, beamforming",1611,2025-03-13 13:12:00.000
+6,"graphs, trees, hypergraphs, coloring, digraphs",1542,2025-03-13 13:12:00.000
+7,"language, language models, large language, reasoning, language model",2431,2025-03-13 13:12:00.000
+8,"segmentation, medical, mri, medical image, image segmentation",1612,2025-03-13 13:12:00.000
+9,"black, black hole, hole, black holes, holes",1299,2025-03-13 13:12:00.000
+10,"speech, audio, music, speaker, speech recognition",1444,2025-03-13 13:12:00.000
+11,"quantum, circuits, quantum circuits, quantum computing, variational quantum",1440,2025-03-13 13:12:00.000
+12,"time series, forecasting, series forecasting, multivariate, highdimensional",1211,2025-03-13 13:12:00.000
+13,"ai, agents, intelligence, generative ai, agent",1498,2025-03-13 13:12:00.000
+14,"nonconvex, descent, convex, gradient descent, multiobjective",991,2025-03-13 13:12:00.000
+15,"algebras, categories, lie, modules, algebra",831,2025-03-13 13:12:00.000
+16,"photonic, optical, cavity, lithium, laser",673,2025-03-13 13:12:00.000
+17,"protein, molecular, drug, dna, cell",925,2025-03-13 13:12:00.000
+18,"spiking, brain, eeg, spiking neural, neuromorphic",813,2025-03-13 13:12:00.000
+19,"financial, market, pricing, stock, volatility",766,2025-03-13 13:12:00.000
+20,"pruning, architecture search, relu, training, deep neural",628,2025-03-13 13:12:00.000
+21,"reinforcement learning, reinforcement, policy, offline, reward",744,2025-03-13 13:12:00.000
+22,"granular, porous, polymer, fracture, droplets",629,2025-03-13 13:12:00.000
+23,"electricity, charging, grid, power systems, load",694,2025-03-13 13:12:00.000
+24,"driving, autonomous, autonomous driving, traffic, planning",805,2025-03-13 13:12:00.000
+25,"object detection, object, point cloud, cloud, lidar",623,2025-03-13 13:12:00.000
+26,"covid19, epidemic, pandemic, infection, covid19 pandemic",302,2025-03-13 13:12:00.000
+27,"domain adaptation, adaptation, domain generalization, label, multilabel",546,2025-03-13 13:12:00.000
+28,"manipulation, robot, robotic, locomotion, imitation",831,2025-03-13 13:12:00.000
+29,"causal, treatment, causal inference, survival, imputation",727,2025-03-13 13:12:00.000
+30,"dark, dark matter, dark energy, axion, halos",535,2025-03-13 13:12:00.000
+31,"predictive control, optimal control, predictive, model predictive, nonlinear systems",623,2025-03-13 13:12:00.000
+32,"navierstokes, navierstokes equations, compressible, equations, galerkin",457,2025-03-13 13:12:00.000
+33,"pulsar, gammaray, bursts, xray, timing",476,2025-03-13 13:12:00.000
+34,"software, code generation, vulnerability, llms, large language",816,2025-03-13 13:12:00.000
+35,"splatting, gaussian splatting, depth, 3d gaussian, scene",832,2025-03-13 13:12:00.000
+36,"encryption, gpu, riscv, serverless, hpc",615,2025-03-13 13:12:00.000
+37,"adversarial, attacks, backdoor, attack, adversarial attacks",538,2025-03-13 13:12:00.000
+38,"elliptic, fractional, equations, elliptic equations, laplacian",484,2025-03-13 13:12:00.000
+39,"operators, sobolev, inequalities, inequality, hardy",483,2025-03-13 13:12:00.000
+40,"clinical, health, medical, depression, language",716,2025-03-13 13:12:00.000
+41,"face, facial, deepfake, face recognition, recognition",549,2025-03-13 13:12:00.000
+42,"graph neural, link prediction, node, graphs, graph learning",431,2025-03-13 13:12:00.000
+43,"neutrino, neutrinos, mass, oscillations, dark",374,2025-03-13 13:12:00.000
+44,"superresolution, image restoration, restoration, image superresolution, video",534,2025-03-13 13:12:00.000
+45,"logic, automata, boolean, logics, modal",435,2025-03-13 13:12:00.000
+46,"solar, coronal, wind, flare, magnetic",333,2025-03-13 13:12:00.000
+47,"recommendation, recommender, recommender systems, recommendations, user",511,2025-03-13 13:12:00.000
+48,"plasma, plasmas, laser, electron, ionization",378,2025-03-13 13:12:00.000
+49,"federated, federated learning, client, personalized federated, heterogeneous",579,2025-03-13 13:12:00.000
+50,"bilayer, twisted, graphite, hall, moire",317,2025-03-13 13:12:00.000
+51,"question, retrievalaugmented, answering, question answering, retrievalaugmented generation",581,2025-03-13 13:12:00.000
+52,"schrodinger, nonlinear schrodinger, equations, wave, wave equations",411,2025-03-13 13:12:00.000
+53,"action, action recognition, reality, recognition, activity recognition",466,2025-03-13 13:12:00.000
+54,"visionlanguage, multimodal, visionlanguage models, reasoning, visual",842,2025-03-13 13:12:00.000
+55,"weather, climate, seismic, assimilation, earthquake",452,2025-03-13 13:12:00.000
+56,"turbulence, turbulent, convection, vortex, waves",333,2025-03-13 13:12:00.000
+57,"transformers, transformer, attention, vision, vision transformers",505,2025-03-13 13:12:00.000
+58,"uav, aerial, drone, uavs, swarm",397,2025-03-13 13:12:00.000
+59,"texttoimage, image generation, editing, video, video generation",712,2025-03-13 13:12:00.000
+60,"groups, subgroups, finite groups, finite, abelian groups",365,2025-03-13 13:12:00.000
+61,"blockchain, smart, smart contracts, fraud, contracts",326,2025-03-13 13:12:00.000
+62,"privacy, private, differentially private, differentially, differential privacy",385,2025-03-13 13:12:00.000
+63,"games, nash, game, mean field, equilibria",321,2025-03-13 13:12:00.000
+64,"brownian, sdes, brownian motion, stochastic differential, differential equations",284,2025-03-13 13:12:00.000
+65,"codes, decoding, polar, constructions, cyclic",267,2025-03-13 13:12:00.000
+66,"dialogue, chatgpt, conversational, taskoriented, gender",262,2025-03-13 13:12:00.000
+67,"anomaly, anomaly detection, outlier, time series, outlier detection",347,2025-03-13 13:12:00.000
+68,"physicsinformed, physicsinformed neural, differential equations, partial differential, pdes",351,2025-03-13 13:12:00.000
+69,"segmentation, semantic segmentation, semantic, instance segmentation, instance",252,2025-03-13 13:12:00.000
+70,"community, community detection, complex networks, centrality, social networks",211,2025-03-13 13:12:00.000
+71,"metamaterials, plasmonic, metamaterial, plasmon, tunable",259,2025-03-13 13:12:00.000
+72,"news, misinformation, fake, opinion, social",256,2025-03-13 13:12:00.000
+73,"diffusion models, inverse problems, flow matching, diffusion model, guidance",360,2025-03-13 13:12:00.000
+74,"supernova, ia, sn, remnant, remnants",185,2025-03-13 13:12:00.000
+75,"entanglement, multipartite, entanglement entropy, entangled, quantum entanglement",261,2025-03-13 13:12:00.000
+76,"boseeinstein, bose, condensates, superfluid, condensate",201,2025-03-13 13:12:00.000
+77,"neutron, neutron stars, star, stars, mergers",195,2025-03-13 13:12:00.000
+78,"matrices, random matrices, markov, markov chains, chains",180,2025-03-13 13:12:00.000
+79,"astronomy, telescope, astronomical, sky, observatory",162,2025-03-13 13:12:00.000
+80,"detector, detectors, readout, silicon, pixel",176,2025-03-13 13:12:00.000
+81,"knots, knot, links, braid, homology",197,2025-03-13 13:12:00.000
+82,"materials, interatomic, potentials, molecular, material",246,2025-03-13 13:12:00.000
+83,"remote sensing, remote, sensing, crop, plant",328,2025-03-13 13:12:00.000
+84,"summarization, sentiment, sentiment analysis, topic, abstractive",148,2025-03-13 13:12:00.000
+-1,"quantum, language, llms, llm, multimodal",65755,2025-07-24 16:48:00.000
+0,"galaxies, galaxy, stellar, stars, star",3329,2025-07-24 16:48:00.000
+1,"hall, spin, superconductivity, magnetic, films",3001,2025-07-24 16:48:00.000
+2,"collisions, qcd, production, decays, higgs",2136,2025-07-24 16:48:00.000
+3,"curvature, surfaces, curves, conjecture, varieties",2925,2025-07-24 16:48:00.000
+4,"gravity, gauge, inflation, theories, cosmological",1960,2025-07-24 16:48:00.000
+5,"mimo, wireless, communications, beamforming, communication",1847,2025-07-24 16:48:00.000
+6,"graphs, trees, hypergraphs, ramsey, coloring",1815,2025-07-24 16:48:00.000
+7,"language, language models, large language, reasoning, llms",2818,2025-07-24 16:48:00.000
+8,"segmentation, medical, mri, medical image, image segmentation",2068,2025-07-24 16:48:00.000
+9,"black, black hole, black holes, hole, holes",1668,2025-07-24 16:48:00.000
+10,"speech, audio, music, speech recognition, speaker",1687,2025-07-24 16:48:00.000
+11,"quantum, circuits, quantum circuits, quantum computing, circuit",1825,2025-07-24 16:48:00.000
+12,"time series, forecasting, series forecasting, multivariate, highdimensional",1426,2025-07-24 16:48:00.000
+13,"ai, agents, agentic, agent, intelligence",2118,2025-07-24 16:48:00.000
+14,"nonconvex, descent, convex, gradient descent, multiobjective",1164,2025-07-24 16:48:00.000
+15,"algebras, categories, lie, modules, algebra",976,2025-07-24 16:48:00.000
+16,"photonic, optical, cavity, waveguide, lithium",828,2025-07-24 16:48:00.000
+17,"protein, molecular, drug, cell, dna",1106,2025-07-24 16:48:00.000
+18,"spiking, eeg, brain, spiking neural, disease",1066,2025-07-24 16:48:00.000
+19,"financial, market, portfolio, stock, pricing",1085,2025-07-24 16:48:00.000
+20,"pruning, quantization, deep neural, training, dnn",683,2025-07-24 16:48:00.000
+21,"reinforcement learning, reinforcement, policy, reward, offline",897,2025-07-24 16:48:00.000
+22,"granular, porous, droplet, polymer, droplets",715,2025-07-24 16:48:00.000
+23,"electricity, charging, grid, power systems, wind",849,2025-07-24 16:48:00.000
+24,"driving, autonomous, autonomous driving, traffic, planning",935,2025-07-24 16:48:00.000
+25,"object detection, object, point cloud, lidar, cloud",711,2025-07-24 16:48:00.000
+26,"covid19, epidemic, pandemic, infection, disease",347,2025-07-24 16:48:00.000
+27,"domain adaptation, adaptation, label, multilabel, contrastive",592,2025-07-24 16:48:00.000
+28,"manipulation, robot, robotic, locomotion, humanoid",1036,2025-07-24 16:48:00.000
+29,"causal, treatment, causal inference, trials, imputation",859,2025-07-24 16:48:00.000
+30,"dark, dark matter, dark energy, axion, ultralight",666,2025-07-24 16:48:00.000
+31,"predictive control, optimal control, predictive, model predictive, nonlinear systems",737,2025-07-24 16:48:00.000
+32,"navierstokes, navierstokes equations, equations, galerkin, element",598,2025-07-24 16:48:00.000
+33,"pulsar, gammaray, bursts, xray, pulsars",495,2025-07-24 16:48:00.000
+34,"software, code generation, vulnerability, repair, llms",942,2025-07-24 16:48:00.000
+35,"splatting, gaussian splatting, 3d gaussian, depth, depth estimation",923,2025-07-24 16:48:00.000
+36,"gpu, serverless, hpc, cloud, riscv",728,2025-07-24 16:48:00.000
+37,"adversarial, attacks, backdoor, attack, adversarial attacks",640,2025-07-24 16:48:00.000
+38,"elliptic, fractional, equations, laplacian, elliptic equations",521,2025-07-24 16:48:00.000
+39,"operators, sobolev, inequalities, inequality, banach",545,2025-07-24 16:48:00.000
+40,"clinical, health, medical, depression, language",906,2025-07-24 16:48:00.000
+41,"face, facial, deepfake, face recognition, recognition",605,2025-07-24 16:48:00.000
+42,"graph neural, node, graphs, graph learning, link prediction",450,2025-07-24 16:48:00.000
+43,"neutrino, neutrinos, oscillations, mass, dark",447,2025-07-24 16:48:00.000
+44,"superresolution, image superresolution, restoration, image restoration, video",560,2025-07-24 16:48:00.000
+45,"logic, automata, logics, boolean, modal",488,2025-07-24 16:48:00.000
+46,"solar, coronal, wind, flare, magnetic",390,2025-07-24 16:48:00.000
+47,"recommendation, recommender, recommender systems, recommendations, collaborative filtering",611,2025-07-24 16:48:00.000
+48,"plasma, plasmas, laser, electron, ionization",412,2025-07-24 16:48:00.000
+49,"federated, federated learning, client, personalized federated, personalized",586,2025-07-24 16:48:00.000
+50,"bilayer, twisted, moire, graphite, hall",351,2025-07-24 16:48:00.000
+51,"question, answering, question answering, retrievalaugmented, retrieval",607,2025-07-24 16:48:00.000
+52,"schrodinger, nonlinear schrodinger, equations, wave, operators",446,2025-07-24 16:48:00.000
+53,"action, action recognition, reality, recognition, activity recognition",493,2025-07-24 16:48:00.000
+54,"visionlanguage, multimodal, visionlanguage models, reasoning, visual",1015,2025-07-24 16:48:00.000
+55,"climate, weather, assimilation, precipitation, seismic",576,2025-07-24 16:48:00.000
+56,"turbulence, turbulent, convection, vortex, boundary layers",390,2025-07-24 16:48:00.000
+57,"transformers, attention, transformer, vision, vision transformers",571,2025-07-24 16:48:00.000
+58,"uav, aerial, drone, swarm, uavs",508,2025-07-24 16:48:00.000
+59,"texttoimage, image generation, editing, video generation, video",757,2025-07-24 16:48:00.000
+60,"groups, subgroups, finite, finite groups, conjugacy",393,2025-07-24 16:48:00.000
+61,"blockchain, smart, fraud, contracts, smart contracts",367,2025-07-24 16:48:00.000
+62,"privacy, private, differentially private, differentially, differential privacy",374,2025-07-24 16:48:00.000
+63,"games, game, nash, equilibria, mean field",429,2025-07-24 16:48:00.000
+64,"brownian, brownian motion, sdes, stochastic differential, equations",387,2025-07-24 16:48:00.000
+65,"codes, decoding, polar, coding, constructions",358,2025-07-24 16:48:00.000
+66,"dialogue, conversational, chatgpt, gender, dialog",309,2025-07-24 16:48:00.000
+67,"anomaly, anomaly detection, outlier, time series, outlier detection",426,2025-07-24 16:48:00.000
+68,"physicsinformed, physicsinformed neural, differential equations, pdes, partial differential",464,2025-07-24 16:48:00.000
+69,"segmentation, semantic segmentation, semantic, instance, instance segmentation",233,2025-07-24 16:48:00.000
+70,"community, community detection, complex networks, centrality, social",251,2025-07-24 16:48:00.000
+71,"metamaterials, plasmonic, metamaterial, plasmon, dielectric",243,2025-07-24 16:48:00.000
+72,"news, misinformation, opinion, fake, social",314,2025-07-24 16:48:00.000
+73,"diffusion models, inverse problems, flow matching, diffusion model, guidance",492,2025-07-24 16:48:00.000
+74,"supernova, sn, ia, remnant, remnants",232,2025-07-24 16:48:00.000
+75,"entanglement, multipartite, entangled, entanglement entropy, genuine",295,2025-07-24 16:48:00.000
+76,"boseeinstein, bose, condensates, condensate, superfluid",244,2025-07-24 16:48:00.000
+77,"neutron, neutron stars, star, stars, mergers",242,2025-07-24 16:48:00.000
+78,"matrices, random matrices, markov, markov chains, chains",223,2025-07-24 16:48:00.000
+79,"astronomy, astronomical, telescope, sky, telescopes",208,2025-07-24 16:48:00.000
+80,"detector, detectors, pixel, silicon, liquid",197,2025-07-24 16:48:00.000
+81,"knots, knot, braid, links, homology",284,2025-07-24 16:48:00.000
+82,"materials, interatomic, potentials, additive manufacturing, molecular",360,2025-07-24 16:48:00.000
+83,"remote sensing, remote, sensing, plant, crop",336,2025-07-24 16:48:00.000
+84,"sentiment, summarization, sentiment analysis, topic, abstractive",191,2025-07-24 16:48:00.000
+-1,"quantum, llm, language, llms, multimodal",83257,2025-12-04 20:24:00.000
+0,"galaxies, galaxy, stellar, stars, star",4163,2025-12-04 20:24:00.000
+1,"hall, superconductivity, spin, magnetic, films",4137,2025-12-04 20:24:00.000
+2,"collisions, qcd, production, decays, quark",2894,2025-12-04 20:24:00.000
+3,"curvature, curves, surfaces, varieties, bundles",3558,2025-12-04 20:24:00.000
+4,"gravity, gauge, inflation, theories, cosmological",2730,2025-12-04 20:24:00.000
+5,"mimo, wireless, communications, beamforming, 6g",2190,2025-12-04 20:24:00.000
+6,"graphs, trees, hypergraphs, coloring, ramsey",2298,2025-12-04 20:24:00.000
+7,"language, language models, large language, reasoning, language model",3448,2025-12-04 20:24:00.000
+8,"segmentation, mri, medical, medical image, image segmentation",2167,2025-12-04 20:24:00.000
+9,"black, black hole, hole, black holes, holes",2220,2025-12-04 20:24:00.000
+10,"speech, audio, music, speech recognition, speaker",1838,2025-12-04 20:24:00.000
+11,"quantum, circuits, quantum circuits, quantum computing, quantum error",2365,2025-12-04 20:24:00.000
+12,"time series, forecasting, series forecasting, multivariate, carlo",1855,2025-12-04 20:24:00.000
+13,"ai, agents, agentic, agent, intelligence",3382,2025-12-04 20:24:00.000
+14,"nonconvex, convex, descent, multiobjective, gradient descent",1422,2025-12-04 20:24:00.000
+15,"algebras, categories, lie, modules, algebra",1206,2025-12-04 20:24:00.000
+16,"photonic, optical, waveguide, cavity, photon",1085,2025-12-04 20:24:00.000
+17,"protein, molecular, drug, cell, dna",1300,2025-12-04 20:24:00.000
+18,"spiking, brain, eeg, spiking neural, disease",1193,2025-12-04 20:24:00.000
+19,"financial, market, pricing, portfolio, volatility",1277,2025-12-04 20:24:00.000
+20,"quantization, pruning, relu, deep neural, training",880,2025-12-04 20:24:00.000
+21,"reinforcement learning, reinforcement, policy, offline, policy optimization",1345,2025-12-04 20:24:00.000
+22,"granular, porous, polymer, droplet, suspensions",929,2025-12-04 20:24:00.000
+23,"electricity, charging, grid, power systems, wind",973,2025-12-04 20:24:00.000
+24,"driving, autonomous, autonomous driving, traffic, planning",1022,2025-12-04 20:24:00.000
+25,"object detection, object, point cloud, lidar, cloud",819,2025-12-04 20:24:00.000
+26,"covid19, epidemic, pandemic, disease, infection",390,2025-12-04 20:24:00.000
+27,"domain adaptation, adaptation, label, multilabel, multitask",663,2025-12-04 20:24:00.000
+28,"manipulation, robot, robotic, humanoid, tactile",1283,2025-12-04 20:24:00.000
+29,"causal, treatment, causal inference, trials, treatment effects",1162,2025-12-04 20:24:00.000
+30,"dark, dark matter, dark energy, axion, halos",923,2025-12-04 20:24:00.000
+31,"predictive control, optimal control, predictive, model predictive, nonlinear systems",938,2025-12-04 20:24:00.000
+32,"navierstokes, navierstokes equations, compressible, equations, galerkin",763,2025-12-04 20:24:00.000
+33,"pulsar, gammaray, xray, pulsars, bursts",684,2025-12-04 20:24:00.000
+34,"code generation, software, vulnerability, repair, llms",1183,2025-12-04 20:24:00.000
+35,"splatting, gaussian splatting, 3d gaussian, depth, scene",1119,2025-12-04 20:24:00.000
+36,"gpu, serverless, encryption, hpc, gpus",883,2025-12-04 20:24:00.000
+37,"adversarial, attacks, backdoor, attack, adversarial attacks",625,2025-12-04 20:24:00.000
+38,"elliptic, fractional, equations, laplacian, parabolic",735,2025-12-04 20:24:00.000
+39,"operators, sobolev, inequalities, inequality, banach",598,2025-12-04 20:24:00.000
+40,"clinical, health, medical, mental, mental health",1143,2025-12-04 20:24:00.000
+41,"face, facial, deepfake, head, avatars",648,2025-12-04 20:24:00.000
+42,"graph neural, node, graphs, link prediction, graph learning",500,2025-12-04 20:24:00.000
+43,"neutrino, neutrinos, mass, dark, oscillations",608,2025-12-04 20:24:00.000
+44,"superresolution, restoration, image restoration, image superresolution, video",612,2025-12-04 20:24:00.000
+45,"logic, automata, boolean, logics, modal",610,2025-12-04 20:24:00.000
+46,"solar, coronal, flare, wind, magnetic",468,2025-12-04 20:24:00.000
+47,"recommendation, recommender, recommender systems, recommendations, collaborative filtering",700,2025-12-04 20:24:00.000
+48,"plasma, plasmas, laser, electron, acceleration",566,2025-12-04 20:24:00.000
+49,"federated, federated learning, client, vertical federated, privacy",590,2025-12-04 20:24:00.000
+50,"bilayer, twisted, graphite, moire, electronic",362,2025-12-04 20:24:00.000
+51,"question, answering, question answering, retrievalaugmented, retrievalaugmented generation",705,2025-12-04 20:24:00.000
+52,"schrodinger, nonlinear schrodinger, equations, wave, wave equations",565,2025-12-04 20:24:00.000
+53,"action, action recognition, reality, recognition, egocentric",550,2025-12-04 20:24:00.000
+54,"visionlanguage, multimodal, visionlanguage models, reasoning, visual",1418,2025-12-04 20:24:00.000
+55,"climate, weather, seismic, assimilation, precipitation",720,2025-12-04 20:24:00.000
+56,"turbulence, turbulent, convection, vortex, waves",531,2025-12-04 20:24:00.000
+57,"transformers, attention, transformer, vision, vision transformers",796,2025-12-04 20:24:00.000
+58,"uav, aerial, drone, uavs, swarm",635,2025-12-04 20:24:00.000
+59,"texttoimage, editing, video generation, video, image generation",935,2025-12-04 20:24:00.000
+60,"groups, subgroups, finite, finite groups, abelian groups",472,2025-12-04 20:24:00.000
+61,"blockchain, smart, contracts, smart contracts, fraud",381,2025-12-04 20:24:00.000
+62,"privacy, private, differentially private, differentially, differential privacy",509,2025-12-04 20:24:00.000
+63,"games, game, nash, mean field, equilibria",511,2025-12-04 20:24:00.000
+64,"brownian, brownian motion, sdes, stochastic differential, equations",420,2025-12-04 20:24:00.000
+65,"codes, decoding, polar, constructions, coding",441,2025-12-04 20:24:00.000
+66,"dialogue, conversational, chatgpt, dialog, gender",386,2025-12-04 20:24:00.000
+67,"anomaly, anomaly detection, outlier, time series, unsupervised",482,2025-12-04 20:24:00.000
+68,"physicsinformed, physicsinformed neural, differential equations, pdes, pde",547,2025-12-04 20:24:00.000
+69,"segmentation, semantic segmentation, semantic, instance segmentation, instance",267,2025-12-04 20:24:00.000
+70,"community, community detection, complex networks, centrality, communities",291,2025-12-04 20:24:00.000
+71,"metamaterials, plasmonic, metamaterial, plasmon, surface",278,2025-12-04 20:24:00.000
+72,"news, opinion, fake, misinformation, social",336,2025-12-04 20:24:00.000
+73,"diffusion models, inverse problems, flow matching, diffusion model, masked diffusion",781,2025-12-04 20:24:00.000
+74,"supernova, ia, sn, remnant, remnants",294,2025-12-04 20:24:00.000
+75,"entanglement, multipartite, entangled, entanglement entropy, quantum",395,2025-12-04 20:24:00.000
+76,"boseeinstein, condensates, bose, superfluid, condensate",283,2025-12-04 20:24:00.000
+77,"neutron, neutron stars, star, stars, mergers",289,2025-12-04 20:24:00.000
+78,"markov, matrices, random matrices, markov chains, chains",303,2025-12-04 20:24:00.000
+79,"telescope, astronomy, astronomical, sky, observatory",271,2025-12-04 20:24:00.000
+80,"detector, detectors, readout, liquid, silicon",294,2025-12-04 20:24:00.000
+81,"knots, knot, links, braid, homology",320,2025-12-04 20:24:00.000
+82,"materials, interatomic, potentials, additive manufacturing, manufacturing",424,2025-12-04 20:24:00.000
+83,"remote sensing, remote, sensing, crop, plant",451,2025-12-04 20:24:00.000
+84,"sentiment, summarization, sentiment analysis, topic, topic modeling",168,2025-12-04 20:24:00.000

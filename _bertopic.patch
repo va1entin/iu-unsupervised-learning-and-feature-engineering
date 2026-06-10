@@ -1,0 +1,6 @@
+863c863
+<         selected_topics = topics if topics else self.topics_
+---
+>         selected_topics = topics
+874d873
+<                 infer_datetime_format=infer_datetime_format,
