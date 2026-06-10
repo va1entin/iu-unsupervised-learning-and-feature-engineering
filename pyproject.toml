@@ -1,7 +1,7 @@
 [project]
 name = "iu-unsupervised-learning-and-feature-engineering"
 version = "0.1.0"
-description = "Comparison of LDA and BERTopic for topic modeling on Arxiv metadata set"
+description = "Comparison of LDA and BERTopic for topic modeling on Arxiv metadata set developed for IU course DLBDSMLUSL01"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
