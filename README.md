@@ -111,6 +111,11 @@ Use the variable `load_embeddings` in the first code cell to tell the BERTopic n
 
 Embeddings are saved to/expected at `/home/azureuser/iu-unsupervised-learning-and-feature-engineering/artifacts/BERTopic/bertopic-<corpus type>-<corpus row count>-embeddings.npy` where `corpus type` is either `title` or `concat` and `corpus row count` should be `1632186` if you use the Preprocessing pipeline and version `282` of the dataset as instructed.
 
+You can transfer them to the VM with scp for example
+```bash
+scp bertopic-<corpus type>-1632186-embeddings.npy azureuser@<IP>:iu-unsupervised-learning-and-feature-engineering/artifacts/BERTopic/bertopic-<corpus type>-1632186-embeddings.npy
+```
+
 ## Removal of resources with Terraform
 Once you're done using the machine and extracted all desired artifacts, you can remove the VM.
 
