@@ -116,6 +116,41 @@ You can transfer them to the VM with scp for example
 scp bertopic-<corpus type>-1632186-embeddings.npy azureuser@<IP>:iu-unsupervised-learning-and-feature-engineering/artifacts/BERTopic/bertopic-<corpus type>-1632186-embeddings.npy
 ```
 
+## Topic diversity calculation
+
+To calculate the topic diversity for a CSV file of topics, use the provided script [`calculate_topic_diversity.py`](https://github.com/va1entin/iu-unsupervised-learning-and-feature-engineering/blob/main/calculate_topic_diversity.py) and give it the path to a **Topics CSV file**.
+
+```bash
+python3 calculate_topic_diversity.py artifacts/BERTopic/bertopic-concat-1632186-topics.csv
+# Topic Diversity for artifacts/BERTopic/bertopic-concat-1632186-topics.csv:
+# 0.8973684210526316
+```
+
+## Find growing topics
+
+To find the top 10 most dynamically growing topics, use the provided script [`find_growing_topics.py`](https://github.com/va1entin/iu-unsupervised-learning-and-feature-engineering/blob/main/find_growing_topics.py) and give it the path to a **BERTopic Topics over time CSV file**.
+
+The growth rate is calculated as a log-linear trend of topic frequencies (paper counts) over the number of years that time bins exist for.
+
+```bash
+python3 find_growing_topics.py artifacts/BERTopic/bertopic-concat-1632186-topics_over_time.csv
+# Topic ID | Growth rate | Paper count change | Final representation words
+# --------------------------------------------------------------------------------------------------------------
+#       54 |     182.66% |               1616 | reward, llms, language models, large language, cot
+#       59 |      78.16% |                949 | transformers, language models, pruning, llms, incontext
+#       14 |      43.77% |               2031 | visionlanguage, editing, mllms, vlms, visionlanguage models
+```
+
+You can also specify `--start-date YYYY-MM-DD` to make the script only consider time bins on or after this date to find growing topics across more recent timeframes.
+```bash
+python3 find_growing_topics.py artifacts/BERTopic/bertopic-concat-1632186-topics_over_time.csv --start-date 2023-01-01
+# Topic ID | Growth rate | Paper count change | Final representation words
+# --------------------------------------------------------------------------------------------------------------
+#       54 |     244.14% |               1581 | reward, llms, language models, large language, cot
+#       59 |     109.29% |                880 | transformers, language models, pruning, llms, incontext
+#       26 |      76.72% |               1313 | attacks, llms, malware, jailbreak, malicious
+```
+
 ## Removal of resources with Terraform
 Once you're done using the machine and extracted all desired artifacts, you can remove the VM.
 
