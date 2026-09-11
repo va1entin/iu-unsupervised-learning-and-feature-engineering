@@ -1,0 +1,1461 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script>function neighbourhoodHighlight(params) {
+  // console.log("in nieghbourhoodhighlight");
+  allNodes = nodes.get({ returnType: "Object" });
+  // originalNodes = JSON.parse(JSON.stringify(allNodes));
+  // if something is selected:
+  if (params.nodes.length > 0) {
+    highlightActive = true;
+    var i, j;
+    var selectedNode = params.nodes[0];
+    var degrees = 2;
+
+    // mark all nodes as hard to read.
+    for (let nodeId in allNodes) {
+      // nodeColors[nodeId] = allNodes[nodeId].color;
+      allNodes[nodeId].color = "rgba(200,200,200,0.5)";
+      if (allNodes[nodeId].hiddenLabel === undefined) {
+        allNodes[nodeId].hiddenLabel = allNodes[nodeId].label;
+        allNodes[nodeId].label = undefined;
+      }
+    }
+    var connectedNodes = network.getConnectedNodes(selectedNode);
+    var allConnectedNodes = [];
+
+    // get the second degree nodes
+    for (i = 1; i < degrees; i++) {
+      for (j = 0; j < connectedNodes.length; j++) {
+        allConnectedNodes = allConnectedNodes.concat(
+          network.getConnectedNodes(connectedNodes[j])
+        );
+      }
+    }
+
+    // all second degree nodes get a different color and their label back
+    for (i = 0; i < allConnectedNodes.length; i++) {
+      // allNodes[allConnectedNodes[i]].color = "pink";
+      allNodes[allConnectedNodes[i]].color = "rgba(150,150,150,0.75)";
+      if (allNodes[allConnectedNodes[i]].hiddenLabel !== undefined) {
+        allNodes[allConnectedNodes[i]].label =
+          allNodes[allConnectedNodes[i]].hiddenLabel;
+        allNodes[allConnectedNodes[i]].hiddenLabel = undefined;
+      }
+    }
+
+    // all first degree nodes get their own color and their label back
+    for (i = 0; i < connectedNodes.length; i++) {
+      // allNodes[connectedNodes[i]].color = undefined;
+      allNodes[connectedNodes[i]].color = nodeColors[connectedNodes[i]];
+      if (allNodes[connectedNodes[i]].hiddenLabel !== undefined) {
+        allNodes[connectedNodes[i]].label =
+          allNodes[connectedNodes[i]].hiddenLabel;
+        allNodes[connectedNodes[i]].hiddenLabel = undefined;
+      }
+    }
+
+    // the main node gets its own color and its label back.
+    // allNodes[selectedNode].color = undefined;
+    allNodes[selectedNode].color = nodeColors[selectedNode];
+    if (allNodes[selectedNode].hiddenLabel !== undefined) {
+      allNodes[selectedNode].label = allNodes[selectedNode].hiddenLabel;
+      allNodes[selectedNode].hiddenLabel = undefined;
+    }
+  } else if (highlightActive === true) {
+    // console.log("highlightActive was true");
+    // reset all nodes
+    for (let nodeId in allNodes) {
+      // allNodes[nodeId].color = "purple";
+      allNodes[nodeId].color = nodeColors[nodeId];
+      // delete allNodes[nodeId].color;
+      if (allNodes[nodeId].hiddenLabel !== undefined) {
+        allNodes[nodeId].label = allNodes[nodeId].hiddenLabel;
+        allNodes[nodeId].hiddenLabel = undefined;
+      }
+    }
+    highlightActive = false;
+  }
+
+  // transform the object into an array
+  var updateArray = [];
+  if (params.nodes.length > 0) {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        // console.log(allNodes[nodeId]);
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  } else {
+    // console.log("Nothing was selected");
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        // console.log(allNodes[nodeId]);
+        // allNodes[nodeId].color = {};
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  }
+}
+
+function filterHighlight(params) {
+  allNodes = nodes.get({ returnType: "Object" });
+  // if something is selected:
+  if (params.nodes.length > 0) {
+    filterActive = true;
+    let selectedNodes = params.nodes;
+
+    // hiding all nodes and saving the label
+    for (let nodeId in allNodes) {
+      allNodes[nodeId].hidden = true;
+      if (allNodes[nodeId].savedLabel === undefined) {
+        allNodes[nodeId].savedLabel = allNodes[nodeId].label;
+        allNodes[nodeId].label = undefined;
+      }
+    }
+
+    for (let i=0; i < selectedNodes.length; i++) {
+      allNodes[selectedNodes[i]].hidden = false;
+      if (allNodes[selectedNodes[i]].savedLabel !== undefined) {
+        allNodes[selectedNodes[i]].label = allNodes[selectedNodes[i]].savedLabel;
+        allNodes[selectedNodes[i]].savedLabel = undefined;
+      }
+    }
+
+  } else if (filterActive === true) {
+    // reset all nodes
+    for (let nodeId in allNodes) {
+      allNodes[nodeId].hidden = false;
+      if (allNodes[nodeId].savedLabel !== undefined) {
+        allNodes[nodeId].label = allNodes[nodeId].savedLabel;
+        allNodes[nodeId].savedLabel = undefined;
+      }
+    }
+    filterActive = false;
+  }
+
+  // transform the object into an array
+  var updateArray = [];
+  if (params.nodes.length > 0) {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  } else {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  }
+}
+
+function selectNode(nodes) {
+  network.selectNodes(nodes);
+  neighbourhoodHighlight({ nodes: nodes });
+  return nodes;
+}
+
+function selectNodes(nodes) {
+  network.selectNodes(nodes);
+  filterHighlight({nodes: nodes});
+  return nodes;
+}
+
+function highlightFilter(filter) {
+  let selectedNodes = []
+  let selectedProp = filter['property']
+  if (filter['item'] === 'node') {
+    let allNodes = nodes.get({ returnType: "Object" });
+    for (let nodeId in allNodes) {
+      if (allNodes[nodeId][selectedProp] && filter['value'].includes((allNodes[nodeId][selectedProp]).toString())) {
+        selectedNodes.push(nodeId)
+      }
+    }
+  }
+  else if (filter['item'] === 'edge'){
+    let allEdges = edges.get({returnType: 'object'});
+    // check if the selected property exists for selected edge and select the nodes connected to the edge
+    for (let edge in allEdges) {
+      if (allEdges[edge][selectedProp] && filter['value'].includes((allEdges[edge][selectedProp]).toString())) {
+        selectedNodes.push(allEdges[edge]['from'])
+        selectedNodes.push(allEdges[edge]['to'])
+      }
+    }
+  }
+  selectNodes(selectedNodes)
+}</script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+            
+            
+            
+            
+            
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tom-select/2.0.0-rc.4/css/tom-select.min.css" integrity="sha512-43fHB3GLgZfz8QXl1RPQ8O66oIgv3po9cJ5erMt1c4QISq9dYb195T3vr5ImnJPXuVroKcGBPXBFKETW8jrPNQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/tom-select/2.0.0-rc.4/js/tom-select.complete.js" integrity="sha512-jeF9CfnvzDiw9G9xiksVjxR2lib44Gnovvkv+3CgCG6NXCD4gqlA5nDAVW5WjpA+i+/zKsUWV5xNEbW1X/HH0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 1080px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 1080px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+                <div id="select-menu" class="card-header">
+                    <div class="row no-gutters">
+                        <div class="col-10 pb-2">
+                            <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="selectNode([value]);"
+                            id="select-node"
+                            placeholder="Select node..."
+                            >
+                                <option selected>Select a Node by ID</option>
+                                
+                                    <option value="0">0</option>
+                                
+                                    <option value="stars">stars</option>
+                                
+                                    <option value="galaxies">galaxies</option>
+                                
+                                    <option value="dark">dark</option>
+                                
+                                    <option value="stellar">stellar</option>
+                                
+                                    <option value="galaxy">galaxy</option>
+                                
+                                    <option value="emission">emission</option>
+                                
+                                    <option value="gravitational">gravitational</option>
+                                
+                                    <option value="black hole">black hole</option>
+                                
+                                    <option value="hole">hole</option>
+                                
+                                    <option value="dark matter">dark matter</option>
+                                
+                                    <option value="1">1</option>
+                                
+                                    <option value="algebras">algebras</option>
+                                
+                                    <option value="varieties">varieties</option>
+                                
+                                    <option value="cohomology">cohomology</option>
+                                
+                                    <option value="polynomials">polynomials</option>
+                                
+                                    <option value="elliptic">elliptic</option>
+                                
+                                    <option value="projective">projective</option>
+                                
+                                    <option value="abelian">abelian</option>
+                                
+                                    <option value="fractional">fractional</option>
+                                
+                                    <option value="moduli">moduli</option>
+                                
+                                    <option value="invariants">invariants</option>
+                                
+                                    <option value="2">2</option>
+                                
+                                    <option value="wireless">wireless</option>
+                                
+                                    <option value="mimo">mimo</option>
+                                
+                                    <option value="beamforming">beamforming</option>
+                                
+                                    <option value="ris">ris</option>
+                                
+                                    <option value="antenna">antenna</option>
+                                
+                                    <option value="5g">5g</option>
+                                
+                                    <option value="intelligent">intelligent</option>
+                                
+                                    <option value="6g">6g</option>
+                                
+                                    <option value="csi">csi</option>
+                                
+                                    <option value="transmit">transmit</option>
+                                
+                                    <option value="3">3</option>
+                                
+                                    <option value="particles">particles</option>
+                                
+                                    <option value="liquid">liquid</option>
+                                
+                                    <option value="shear">shear</option>
+                                
+                                    <option value="turbulent">turbulent</option>
+                                
+                                    <option value="turbulence">turbulence</option>
+                                
+                                    <option value="droplet">droplet</option>
+                                
+                                    <option value="polymer">polymer</option>
+                                
+                                    <option value="reynolds">reynolds</option>
+                                
+                                    <option value="droplets">droplets</option>
+                                
+                                    <option value="fluids">fluids</option>
+                                
+                                    <option value="4">4</option>
+                                
+                                    <option value="segmentation">segmentation</option>
+                                
+                                    <option value="mri">mri</option>
+                                
+                                    <option value="clinical">clinical</option>
+                                
+                                    <option value="ct">ct</option>
+                                
+                                    <option value="medical image">medical image</option>
+                                
+                                    <option value="cancer">cancer</option>
+                                
+                                    <option value="surgical">surgical</option>
+                                
+                                    <option value="tumor">tumor</option>
+                                
+                                    <option value="image segmentation">image segmentation</option>
+                                
+                                    <option value="brain">brain</option>
+                                
+                                    <option value="5">5</option>
+                                
+                                    <option value="speech">speech</option>
+                                
+                                    <option value="audio">audio</option>
+                                
+                                    <option value="speaker">speaker</option>
+                                
+                                    <option value="music">music</option>
+                                
+                                    <option value="asr">asr</option>
+                                
+                                    <option value="emotion">emotion</option>
+                                
+                                    <option value="speech recognition">speech recognition</option>
+                                
+                                    <option value="voice">voice</option>
+                                
+                                    <option value="acoustic">acoustic</option>
+                                
+                                    <option value="speakers">speakers</option>
+                                
+                                    <option value="6">6</option>
+                                
+                                    <option value="policy">policy</option>
+                                
+                                    <option value="reinforcement learning">reinforcement learning</option>
+                                
+                                    <option value="robot">robot</option>
+                                
+                                    <option value="rl">rl</option>
+                                
+                                    <option value="robots">robots</option>
+                                
+                                    <option value="robotic">robotic</option>
+                                
+                                    <option value="policies">policies</option>
+                                
+                                    <option value="reward">reward</option>
+                                
+                                    <option value="planning">planning</option>
+                                
+                                    <option value="offline">offline</option>
+                                
+                                    <option value="7">7</option>
+                                
+                                    <option value="vertex">vertex</option>
+                                
+                                    <option value="coloring">coloring</option>
+                                
+                                    <option value="subgraph">subgraph</option>
+                                
+                                    <option value="bipartite">bipartite</option>
+                                
+                                    <option value="planar">planar</option>
+                                
+                                    <option value="chromatic">chromatic</option>
+                                
+                                    <option value="hypergraphs">hypergraphs</option>
+                                
+                                    <option value="clique">clique</option>
+                                
+                                    <option value="hypergraph">hypergraph</option>
+                                
+                                    <option value="chromatic number">chromatic number</option>
+                                
+                                    <option value="result chromatic">result chromatic</option>
+                                
+                                    <option value="8">8</option>
+                                
+                                    <option value="scene">scene</option>
+                                
+                                    <option value="point cloud">point cloud</option>
+                                
+                                    <option value="lidar">lidar</option>
+                                
+                                    <option value="camera">camera</option>
+                                
+                                    <option value="point clouds">point clouds</option>
+                                
+                                    <option value="scenes">scenes</option>
+                                
+                                    <option value="clouds">clouds</option>
+                                
+                                    <option value="slam">slam</option>
+                                
+                                    <option value="monocular">monocular</option>
+                                
+                                    <option value="multiview">multiview</option>
+                                
+                                    <option value="9">9</option>
+                                
+                                    <option value="brownian">brownian</option>
+                                
+                                    <option value="percolation">percolation</option>
+                                
+                                    <option value="brownian motion">brownian motion</option>
+                                
+                                    <option value="random walk">random walk</option>
+                                
+                                    <option value="stochastic differential">stochastic differential</option>
+                                
+                                    <option value="random variables">random variables</option>
+                                
+                                    <option value="levy">levy</option>
+                                
+                                    <option value="walks">walks</option>
+                                
+                                    <option value="random walks">random walks</option>
+                                
+                                    <option value="2404.07486">2404.07486</option>
+                                
+                                    <option value="graphs chromatic">graphs chromatic</option>
+                                
+                                    <option value="chromatic number concept">chromatic number concept</option>
+                                
+                                    <option value="free graphs">free graphs</option>
+                                
+                                    <option value="free graph">free graph</option>
+                                
+                                    <option value="2107.10105">2107.10105</option>
+                                
+                                    <option value="fullerene graphs">fullerene graphs</option>
+                                
+                                    <option value="graphs fullerene">graphs fullerene</option>
+                                
+                                    <option value="fullerene graph">fullerene graph</option>
+                                
+                                    <option value="complexity fullerene">complexity fullerene</option>
+                                
+                                    <option value="models fullerene">models fullerene</option>
+                                
+                                    <option value="2412.09410">2412.09410</option>
+                                
+                                    <option value="acyclically colourable">acyclically colourable</option>
+                                
+                                    <option value="list colourable">list colourable</option>
+                                
+                                    <option value="graphs acyclically">graphs acyclically</option>
+                                
+                                    <option value="colourable bound">colourable bound</option>
+                                
+                                    <option value="vertex colouring">vertex colouring</option>
+                                
+                                    <option value="colorings vertex">colorings vertex</option>
+                                
+                                    <option value="vertices colors">vertices colors</option>
+                                
+                                    <option value="2103.11892">2103.11892</option>
+                                
+                                    <option value="free colorings">free colorings</option>
+                                
+                                    <option value="edge colorings">edge colorings</option>
+                                
+                                    <option value="graphs unique">graphs unique</option>
+                                
+                                    <option value="2112.04230">2112.04230</option>
+                                
+                                    <option value="isospectral graphs">isospectral graphs</option>
+                                
+                                    <option value="graphs isospectral">graphs isospectral</option>
+                                
+                                    <option value="isospectral metric">isospectral metric</option>
+                                
+                                    <option value="isospectrality">isospectrality</option>
+                                
+                                    <option value="metric graphs">metric graphs</option>
+                                
+                                    <option value="2004.10097">2004.10097</option>
+                                
+                                    <option value="heated intergalactic">heated intergalactic</option>
+                                
+                                    <option value="cosmic signals">cosmic signals</option>
+                                
+                                    <option value="bias cosmic">bias cosmic</option>
+                                
+                                    <option value="intergalactic">intergalactic</option>
+                                
+                                    <option value="known cosmic">known cosmic</option>
+                                
+                                    <option value="2203.06878">2203.06878</option>
+                                
+                                    <option value="intrinsic nucleon">intrinsic nucleon</option>
+                                
+                                    <option value="vacuum weinberg">vacuum weinberg</option>
+                                
+                                    <option value="nucleon vertex">nucleon vertex</option>
+                                
+                                    <option value="qcd">qcd</option>
+                                
+                                    <option value="pion nucleon">pion nucleon</option>
+                                
+                                    <option value="2503.14025">2503.14025</option>
+                                
+                                    <option value="cosmic rays">cosmic rays</option>
+                                
+                                    <option value="propagation heliosphere">propagation heliosphere</option>
+                                
+                                    <option value="cosmic protons">cosmic protons</option>
+                                
+                                    <option value="modulation cosmic">modulation cosmic</option>
+                                
+                                    <option value="cosmic ray">cosmic ray</option>
+                                
+                                    <option value="2004.07263">2004.07263</option>
+                                
+                                    <option value="cosmological models">cosmological models</option>
+                                
+                                    <option value="cosmological parameter">cosmological parameter</option>
+                                
+                                    <option value="universe modifications">universe modifications</option>
+                                
+                                    <option value="cosmology">cosmology</option>
+                                
+                                    <option value="perform cosmological">perform cosmological</option>
+                                
+                                    <option value="2003.08845">2003.08845</option>
+                                
+                                    <option value="galaxy rotation">galaxy rotation</option>
+                                
+                                    <option value="spiral galaxies">spiral galaxies</option>
+                                
+                                    <option value="model galaxies">model galaxies</option>
+                                
+                                    <option value="galaxies concept">galaxies concept</option>
+                                
+                                    <option value="galaxies velocities">galaxies velocities</option>
+                                
+                                    <option value="2310.02962">2310.02962</option>
+                                
+                                    <option value="k3 fibrations">k3 fibrations</option>
+                                
+                                    <option value="k3 fibration">k3 fibration</option>
+                                
+                                    <option value="projective fold">projective fold</option>
+                                
+                                    <option value="fibration k_y">fibration k_y</option>
+                                
+                                    <option value="folds k3">folds k3</option>
+                                
+                                    <option value="2501.17426">2501.17426</option>
+                                
+                                    <option value="generated ideals">generated ideals</option>
+                                
+                                    <option value="finite generators">finite generators</option>
+                                
+                                    <option value="finite generating">finite generating</option>
+                                
+                                    <option value="infinitely generated">infinitely generated</option>
+                                
+                                    <option value="generating sets">generating sets</option>
+                                
+                                    <option value="1712.05984">1712.05984</option>
+                                
+                                    <option value="dirac systems">dirac systems</option>
+                                
+                                    <option value="selfadjoint dirac">selfadjoint dirac</option>
+                                
+                                    <option value="darboux transformations">darboux transformations</option>
+                                
+                                    <option value="skew selfadjoint">skew selfadjoint</option>
+                                
+                                    <option value="explicit solutions">explicit solutions</option>
+                                
+                                    <option value="2108.07395">2108.07395</option>
+                                
+                                    <option value="attractor wave">attractor wave</option>
+                                
+                                    <option value="damping nonlocal">damping nonlocal</option>
+                                
+                                    <option value="global attractor">global attractor</option>
+                                
+                                    <option value="critical nonlinearity">critical nonlinearity</option>
+                                
+                                    <option value="weak damping">weak damping</option>
+                                
+                                    <option value="2105.00446">2105.00446</option>
+                                
+                                    <option value="nilsystem homogeneous">nilsystem homogeneous</option>
+                                
+                                    <option value="nilpotent homogeneous">nilpotent homogeneous</option>
+                                
+                                    <option value="dimensional nilpotent">dimensional nilpotent</option>
+                                
+                                    <option value="ergodic averages">ergodic averages</option>
+                                
+                                    <option value="characteristic factors">characteristic factors</option>
+                                
+                                    <option value="2403.10050">2403.10050</option>
+                                
+                                    <option value="learnable texture">learnable texture</option>
+                                
+                                    <option value="texture 3d">texture 3d</option>
+                                
+                                    <option value="texture gs">texture gs</option>
+                                
+                                    <option value="texture capture">texture capture</option>
+                                
+                                    <option value="texture mapping">texture mapping</option>
+                                
+                                    <option value="2206.03087">2206.03087</option>
+                                
+                                    <option value="surface regularization">surface regularization</option>
+                                
+                                    <option value="surface reconstruction">surface reconstruction</option>
+                                
+                                    <option value="surface reconstructions">surface reconstructions</option>
+                                
+                                    <option value="robust reconstruction">robust reconstruction</option>
+                                
+                                    <option value="hessian regularization">hessian regularization</option>
+                                
+                                    <option value="2311.07301">2311.07301</option>
+                                
+                                    <option value="geo localization">geo localization</option>
+                                
+                                    <option value="landmarks observable">landmarks observable</option>
+                                
+                                    <option value="trajectory estimation">trajectory estimation</option>
+                                
+                                    <option value="localization based">localization based</option>
+                                
+                                    <option value="localization relies">localization relies</option>
+                                
+                                    <option value="2404.11958">2404.11958</option>
+                                
+                                    <option value="voxels easy">voxels easy</option>
+                                
+                                    <option value="hard voxels">hard voxels</option>
+                                
+                                    <option value="hard voxel">hard voxel</option>
+                                
+                                    <option value="voxel">voxel</option>
+                                
+                                    <option value="semantic scene">semantic scene</option>
+                                
+                                    <option value="2411.14158">2411.14158</option>
+                                
+                                    <option value="graph convolutional">graph convolutional</option>
+                                
+                                    <option value="graph convolution">graph convolution</option>
+                                
+                                    <option value="cloud denoising">cloud denoising</option>
+                                
+                                    <option value="convolution networks">convolution networks</option>
+                                
+                                    <option value="point cloud concept">point cloud concept</option>
+                                
+                                    <option value="2105.14105">2105.14105</option>
+                                
+                                    <option value="learning control">learning control</option>
+                                
+                                    <option value="particles control">particles control</option>
+                                
+                                    <option value="dynamics mixing">dynamics mixing</option>
+                                
+                                    <option value="particle interactions">particle interactions</option>
+                                
+                                    <option value="reinforcement learning concept">reinforcement learning concept</option>
+                                
+                                    <option value="2110.14469">2110.14469</option>
+                                
+                                    <option value="particle geometries">particle geometries</option>
+                                
+                                    <option value="characterize phenotypic">characterize phenotypic</option>
+                                
+                                    <option value="phenotypic trait">phenotypic trait</option>
+                                
+                                    <option value="trait geometries">trait geometries</option>
+                                
+                                    <option value="geometries variation">geometries variation</option>
+                                
+                                    <option value="2411.14778">2411.14778</option>
+                                
+                                    <option value="dynamics polymer">dynamics polymer</option>
+                                
+                                    <option value="fluctuations polymers">fluctuations polymers</option>
+                                
+                                    <option value="polymeric systems">polymeric systems</option>
+                                
+                                    <option value="dynamics chains">dynamics chains</option>
+                                
+                                    <option value="active polymeric">active polymeric</option>
+                                
+                                    <option value="2204.07127">2204.07127</option>
+                                
+                                    <option value="diffusion soft">diffusion soft</option>
+                                
+                                    <option value="jamming shear">jamming shear</option>
+                                
+                                    <option value="athermal particles">athermal particles</option>
+                                
+                                    <option value="diffusion">diffusion</option>
+                                
+                                    <option value="relaxation dynamics">relaxation dynamics</option>
+                                
+                                    <option value="cross diffusion">cross diffusion</option>
+                                
+                                    <option value="diffusion macroscopic">diffusion macroscopic</option>
+                                
+                                    <option value="2309.01034">2309.01034</option>
+                                
+                                    <option value="cytoskeleton discrete">cytoskeleton discrete</option>
+                                
+                                    <option value="cytoskeletal filament">cytoskeletal filament</option>
+                                
+                                    <option value="filament networks">filament networks</option>
+                                
+                                    <option value="stressed cytoskeletal">stressed cytoskeletal</option>
+                                
+                                    <option value="protein filaments">protein filaments</option>
+                                
+                                    <option value="2202.09609">2202.09609</option>
+                                
+                                    <option value="reconstructed ct">reconstructed ct</option>
+                                
+                                    <option value="ct reconstruction">ct reconstruction</option>
+                                
+                                    <option value="cagan adversarial">cagan adversarial</option>
+                                
+                                    <option value="tomography ct">tomography ct</option>
+                                
+                                    <option value="ct image">ct image</option>
+                                
+                                    <option value="2409.00639">2409.00639</option>
+                                
+                                    <option value="detecting bleeding">detecting bleeding</option>
+                                
+                                    <option value="bleeding detection">bleeding detection</option>
+                                
+                                    <option value="gastrointestinal bleeding">gastrointestinal bleeding</option>
+                                
+                                    <option value="capsule endoscopy">capsule endoscopy</option>
+                                
+                                    <option value="endoscopy insights">endoscopy insights</option>
+                                
+                                    <option value="2204.03014">2204.03014</option>
+                                
+                                    <option value="cnn volumetric">cnn volumetric</option>
+                                
+                                    <option value="cell segmentation">cell segmentation</option>
+                                
+                                    <option value="volumetric cell">volumetric cell</option>
+                                
+                                    <option value="cnns vision">cnns vision</option>
+                                
+                                    <option value="cnn models">cnn models</option>
+                                
+                                    <option value="2212.05566">2212.05566</option>
+                                
+                                    <option value="annotated segmentation">annotated segmentation</option>
+                                
+                                    <option value="segmentation weakly">segmentation weakly</option>
+                                
+                                    <option value="structure segmentation">structure segmentation</option>
+                                
+                                    <option value="segmentation concept">segmentation concept</option>
+                                
+                                    <option value="segmentation labels">segmentation labels</option>
+                                
+                                    <option value="2101.01570">2101.01570</option>
+                                
+                                    <option value="reconstruction deep">reconstruction deep</option>
+                                
+                                    <option value="mri reconstruction">mri reconstruction</option>
+                                
+                                    <option value="density compensated">density compensated</option>
+                                
+                                    <option value="density compensation">density compensation</option>
+                                
+                                    <option value="unrolled neural">unrolled neural</option>
+                                
+                                    <option value="1809.03394">1809.03394</option>
+                                
+                                    <option value="symmetric quaternionic">symmetric quaternionic</option>
+                                
+                                    <option value="hermitian quaternionic">hermitian quaternionic</option>
+                                
+                                    <option value="quaternionic matrices">quaternionic matrices</option>
+                                
+                                    <option value="pdf eigenvalues">pdf eigenvalues</option>
+                                
+                                    <option value="dual quaternionic">dual quaternionic</option>
+                                
+                                    <option value="1906.08060">1906.08060</option>
+                                
+                                    <option value="parabolic systems">parabolic systems</option>
+                                
+                                    <option value="nonlinear parabolic">nonlinear parabolic</option>
+                                
+                                    <option value="1910.00743">1910.00743</option>
+                                
+                                    <option value="fluctuations jacobi">fluctuations jacobi</option>
+                                
+                                    <option value="point processes">point processes</option>
+                                
+                                    <option value="fluctuations jointly">fluctuations jointly</option>
+                                
+                                    <option value="jointly gaussian">jointly gaussian</option>
+                                
+                                    <option value="gaussian explicit">gaussian explicit</option>
+                                
+                                    <option value="1903.10755">1903.10755</option>
+                                
+                                    <option value="distribution equation">distribution equation</option>
+                                
+                                    <option value="distribution solution">distribution solution</option>
+                                
+                                    <option value="tail distribution">tail distribution</option>
+                                
+                                    <option value="law equation">law equation</option>
+                                
+                                    <option value="consider distribution">consider distribution</option>
+                                
+                                    <option value="1106.2717">1106.2717</option>
+                                
+                                    <option value="continuum statistics">continuum statistics</option>
+                                
+                                    <option value="polymer disordered">polymer disordered</option>
+                                
+                                    <option value="directed polymer">directed polymer</option>
+                                
+                                    <option value="directed polymers">directed polymers</option>
+                                
+                                    <option value="polymer interpretation">polymer interpretation</option>
+                                
+                                    <option value="2310.18573">2310.18573</option>
+                                
+                                    <option value="channel estimation">channel estimation</option>
+                                
+                                    <option value="channel information">channel information</option>
+                                
+                                    <option value="priori channel">priori channel</option>
+                                
+                                    <option value="statistical channel">statistical channel</option>
+                                
+                                    <option value="pilot signal">pilot signal</option>
+                                
+                                    <option value="2405.11138">2405.11138</option>
+                                
+                                    <option value="sampling internet">sampling internet</option>
+                                
+                                    <option value="regionalizing crowdsourced">regionalizing crowdsourced</option>
+                                
+                                    <option value="crowdsourced latency">crowdsourced latency</option>
+                                
+                                    <option value="crowdsourced measurements">crowdsourced measurements</option>
+                                
+                                    <option value="crowdsourced measurement">crowdsourced measurement</option>
+                                
+                                    <option value="2212.06987">2212.06987</option>
+                                
+                                    <option value="privacy b5g">privacy b5g</option>
+                                
+                                    <option value="data privacy">data privacy</option>
+                                
+                                    <option value="upgrade privacy">upgrade privacy</option>
+                                
+                                    <option value="privacy leakages">privacy leakages</option>
+                                
+                                    <option value="current privacy">current privacy</option>
+                                
+                                    <option value="1902.00408">1902.00408</option>
+                                
+                                    <option value="lte devices">lte devices</option>
+                                
+                                    <option value="devices lte">devices lte</option>
+                                
+                                    <option value="iot traffic">iot traffic</option>
+                                
+                                    <option value="lte networks">lte networks</option>
+                                
+                                    <option value="lte supporting">lte supporting</option>
+                                
+                                    <option value="2107.10294">2107.10294</option>
+                                
+                                    <option value="protocol cellular">protocol cellular</option>
+                                
+                                    <option value="ra protocols">ra protocols</option>
+                                
+                                    <option value="network multiple">network multiple</option>
+                                
+                                    <option value="multiple access">multiple access</option>
+                                
+                                    <option value="access points">access points</option>
+                                
+                                    <option value="1902.05546">1902.05546</option>
+                                
+                                    <option value="agent robotic">agent robotic</option>
+                                
+                                    <option value="modular agents">modular agents</option>
+                                
+                                    <option value="agents learns">agents learns</option>
+                                
+                                    <option value="primitive agents">primitive agents</option>
+                                
+                                    <option value="learns dynamically">learns dynamically</option>
+                                
+                                    <option value="2304.10888">2304.10888</option>
+                                
+                                    <option value="legged locomotion">legged locomotion</option>
+                                
+                                    <option value="locomotion skills">locomotion skills</option>
+                                
+                                    <option value="animal locomotion">animal locomotion</option>
+                                
+                                    <option value="locomotion data">locomotion data</option>
+                                
+                                    <option value="robot legged">robot legged</option>
+                                
+                                    <option value="2506.10138">2506.10138</option>
+                                
+                                    <option value="learned search">learned search</option>
+                                
+                                    <option value="rnn plays">rnn plays</option>
+                                
+                                    <option value="rnn trained">rnn trained</option>
+                                
+                                    <option value="network rnn">network rnn</option>
+                                
+                                    <option value="function rnn">function rnn</option>
+                                
+                                    <option value="2410.10803">2410.10803</option>
+                                
+                                    <option value="manipulation humanoid">manipulation humanoid</option>
+                                
+                                    <option value="humanoid manipulation">humanoid manipulation</option>
+                                
+                                    <option value="robotic teleoperation">robotic teleoperation</option>
+                                
+                                    <option value="policies humanoid">policies humanoid</option>
+                                
+                                    <option value="robot data">robot data</option>
+                                
+                                    <option value="2012.12209">2012.12209</option>
+                                
+                                    <option value="grasping skills">grasping skills</option>
+                                
+                                    <option value="grasping tasks">grasping tasks</option>
+                                
+                                    <option value="design grasping">design grasping</option>
+                                
+                                    <option value="morphology grasping">morphology grasping</option>
+                                
+                                    <option value="grasping">grasping</option>
+                                
+                                    <option value="2407.11745">2407.11745</option>
+                                
+                                    <option value="supervised audio">supervised audio</option>
+                                
+                                    <option value="audioset">audioset</option>
+                                
+                                    <option value="sound separation">sound separation</option>
+                                
+                                    <option value="methods audioset">methods audioset</option>
+                                
+                                    <option value="audio masked">audio masked</option>
+                                
+                                    <option value="1904.04100">1904.04100</option>
+                                
+                                    <option value="generative adversarial">generative adversarial</option>
+                                
+                                    <option value="unsupervised speech">unsupervised speech</option>
+                                
+                                    <option value="network gan">network gan</option>
+                                
+                                    <option value="recognition generative">recognition generative</option>
+                                
+                                    <option value="adversarial network">adversarial network</option>
+                                
+                                    <option value="2210.17183">2210.17183</option>
+                                
+                                    <option value="labeling beats">labeling beats</option>
+                                
+                                    <option value="hierarchical metrical">hierarchical metrical</option>
+                                
+                                    <option value="supervised hierarchical">supervised hierarchical</option>
+                                
+                                    <option value="symbolic music">symbolic music</option>
+                                
+                                    <option value="metrical labeling">metrical labeling</option>
+                                
+                                    <option value="2412.01064">2412.01064</option>
+                                
+                                    <option value="portrait video">portrait video</option>
+                                
+                                    <option value="talking portrait">talking portrait</option>
+                                
+                                    <option value="video generation">video generation</option>
+                                
+                                    <option value="audio driven">audio driven</option>
+                                
+                                    <option value="generative motion">generative motion</option>
+                                
+                                    <option value="2310.02281">2310.02281</option>
+                                
+                                    <option value="emotion annotation">emotion annotation</option>
+                                
+                                    <option value="speech emotion">speech emotion</option>
+                                
+                                    <option value="emotion recognition">emotion recognition</option>
+                                
+                                    <option value="conversations annotating">conversations annotating</option>
+                                
+                                    <option value="conversations speech">conversations speech</option>
+                                
+                            </select>
+                        </div>
+                        <div class="col-2 pb-2">
+                            <button type="button" class="btn btn-primary btn-block" onclick="neighbourhoodHighlight({nodes: []});">Reset Selection</button>
+                        </div>
+                    </div>
+                </div>
+            
+            
+              <div id="filter-menu" class="card-header">
+                <div class="row no-gutters">
+                  <div class="col-3 pb-2">
+                    <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="updateFilter(value, 'item')"
+                            id="select-item"
+                        >
+                        <option value="">Select a network item</option>
+                        <option value="edge">edge</option>
+                        <option value="node">node</option>
+                    </select>
+                  </div>
+                  <div class="col-3 pb-2">
+                    <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="updateFilter(value, 'property')"
+                            id="select-property"
+                        >
+                        <option value="">Select a property...</option>
+                    </select>
+                  </div>
+                  <div class="col-3 pb-2">
+                    <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            id="select-value"
+                        >
+                        <option value="">Select value(s)...</option>
+                    </select>
+                  </div>
+                  <div class="col-1 pb-2">
+                    <button type="button" class="btn btn-primary btn-block" onclick="highlightFilter(filter);">Filter</button>
+                  </div>
+                  <div class="col-2 pb-2">
+                    <button type="button" class="btn btn-primary btn-block" onclick="clearFilter(true)">Reset Selection</button>
+                  </div>
+                </div>
+              </div>
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+                  new TomSelect("#select-node",{
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      }
+                  });
+              
+
+              
+                  // explicitly using onItemAdd and this function as we need to save multiple values
+                  let updateValueFilter = function() {
+                      return function () {
+                      filter['value'].push(arguments[0])
+                      }
+                  }
+
+                  let valueControl = new TomSelect("#select-value",{
+                      maxItems: null,
+                      valueField: 'id',
+                      labelField: 'title',
+                      searchField: 'title',
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      },
+                      onItemAdd: updateValueFilter()
+                  });
+
+                  let addValues = function() {
+                      return function () {
+                          // clear the current value options and add the selected attribute values
+                          // tom-select handles duplicates
+                          let selectedProperty = arguments[0];
+                          valueControl.clear();
+                          valueControl.clearOptions();
+                          filter['value'] = []
+                          if (filter['item'] === 'node') {
+                              for (let each in allNodes) {
+                                  valueControl.addOption({
+                                      id:allNodes[each][selectedProperty],
+                                      title:allNodes[each][selectedProperty]
+                                  })
+                              }
+                          }
+                          else if (filter['item'] === 'edge') {
+                              for (let each in allEdges) {
+                                  valueControl.addOption({
+                                      id:allEdges[each][selectedProperty],
+                                      title:allEdges[each][selectedProperty]
+                                  })
+                              }
+                          }
+                      }
+                  };
+
+                  let propControl = new TomSelect("#select-property",{
+                      valueField: 'id',
+                      labelField: 'title',
+                      searchField: 'title',
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      },
+                      onItemAdd: addValues()
+                  });
+
+                  let addProperties = function() {
+                      return function () {
+                          // loops through the selected network item and adds the attributes to dropdown
+                          // tom-select handles duplicates
+                          clearFilter(false)
+                          if (arguments[0] === 'edge') {
+                              for (let each in allEdges) {
+                                  if (allEdges.hasOwnProperty(each)) {
+                                      for (let eachProp in allEdges[each]) {
+                                          if (allEdges[each].hasOwnProperty(eachProp)) {
+                                              propControl.addOption({id: eachProp, title: eachProp})
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                          else if (arguments[0] === 'node') {
+                              for (let each in allNodes) {
+                                  if (allNodes.hasOwnProperty(each)) {
+                                      for (let eachProp in allNodes[each]) {
+                                          if (allNodes[each].hasOwnProperty(eachProp)
+                                              && (eachProp !== 'hidden' && eachProp !== 'savedLabel'
+                                                  && eachProp !== 'hiddenLabel')) {
+                                              propControl.addOption({id: eachProp, title: eachProp})
+
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  };
+
+                  let itemControl = new TomSelect("#select-item",{
+                      create: false,
+                      sortField:{
+                          field: "text",
+                          direction: "asc"
+                      },
+                      onItemAdd: addProperties()
+                  });
+
+                  function clearFilter(reset) {
+                      // utility function to clear all the selected filter options
+                      // if reset is set to true, the existing filter will be removed
+                      // else, only the dropdown options are cleared
+                      propControl.clear();
+                      propControl.clearOptions();
+                      valueControl.clear();
+                      valueControl.clearOptions();
+                      filter = {
+                          item : '',
+                          property : '',
+                          value : []
+                      }
+                      if (reset) {
+                          itemControl.clear();
+                          filterHighlight({nodes: []})
+                      }
+                  }
+
+                  function updateFilter(value, key) {
+                      // key could be 'item' or 'property' and value is as selected in dropdown
+                      filter[key] = value
+                  }
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "green", "id": 0, "label": "0", "physics": true, "shape": "diamond", "size": 10, "type": "topic"}, {"color": "purple", "id": "stars", "label": "stars", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "galaxies", "label": "galaxies", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "dark", "label": "dark", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "stellar", "label": "stellar", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "galaxy", "label": "galaxy", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "emission", "label": "emission", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "gravitational", "label": "gravitational", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "black hole", "label": "black hole", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "hole", "label": "hole", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "dark matter", "label": "dark matter", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "green", "id": 1, "label": "1", "physics": true, "shape": "diamond", "size": 10, "type": "topic"}, {"color": "purple", "id": "algebras", "label": "algebras", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "varieties", "label": "varieties", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "cohomology", "label": "cohomology", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "polynomials", "label": "polynomials", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "elliptic", "label": "elliptic", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "projective", "label": "projective", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "abelian", "label": "abelian", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "fractional", "label": "fractional", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "moduli", "label": "moduli", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "invariants", "label": "invariants", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "green", "id": 2, "label": "2", "physics": true, "shape": "diamond", "size": 10, "type": "topic"}, {"color": "purple", "id": "wireless", "label": "wireless", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "mimo", "label": "mimo", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "beamforming", "label": "beamforming", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "ris", "label": "ris", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "antenna", "label": "antenna", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "5g", "label": "5g", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "intelligent", "label": "intelligent", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "6g", "label": "6g", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "csi", "label": "csi", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "transmit", "label": "transmit", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "green", "id": 3, "label": "3", "physics": true, "shape": "diamond", "size": 10, "type": "topic"}, {"color": "purple", "id": "particles", "label": "particles", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "liquid", "label": "liquid", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "shear", "label": "shear", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "turbulent", "label": "turbulent", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "turbulence", "label": "turbulence", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "droplet", "label": "droplet", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "polymer", "label": "polymer", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "reynolds", "label": "reynolds", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "droplets", "label": "droplets", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "fluids", "label": "fluids", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "green", "id": 4, "label": "4", "physics": true, "shape": "diamond", "size": 10, "type": "topic"}, {"color": "purple", "id": "segmentation", "label": "segmentation", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "mri", "label": "mri", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "clinical", "label": "clinical", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "ct", "label": "ct", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "medical image", "label": "medical image", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "cancer", "label": "cancer", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "surgical", "label": "surgical", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "tumor", "label": "tumor", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "image segmentation", "label": "image segmentation", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "brain", "label": "brain", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "green", "id": 5, "label": "5", "physics": true, "shape": "diamond", "size": 10, "type": "topic"}, {"color": "purple", "id": "speech", "label": "speech", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "audio", "label": "audio", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "speaker", "label": "speaker", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "music", "label": "music", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "asr", "label": "asr", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "emotion", "label": "emotion", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "speech recognition", "label": "speech recognition", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "voice", "label": "voice", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "acoustic", "label": "acoustic", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "speakers", "label": "speakers", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "green", "id": 6, "label": "6", "physics": true, "shape": "diamond", "size": 10, "type": "topic"}, {"color": "purple", "id": "policy", "label": "policy", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "reinforcement learning", "label": "reinforcement learning", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "robot", "label": "robot", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "rl", "label": "rl", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "robots", "label": "robots", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "robotic", "label": "robotic", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "policies", "label": "policies", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "reward", "label": "reward", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "planning", "label": "planning", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "offline", "label": "offline", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "green", "id": 7, "label": "7", "physics": true, "shape": "diamond", "size": 10, "type": "topic"}, {"color": "purple", "id": "vertex", "label": "vertex", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "coloring", "label": "coloring", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "subgraph", "label": "subgraph", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "bipartite", "label": "bipartite", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "planar", "label": "planar", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "chromatic", "label": "chromatic", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "hypergraphs", "label": "hypergraphs", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "clique", "label": "clique", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "hypergraph", "label": "hypergraph", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "chromatic number", "label": "chromatic number", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "orange", "id": "result chromatic", "label": "result chromatic", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "green", "id": 8, "label": "8", "physics": true, "shape": "diamond", "size": 10, "type": "topic"}, {"color": "purple", "id": "scene", "label": "scene", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "point cloud", "label": "point cloud", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "lidar", "label": "lidar", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "camera", "label": "camera", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "point clouds", "label": "point clouds", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "scenes", "label": "scenes", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "clouds", "label": "clouds", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "slam", "label": "slam", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "monocular", "label": "monocular", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "multiview", "label": "multiview", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "green", "id": 9, "label": "9", "physics": true, "shape": "diamond", "size": 10, "type": "topic"}, {"color": "purple", "id": "brownian", "label": "brownian", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "percolation", "label": "percolation", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "brownian motion", "label": "brownian motion", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "random walk", "label": "random walk", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "stochastic differential", "label": "stochastic differential", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "random variables", "label": "random variables", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "levy", "label": "levy", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "walks", "label": "walks", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "purple", "id": "random walks", "label": "random walks", "physics": true, "shape": "star", "size": 10, "type": "top_term"}, {"color": "lightblue", "id": "2404.07486", "label": "2404.07486", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "graphs chromatic", "label": "graphs chromatic", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "chromatic number concept", "label": "chromatic number", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "free graphs", "label": "free graphs", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "free graph", "label": "free graph", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2107.10105", "label": "2107.10105", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "fullerene graphs", "label": "fullerene graphs", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "graphs fullerene", "label": "graphs fullerene", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "fullerene graph", "label": "fullerene graph", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "complexity fullerene", "label": "complexity fullerene", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "models fullerene", "label": "models fullerene", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2412.09410", "label": "2412.09410", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "acyclically colourable", "label": "acyclically colourable", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "list colourable", "label": "list colourable", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "graphs acyclically", "label": "graphs acyclically", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "colourable bound", "label": "colourable bound", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "vertex colouring", "label": "vertex colouring", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "colorings vertex", "label": "colorings vertex", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "vertices colors", "label": "vertices colors", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2103.11892", "label": "2103.11892", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "free colorings", "label": "free colorings", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "edge colorings", "label": "edge colorings", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "graphs unique", "label": "graphs unique", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2112.04230", "label": "2112.04230", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "isospectral graphs", "label": "isospectral graphs", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "graphs isospectral", "label": "graphs isospectral", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "isospectral metric", "label": "isospectral metric", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "isospectrality", "label": "isospectrality", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "metric graphs", "label": "metric graphs", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2004.10097", "label": "2004.10097", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "heated intergalactic", "label": "heated intergalactic", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "cosmic signals", "label": "cosmic signals", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "bias cosmic", "label": "bias cosmic", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "intergalactic", "label": "intergalactic", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "known cosmic", "label": "known cosmic", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2203.06878", "label": "2203.06878", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "intrinsic nucleon", "label": "intrinsic nucleon", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "vacuum weinberg", "label": "vacuum weinberg", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "nucleon vertex", "label": "nucleon vertex", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "qcd", "label": "qcd", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "pion nucleon", "label": "pion nucleon", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2503.14025", "label": "2503.14025", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "cosmic rays", "label": "cosmic rays", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "propagation heliosphere", "label": "propagation heliosphere", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "cosmic protons", "label": "cosmic protons", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "modulation cosmic", "label": "modulation cosmic", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "cosmic ray", "label": "cosmic ray", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2004.07263", "label": "2004.07263", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "cosmological models", "label": "cosmological models", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "cosmological parameter", "label": "cosmological parameter", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "universe modifications", "label": "universe modifications", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "cosmology", "label": "cosmology", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "perform cosmological", "label": "perform cosmological", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2003.08845", "label": "2003.08845", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "galaxy rotation", "label": "galaxy rotation", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "spiral galaxies", "label": "spiral galaxies", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "model galaxies", "label": "model galaxies", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "galaxies concept", "label": "galaxies", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "galaxies velocities", "label": "galaxies velocities", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2310.02962", "label": "2310.02962", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "k3 fibrations", "label": "k3 fibrations", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "k3 fibration", "label": "k3 fibration", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "projective fold", "label": "projective fold", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "fibration k_y", "label": "fibration k_y", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "folds k3", "label": "folds k3", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2501.17426", "label": "2501.17426", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "generated ideals", "label": "generated ideals", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "finite generators", "label": "finite generators", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "finite generating", "label": "finite generating", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "infinitely generated", "label": "infinitely generated", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "generating sets", "label": "generating sets", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "1712.05984", "label": "1712.05984", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "dirac systems", "label": "dirac systems", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "selfadjoint dirac", "label": "selfadjoint dirac", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "darboux transformations", "label": "darboux transformations", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "skew selfadjoint", "label": "skew selfadjoint", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "explicit solutions", "label": "explicit solutions", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2108.07395", "label": "2108.07395", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "attractor wave", "label": "attractor wave", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "damping nonlocal", "label": "damping nonlocal", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "global attractor", "label": "global attractor", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "critical nonlinearity", "label": "critical nonlinearity", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "weak damping", "label": "weak damping", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2105.00446", "label": "2105.00446", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "nilsystem homogeneous", "label": "nilsystem homogeneous", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "nilpotent homogeneous", "label": "nilpotent homogeneous", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "dimensional nilpotent", "label": "dimensional nilpotent", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "ergodic averages", "label": "ergodic averages", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "characteristic factors", "label": "characteristic factors", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2403.10050", "label": "2403.10050", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "learnable texture", "label": "learnable texture", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "texture 3d", "label": "texture 3d", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "texture gs", "label": "texture gs", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "texture capture", "label": "texture capture", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "texture mapping", "label": "texture mapping", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2206.03087", "label": "2206.03087", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "surface regularization", "label": "surface regularization", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "surface reconstruction", "label": "surface reconstruction", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "surface reconstructions", "label": "surface reconstructions", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "robust reconstruction", "label": "robust reconstruction", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "hessian regularization", "label": "hessian regularization", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2311.07301", "label": "2311.07301", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "geo localization", "label": "geo localization", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "landmarks observable", "label": "landmarks observable", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "trajectory estimation", "label": "trajectory estimation", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "localization based", "label": "localization based", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "localization relies", "label": "localization relies", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2404.11958", "label": "2404.11958", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "voxels easy", "label": "voxels easy", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "hard voxels", "label": "hard voxels", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "hard voxel", "label": "hard voxel", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "voxel", "label": "voxel", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "semantic scene", "label": "semantic scene", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2411.14158", "label": "2411.14158", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "graph convolutional", "label": "graph convolutional", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "graph convolution", "label": "graph convolution", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "cloud denoising", "label": "cloud denoising", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "convolution networks", "label": "convolution networks", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "point cloud concept", "label": "point cloud", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2105.14105", "label": "2105.14105", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "learning control", "label": "learning control", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "particles control", "label": "particles control", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "dynamics mixing", "label": "dynamics mixing", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "particle interactions", "label": "particle interactions", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "reinforcement learning concept", "label": "reinforcement learning", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2110.14469", "label": "2110.14469", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "particle geometries", "label": "particle geometries", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "characterize phenotypic", "label": "characterize phenotypic", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "phenotypic trait", "label": "phenotypic trait", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "trait geometries", "label": "trait geometries", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "geometries variation", "label": "geometries variation", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2411.14778", "label": "2411.14778", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "dynamics polymer", "label": "dynamics polymer", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "fluctuations polymers", "label": "fluctuations polymers", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "polymeric systems", "label": "polymeric systems", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "dynamics chains", "label": "dynamics chains", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "active polymeric", "label": "active polymeric", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2204.07127", "label": "2204.07127", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "diffusion soft", "label": "diffusion soft", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "jamming shear", "label": "jamming shear", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "athermal particles", "label": "athermal particles", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "diffusion", "label": "diffusion", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "relaxation dynamics", "label": "relaxation dynamics", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "cross diffusion", "label": "cross diffusion", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "diffusion macroscopic", "label": "diffusion macroscopic", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2309.01034", "label": "2309.01034", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "cytoskeleton discrete", "label": "cytoskeleton discrete", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "cytoskeletal filament", "label": "cytoskeletal filament", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "filament networks", "label": "filament networks", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "stressed cytoskeletal", "label": "stressed cytoskeletal", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "protein filaments", "label": "protein filaments", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2202.09609", "label": "2202.09609", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "reconstructed ct", "label": "reconstructed ct", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "ct reconstruction", "label": "ct reconstruction", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "cagan adversarial", "label": "cagan adversarial", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "tomography ct", "label": "tomography ct", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "ct image", "label": "ct image", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2409.00639", "label": "2409.00639", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "detecting bleeding", "label": "detecting bleeding", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "bleeding detection", "label": "bleeding detection", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "gastrointestinal bleeding", "label": "gastrointestinal bleeding", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "capsule endoscopy", "label": "capsule endoscopy", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "endoscopy insights", "label": "endoscopy insights", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2204.03014", "label": "2204.03014", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "cnn volumetric", "label": "cnn volumetric", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "cell segmentation", "label": "cell segmentation", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "volumetric cell", "label": "volumetric cell", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "cnns vision", "label": "cnns vision", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "cnn models", "label": "cnn models", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2212.05566", "label": "2212.05566", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "annotated segmentation", "label": "annotated segmentation", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "segmentation weakly", "label": "segmentation weakly", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "structure segmentation", "label": "structure segmentation", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "segmentation concept", "label": "segmentation", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "segmentation labels", "label": "segmentation labels", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2101.01570", "label": "2101.01570", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "reconstruction deep", "label": "reconstruction deep", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "mri reconstruction", "label": "mri reconstruction", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "density compensated", "label": "density compensated", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "density compensation", "label": "density compensation", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "unrolled neural", "label": "unrolled neural", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "1809.03394", "label": "1809.03394", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "symmetric quaternionic", "label": "symmetric quaternionic", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "hermitian quaternionic", "label": "hermitian quaternionic", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "quaternionic matrices", "label": "quaternionic matrices", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "pdf eigenvalues", "label": "pdf eigenvalues", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "dual quaternionic", "label": "dual quaternionic", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "1906.08060", "label": "1906.08060", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "parabolic systems", "label": "parabolic systems", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "nonlinear parabolic", "label": "nonlinear parabolic", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "1910.00743", "label": "1910.00743", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "fluctuations jacobi", "label": "fluctuations jacobi", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "point processes", "label": "point processes", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "fluctuations jointly", "label": "fluctuations jointly", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "jointly gaussian", "label": "jointly gaussian", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "gaussian explicit", "label": "gaussian explicit", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "1903.10755", "label": "1903.10755", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "distribution equation", "label": "distribution equation", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "distribution solution", "label": "distribution solution", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "tail distribution", "label": "tail distribution", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "law equation", "label": "law equation", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "consider distribution", "label": "consider distribution", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "1106.2717", "label": "1106.2717", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "continuum statistics", "label": "continuum statistics", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "polymer disordered", "label": "polymer disordered", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "directed polymer", "label": "directed polymer", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "directed polymers", "label": "directed polymers", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "polymer interpretation", "label": "polymer interpretation", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2310.18573", "label": "2310.18573", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "channel estimation", "label": "channel estimation", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "channel information", "label": "channel information", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "priori channel", "label": "priori channel", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "statistical channel", "label": "statistical channel", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "pilot signal", "label": "pilot signal", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2405.11138", "label": "2405.11138", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "sampling internet", "label": "sampling internet", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "regionalizing crowdsourced", "label": "regionalizing crowdsourced", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "crowdsourced latency", "label": "crowdsourced latency", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "crowdsourced measurements", "label": "crowdsourced measurements", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "crowdsourced measurement", "label": "crowdsourced measurement", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2212.06987", "label": "2212.06987", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "privacy b5g", "label": "privacy b5g", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "data privacy", "label": "data privacy", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "upgrade privacy", "label": "upgrade privacy", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "privacy leakages", "label": "privacy leakages", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "current privacy", "label": "current privacy", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "1902.00408", "label": "1902.00408", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "lte devices", "label": "lte devices", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "devices lte", "label": "devices lte", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "iot traffic", "label": "iot traffic", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "lte networks", "label": "lte networks", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "lte supporting", "label": "lte supporting", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2107.10294", "label": "2107.10294", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "protocol cellular", "label": "protocol cellular", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "ra protocols", "label": "ra protocols", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "network multiple", "label": "network multiple", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "multiple access", "label": "multiple access", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "access points", "label": "access points", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "1902.05546", "label": "1902.05546", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "agent robotic", "label": "agent robotic", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "modular agents", "label": "modular agents", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "agents learns", "label": "agents learns", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "primitive agents", "label": "primitive agents", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "learns dynamically", "label": "learns dynamically", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2304.10888", "label": "2304.10888", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "legged locomotion", "label": "legged locomotion", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "locomotion skills", "label": "locomotion skills", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "animal locomotion", "label": "animal locomotion", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "locomotion data", "label": "locomotion data", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "robot legged", "label": "robot legged", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2506.10138", "label": "2506.10138", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "learned search", "label": "learned search", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "rnn plays", "label": "rnn plays", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "rnn trained", "label": "rnn trained", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "network rnn", "label": "network rnn", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "function rnn", "label": "function rnn", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2410.10803", "label": "2410.10803", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "manipulation humanoid", "label": "manipulation humanoid", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "humanoid manipulation", "label": "humanoid manipulation", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "robotic teleoperation", "label": "robotic teleoperation", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "policies humanoid", "label": "policies humanoid", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "robot data", "label": "robot data", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2012.12209", "label": "2012.12209", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "grasping skills", "label": "grasping skills", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "grasping tasks", "label": "grasping tasks", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "design grasping", "label": "design grasping", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "morphology grasping", "label": "morphology grasping", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "grasping", "label": "grasping", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2407.11745", "label": "2407.11745", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "supervised audio", "label": "supervised audio", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "audioset", "label": "audioset", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "sound separation", "label": "sound separation", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "methods audioset", "label": "methods audioset", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "audio masked", "label": "audio masked", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "1904.04100", "label": "1904.04100", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "generative adversarial", "label": "generative adversarial", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "unsupervised speech", "label": "unsupervised speech", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "network gan", "label": "network gan", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "recognition generative", "label": "recognition generative", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "adversarial network", "label": "adversarial network", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2210.17183", "label": "2210.17183", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "labeling beats", "label": "labeling beats", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "hierarchical metrical", "label": "hierarchical metrical", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "supervised hierarchical", "label": "supervised hierarchical", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "symbolic music", "label": "symbolic music", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "metrical labeling", "label": "metrical labeling", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2412.01064", "label": "2412.01064", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "portrait video", "label": "portrait video", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "talking portrait", "label": "talking portrait", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "video generation", "label": "video generation", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "audio driven", "label": "audio driven", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "generative motion", "label": "generative motion", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "lightblue", "id": "2310.02281", "label": "2310.02281", "physics": true, "shape": "circle", "size": 10, "type": "document"}, {"color": "orange", "id": "emotion annotation", "label": "emotion annotation", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "speech emotion", "label": "speech emotion", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "emotion recognition", "label": "emotion recognition", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "conversations annotating", "label": "conversations annotating", "physics": true, "shape": "square", "size": 10, "type": "concept"}, {"color": "orange", "id": "conversations speech", "label": "conversations speech", "physics": true, "shape": "square", "size": 10, "type": "concept"}]);
+                  edges = new vis.DataSet([{"from": 0, "physics": true, "relation": "is_described_by", "to": "stars", "width": 1}, {"from": 0, "physics": true, "relation": "is_described_by", "to": "galaxies", "width": 1}, {"from": 0, "physics": true, "relation": "is_described_by", "to": "dark", "width": 1}, {"from": 0, "physics": true, "relation": "is_described_by", "to": "stellar", "width": 1}, {"from": 0, "physics": true, "relation": "is_described_by", "to": "galaxy", "width": 1}, {"from": 0, "physics": true, "relation": "is_described_by", "to": "emission", "width": 1}, {"from": 0, "physics": true, "relation": "is_described_by", "to": "gravitational", "width": 1}, {"from": 0, "physics": true, "relation": "is_described_by", "to": "black hole", "width": 1}, {"from": 0, "physics": true, "relation": "is_described_by", "to": "hole", "width": 1}, {"from": 0, "physics": true, "relation": "is_described_by", "to": "dark matter", "width": 1}, {"from": 1, "physics": true, "relation": "is_described_by", "to": "algebras", "width": 1}, {"from": 1, "physics": true, "relation": "is_described_by", "to": "varieties", "width": 1}, {"from": 1, "physics": true, "relation": "is_described_by", "to": "cohomology", "width": 1}, {"from": 1, "physics": true, "relation": "is_described_by", "to": "polynomials", "width": 1}, {"from": 1, "physics": true, "relation": "is_described_by", "to": "elliptic", "width": 1}, {"from": 1, "physics": true, "relation": "is_described_by", "to": "projective", "width": 1}, {"from": 1, "physics": true, "relation": "is_described_by", "to": "abelian", "width": 1}, {"from": 1, "physics": true, "relation": "is_described_by", "to": "fractional", "width": 1}, {"from": 1, "physics": true, "relation": "is_described_by", "to": "moduli", "width": 1}, {"from": 1, "physics": true, "relation": "is_described_by", "to": "invariants", "width": 1}, {"from": 2, "physics": true, "relation": "is_described_by", "to": "wireless", "width": 1}, {"from": 2, "physics": true, "relation": "is_described_by", "to": "mimo", "width": 1}, {"from": 2, "physics": true, "relation": "is_described_by", "to": "beamforming", "width": 1}, {"from": 2, "physics": true, "relation": "is_described_by", "to": "ris", "width": 1}, {"from": 2, "physics": true, "relation": "is_described_by", "to": "antenna", "width": 1}, {"from": 2, "physics": true, "relation": "is_described_by", "to": "5g", "width": 1}, {"from": 2, "physics": true, "relation": "is_described_by", "to": "intelligent", "width": 1}, {"from": 2, "physics": true, "relation": "is_described_by", "to": "6g", "width": 1}, {"from": 2, "physics": true, "relation": "is_described_by", "to": "csi", "width": 1}, {"from": 2, "physics": true, "relation": "is_described_by", "to": "transmit", "width": 1}, {"from": 3, "physics": true, "relation": "is_described_by", "to": "particles", "width": 1}, {"from": 3, "physics": true, "relation": "is_described_by", "to": "liquid", "width": 1}, {"from": 3, "physics": true, "relation": "is_described_by", "to": "shear", "width": 1}, {"from": 3, "physics": true, "relation": "is_described_by", "to": "turbulent", "width": 1}, {"from": 3, "physics": true, "relation": "is_described_by", "to": "turbulence", "width": 1}, {"from": 3, "physics": true, "relation": "is_described_by", "to": "droplet", "width": 1}, {"from": 3, "physics": true, "relation": "is_described_by", "to": "polymer", "width": 1}, {"from": 3, "physics": true, "relation": "is_described_by", "to": "reynolds", "width": 1}, {"from": 3, "physics": true, "relation": "is_described_by", "to": "droplets", "width": 1}, {"from": 3, "physics": true, "relation": "is_described_by", "to": "fluids", "width": 1}, {"from": 4, "physics": true, "relation": "is_described_by", "to": "segmentation", "width": 1}, {"from": 4, "physics": true, "relation": "is_described_by", "to": "mri", "width": 1}, {"from": 4, "physics": true, "relation": "is_described_by", "to": "clinical", "width": 1}, {"from": 4, "physics": true, "relation": "is_described_by", "to": "ct", "width": 1}, {"from": 4, "physics": true, "relation": "is_described_by", "to": "medical image", "width": 1}, {"from": 4, "physics": true, "relation": "is_described_by", "to": "cancer", "width": 1}, {"from": 4, "physics": true, "relation": "is_described_by", "to": "surgical", "width": 1}, {"from": 4, "physics": true, "relation": "is_described_by", "to": "tumor", "width": 1}, {"from": 4, "physics": true, "relation": "is_described_by", "to": "image segmentation", "width": 1}, {"from": 4, "physics": true, "relation": "is_described_by", "to": "brain", "width": 1}, {"from": 5, "physics": true, "relation": "is_described_by", "to": "speech", "width": 1}, {"from": 5, "physics": true, "relation": "is_described_by", "to": "audio", "width": 1}, {"from": 5, "physics": true, "relation": "is_described_by", "to": "speaker", "width": 1}, {"from": 5, "physics": true, "relation": "is_described_by", "to": "music", "width": 1}, {"from": 5, "physics": true, "relation": "is_described_by", "to": "asr", "width": 1}, {"from": 5, "physics": true, "relation": "is_described_by", "to": "emotion", "width": 1}, {"from": 5, "physics": true, "relation": "is_described_by", "to": "speech recognition", "width": 1}, {"from": 5, "physics": true, "relation": "is_described_by", "to": "voice", "width": 1}, {"from": 5, "physics": true, "relation": "is_described_by", "to": "acoustic", "width": 1}, {"from": 5, "physics": true, "relation": "is_described_by", "to": "speakers", "width": 1}, {"from": 6, "physics": true, "relation": "is_described_by", "to": "policy", "width": 1}, {"from": 6, "physics": true, "relation": "is_described_by", "to": "reinforcement learning", "width": 1}, {"from": 6, "physics": true, "relation": "is_described_by", "to": "robot", "width": 1}, {"from": 6, "physics": true, "relation": "is_described_by", "to": "rl", "width": 1}, {"from": 6, "physics": true, "relation": "is_described_by", "to": "robots", "width": 1}, {"from": 6, "physics": true, "relation": "is_described_by", "to": "robotic", "width": 1}, {"from": 6, "physics": true, "relation": "is_described_by", "to": "policies", "width": 1}, {"from": 6, "physics": true, "relation": "is_described_by", "to": "reward", "width": 1}, {"from": 6, "physics": true, "relation": "is_described_by", "to": "planning", "width": 1}, {"from": 6, "physics": true, "relation": "is_described_by", "to": "offline", "width": 1}, {"from": 7, "physics": true, "relation": "is_described_by", "to": "vertex", "width": 1}, {"from": 7, "physics": true, "relation": "is_described_by", "to": "coloring", "width": 1}, {"from": 7, "physics": true, "relation": "is_described_by", "to": "subgraph", "width": 1}, {"from": 7, "physics": true, "relation": "is_described_by", "to": "bipartite", "width": 1}, {"from": 7, "physics": true, "relation": "is_described_by", "to": "planar", "width": 1}, {"from": 7, "physics": true, "relation": "is_described_by", "to": "chromatic", "width": 1}, {"from": 7, "physics": true, "relation": "is_described_by", "to": "hypergraphs", "width": 1}, {"from": 7, "physics": true, "relation": "is_described_by", "to": "clique", "width": 1}, {"from": 7, "physics": true, "relation": "is_described_by", "to": "hypergraph", "width": 1}, {"from": 7, "physics": true, "relation": "is_described_by", "to": "chromatic number", "width": 1}, {"from": "chromatic number", "relation": "is_related_to", "to": "result chromatic", "width": 1}, {"from": 8, "physics": true, "relation": "is_described_by", "to": "scene", "width": 1}, {"from": 8, "physics": true, "relation": "is_described_by", "to": "point cloud", "width": 1}, {"from": 8, "physics": true, "relation": "is_described_by", "to": "lidar", "width": 1}, {"from": 8, "physics": true, "relation": "is_described_by", "to": "camera", "width": 1}, {"from": 8, "physics": true, "relation": "is_described_by", "to": "point clouds", "width": 1}, {"from": 8, "physics": true, "relation": "is_described_by", "to": "scenes", "width": 1}, {"from": 8, "physics": true, "relation": "is_described_by", "to": "clouds", "width": 1}, {"from": 8, "physics": true, "relation": "is_described_by", "to": "slam", "width": 1}, {"from": 8, "physics": true, "relation": "is_described_by", "to": "monocular", "width": 1}, {"from": 8, "physics": true, "relation": "is_described_by", "to": "multiview", "width": 1}, {"from": 9, "physics": true, "relation": "is_described_by", "to": "brownian", "width": 1}, {"from": 9, "physics": true, "relation": "is_described_by", "to": "percolation", "width": 1}, {"from": 9, "physics": true, "relation": "is_described_by", "to": "brownian motion", "width": 1}, {"from": 9, "physics": true, "relation": "is_described_by", "to": "random walk", "width": 1}, {"from": 9, "physics": true, "relation": "is_described_by", "to": "stochastic differential", "width": 1}, {"from": 9, "physics": true, "relation": "is_described_by", "to": "random variables", "width": 1}, {"from": 9, "physics": true, "relation": "is_described_by", "to": "levy", "width": 1}, {"from": 9, "physics": true, "relation": "is_described_by", "to": "fractional", "width": 1}, {"from": 9, "physics": true, "relation": "is_described_by", "to": "walks", "width": 1}, {"from": 9, "physics": true, "relation": "is_described_by", "to": "random walks", "width": 1}, {"from": "2404.07486", "physics": true, "relation": "belongs_to", "to": 7, "width": 1}, {"from": "2404.07486", "physics": true, "relation": "mentions", "to": "graphs chromatic", "width": 1}, {"from": "2404.07486", "physics": true, "relation": "mentions", "to": "chromatic number concept", "width": 1}, {"from": "2404.07486", "physics": true, "relation": "mentions", "to": "result chromatic", "width": 1}, {"from": "2404.07486", "physics": true, "relation": "mentions", "to": "free graphs", "width": 1}, {"from": "2404.07486", "physics": true, "relation": "mentions", "to": "free graph", "width": 1}, {"from": "graphs chromatic", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "graphs chromatic", "relation": "is_related_to", "to": "chromatic number", "width": 1}, {"from": "graphs chromatic", "relation": "is_related_to", "to": "result chromatic", "width": 1}, {"from": "chromatic number concept", "physics": true, "relation": "is_same_as", "to": "chromatic number", "width": 1}, {"from": "chromatic number concept", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "result chromatic", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "free graphs", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "free graph", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "2107.10105", "physics": true, "relation": "belongs_to", "to": 7, "width": 1}, {"from": "2107.10105", "physics": true, "relation": "mentions", "to": "fullerene graphs", "width": 1}, {"from": "2107.10105", "physics": true, "relation": "mentions", "to": "graphs fullerene", "width": 1}, {"from": "2107.10105", "physics": true, "relation": "mentions", "to": "fullerene graph", "width": 1}, {"from": "2107.10105", "physics": true, "relation": "mentions", "to": "complexity fullerene", "width": 1}, {"from": "2107.10105", "physics": true, "relation": "mentions", "to": "models fullerene", "width": 1}, {"from": "fullerene graphs", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "fullerene graphs", "relation": "is_related_to", "to": "graphs fullerene", "width": 1}, {"from": "graphs fullerene", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "graphs fullerene", "relation": "is_related_to", "to": "fullerene graph", "width": 1}, {"from": "graphs fullerene", "relation": "is_related_to", "to": "models fullerene", "width": 1}, {"from": "fullerene graph", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "complexity fullerene", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "complexity fullerene", "relation": "is_related_to", "to": "models fullerene", "width": 1}, {"from": "models fullerene", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "2412.09410", "physics": true, "relation": "belongs_to", "to": 7, "width": 1}, {"from": "2412.09410", "physics": true, "relation": "mentions", "to": "acyclically colourable", "width": 1}, {"from": "2412.09410", "physics": true, "relation": "mentions", "to": "list colourable", "width": 1}, {"from": "2412.09410", "physics": true, "relation": "mentions", "to": "graphs acyclically", "width": 1}, {"from": "2412.09410", "physics": true, "relation": "mentions", "to": "colourable bound", "width": 1}, {"from": "2412.09410", "physics": true, "relation": "mentions", "to": "vertex colouring", "width": 1}, {"from": "acyclically colourable", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "list colourable", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "graphs acyclically", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "colourable bound", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "vertex colouring", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "vertex colouring", "relation": "is_related_to", "to": "colorings vertex", "width": 1}, {"from": "vertex colouring", "relation": "is_related_to", "to": "vertices colors", "width": 1}, {"from": "2103.11892", "physics": true, "relation": "belongs_to", "to": 7, "width": 1}, {"from": "2103.11892", "physics": true, "relation": "mentions", "to": "free colorings", "width": 1}, {"from": "2103.11892", "physics": true, "relation": "mentions", "to": "colorings vertex", "width": 1}, {"from": "2103.11892", "physics": true, "relation": "mentions", "to": "edge colorings", "width": 1}, {"from": "2103.11892", "physics": true, "relation": "mentions", "to": "vertices colors", "width": 1}, {"from": "2103.11892", "physics": true, "relation": "mentions", "to": "graphs unique", "width": 1}, {"from": "free colorings", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "colorings vertex", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "colorings vertex", "relation": "is_related_to", "to": "vertices colors", "width": 1}, {"from": "edge colorings", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "vertices colors", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "graphs unique", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "2112.04230", "physics": true, "relation": "belongs_to", "to": 7, "width": 1}, {"from": "2112.04230", "physics": true, "relation": "mentions", "to": "isospectral graphs", "width": 1}, {"from": "2112.04230", "physics": true, "relation": "mentions", "to": "graphs isospectral", "width": 1}, {"from": "2112.04230", "physics": true, "relation": "mentions", "to": "isospectral metric", "width": 1}, {"from": "2112.04230", "physics": true, "relation": "mentions", "to": "isospectrality", "width": 1}, {"from": "2112.04230", "physics": true, "relation": "mentions", "to": "metric graphs", "width": 1}, {"from": "isospectral graphs", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "isospectral graphs", "relation": "is_related_to", "to": "graphs isospectral", "width": 1}, {"from": "graphs isospectral", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "isospectral metric", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "isospectrality", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "metric graphs", "physics": true, "relation": "is_about", "to": 7, "width": 1}, {"from": "2004.10097", "physics": true, "relation": "belongs_to", "to": 0, "width": 1}, {"from": "2004.10097", "physics": true, "relation": "mentions", "to": "heated intergalactic", "width": 1}, {"from": "2004.10097", "physics": true, "relation": "mentions", "to": "cosmic signals", "width": 1}, {"from": "2004.10097", "physics": true, "relation": "mentions", "to": "bias cosmic", "width": 1}, {"from": "2004.10097", "physics": true, "relation": "mentions", "to": "intergalactic", "width": 1}, {"from": "2004.10097", "physics": true, "relation": "mentions", "to": "known cosmic", "width": 1}, {"from": "heated intergalactic", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "cosmic signals", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "bias cosmic", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "intergalactic", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "known cosmic", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "2203.06878", "physics": true, "relation": "belongs_to", "to": 0, "width": 1}, {"from": "2203.06878", "physics": true, "relation": "mentions", "to": "intrinsic nucleon", "width": 1}, {"from": "2203.06878", "physics": true, "relation": "mentions", "to": "vacuum weinberg", "width": 1}, {"from": "2203.06878", "physics": true, "relation": "mentions", "to": "nucleon vertex", "width": 1}, {"from": "2203.06878", "physics": true, "relation": "mentions", "to": "qcd", "width": 1}, {"from": "2203.06878", "physics": true, "relation": "mentions", "to": "pion nucleon", "width": 1}, {"from": "intrinsic nucleon", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "vacuum weinberg", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "nucleon vertex", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "qcd", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "pion nucleon", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "2503.14025", "physics": true, "relation": "belongs_to", "to": 0, "width": 1}, {"from": "2503.14025", "physics": true, "relation": "mentions", "to": "cosmic rays", "width": 1}, {"from": "2503.14025", "physics": true, "relation": "mentions", "to": "propagation heliosphere", "width": 1}, {"from": "2503.14025", "physics": true, "relation": "mentions", "to": "cosmic protons", "width": 1}, {"from": "2503.14025", "physics": true, "relation": "mentions", "to": "modulation cosmic", "width": 1}, {"from": "2503.14025", "physics": true, "relation": "mentions", "to": "cosmic ray", "width": 1}, {"from": "cosmic rays", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "propagation heliosphere", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "cosmic protons", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "modulation cosmic", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "cosmic ray", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "2004.07263", "physics": true, "relation": "belongs_to", "to": 0, "width": 1}, {"from": "2004.07263", "physics": true, "relation": "mentions", "to": "cosmological models", "width": 1}, {"from": "2004.07263", "physics": true, "relation": "mentions", "to": "cosmological parameter", "width": 1}, {"from": "2004.07263", "physics": true, "relation": "mentions", "to": "universe modifications", "width": 1}, {"from": "2004.07263", "physics": true, "relation": "mentions", "to": "cosmology", "width": 1}, {"from": "2004.07263", "physics": true, "relation": "mentions", "to": "perform cosmological", "width": 1}, {"from": "cosmological models", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "cosmological models", "relation": "is_related_to", "to": "cosmology", "width": 1}, {"from": "cosmological parameter", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "cosmological parameter", "relation": "is_related_to", "to": "cosmology", "width": 1}, {"from": "universe modifications", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "cosmology", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "cosmology", "relation": "is_related_to", "to": "perform cosmological", "width": 1}, {"from": "perform cosmological", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "2003.08845", "physics": true, "relation": "belongs_to", "to": 0, "width": 1}, {"from": "2003.08845", "physics": true, "relation": "mentions", "to": "galaxy rotation", "width": 1}, {"from": "2003.08845", "physics": true, "relation": "mentions", "to": "spiral galaxies", "width": 1}, {"from": "2003.08845", "physics": true, "relation": "mentions", "to": "model galaxies", "width": 1}, {"from": "2003.08845", "physics": true, "relation": "mentions", "to": "galaxies concept", "width": 1}, {"from": "2003.08845", "physics": true, "relation": "mentions", "to": "galaxies velocities", "width": 1}, {"from": "galaxy rotation", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "spiral galaxies", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "spiral galaxies", "relation": "is_related_to", "to": "galaxies", "width": 1}, {"from": "model galaxies", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "model galaxies", "relation": "is_related_to", "to": "galaxies", "width": 1}, {"from": "galaxies concept", "physics": true, "relation": "is_same_as", "to": "galaxies", "width": 1}, {"from": "galaxies concept", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "galaxies velocities", "physics": true, "relation": "is_about", "to": 0, "width": 1}, {"from": "2310.02962", "physics": true, "relation": "belongs_to", "to": 1, "width": 1}, {"from": "2310.02962", "physics": true, "relation": "mentions", "to": "k3 fibrations", "width": 1}, {"from": "2310.02962", "physics": true, "relation": "mentions", "to": "k3 fibration", "width": 1}, {"from": "2310.02962", "physics": true, "relation": "mentions", "to": "projective fold", "width": 1}, {"from": "2310.02962", "physics": true, "relation": "mentions", "to": "fibration k_y", "width": 1}, {"from": "2310.02962", "physics": true, "relation": "mentions", "to": "folds k3", "width": 1}, {"from": "k3 fibrations", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "k3 fibration", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "projective fold", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "fibration k_y", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "folds k3", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "2501.17426", "physics": true, "relation": "belongs_to", "to": 1, "width": 1}, {"from": "2501.17426", "physics": true, "relation": "mentions", "to": "generated ideals", "width": 1}, {"from": "2501.17426", "physics": true, "relation": "mentions", "to": "finite generators", "width": 1}, {"from": "2501.17426", "physics": true, "relation": "mentions", "to": "finite generating", "width": 1}, {"from": "2501.17426", "physics": true, "relation": "mentions", "to": "infinitely generated", "width": 1}, {"from": "2501.17426", "physics": true, "relation": "mentions", "to": "generating sets", "width": 1}, {"from": "generated ideals", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "finite generators", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "finite generating", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "infinitely generated", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "generating sets", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "1712.05984", "physics": true, "relation": "belongs_to", "to": 1, "width": 1}, {"from": "1712.05984", "physics": true, "relation": "mentions", "to": "dirac systems", "width": 1}, {"from": "1712.05984", "physics": true, "relation": "mentions", "to": "selfadjoint dirac", "width": 1}, {"from": "1712.05984", "physics": true, "relation": "mentions", "to": "darboux transformations", "width": 1}, {"from": "1712.05984", "physics": true, "relation": "mentions", "to": "skew selfadjoint", "width": 1}, {"from": "1712.05984", "physics": true, "relation": "mentions", "to": "explicit solutions", "width": 1}, {"from": "dirac systems", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "selfadjoint dirac", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "darboux transformations", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "skew selfadjoint", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "explicit solutions", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "2108.07395", "physics": true, "relation": "belongs_to", "to": 1, "width": 1}, {"from": "2108.07395", "physics": true, "relation": "mentions", "to": "attractor wave", "width": 1}, {"from": "2108.07395", "physics": true, "relation": "mentions", "to": "damping nonlocal", "width": 1}, {"from": "2108.07395", "physics": true, "relation": "mentions", "to": "global attractor", "width": 1}, {"from": "2108.07395", "physics": true, "relation": "mentions", "to": "critical nonlinearity", "width": 1}, {"from": "2108.07395", "physics": true, "relation": "mentions", "to": "weak damping", "width": 1}, {"from": "attractor wave", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "damping nonlocal", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "global attractor", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "critical nonlinearity", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "weak damping", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "2105.00446", "physics": true, "relation": "belongs_to", "to": 1, "width": 1}, {"from": "2105.00446", "physics": true, "relation": "mentions", "to": "nilsystem homogeneous", "width": 1}, {"from": "2105.00446", "physics": true, "relation": "mentions", "to": "nilpotent homogeneous", "width": 1}, {"from": "2105.00446", "physics": true, "relation": "mentions", "to": "dimensional nilpotent", "width": 1}, {"from": "2105.00446", "physics": true, "relation": "mentions", "to": "ergodic averages", "width": 1}, {"from": "2105.00446", "physics": true, "relation": "mentions", "to": "characteristic factors", "width": 1}, {"from": "nilsystem homogeneous", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "nilpotent homogeneous", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "dimensional nilpotent", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "ergodic averages", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "characteristic factors", "physics": true, "relation": "is_about", "to": 1, "width": 1}, {"from": "2403.10050", "physics": true, "relation": "belongs_to", "to": 8, "width": 1}, {"from": "2403.10050", "physics": true, "relation": "mentions", "to": "learnable texture", "width": 1}, {"from": "2403.10050", "physics": true, "relation": "mentions", "to": "texture 3d", "width": 1}, {"from": "2403.10050", "physics": true, "relation": "mentions", "to": "texture gs", "width": 1}, {"from": "2403.10050", "physics": true, "relation": "mentions", "to": "texture capture", "width": 1}, {"from": "2403.10050", "physics": true, "relation": "mentions", "to": "texture mapping", "width": 1}, {"from": "learnable texture", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "texture 3d", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "texture gs", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "texture capture", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "texture mapping", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "2206.03087", "physics": true, "relation": "belongs_to", "to": 8, "width": 1}, {"from": "2206.03087", "physics": true, "relation": "mentions", "to": "surface regularization", "width": 1}, {"from": "2206.03087", "physics": true, "relation": "mentions", "to": "surface reconstruction", "width": 1}, {"from": "2206.03087", "physics": true, "relation": "mentions", "to": "surface reconstructions", "width": 1}, {"from": "2206.03087", "physics": true, "relation": "mentions", "to": "robust reconstruction", "width": 1}, {"from": "2206.03087", "physics": true, "relation": "mentions", "to": "hessian regularization", "width": 1}, {"from": "surface regularization", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "surface reconstruction", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "surface reconstructions", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "robust reconstruction", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "hessian regularization", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "2311.07301", "physics": true, "relation": "belongs_to", "to": 8, "width": 1}, {"from": "2311.07301", "physics": true, "relation": "mentions", "to": "geo localization", "width": 1}, {"from": "2311.07301", "physics": true, "relation": "mentions", "to": "landmarks observable", "width": 1}, {"from": "2311.07301", "physics": true, "relation": "mentions", "to": "trajectory estimation", "width": 1}, {"from": "2311.07301", "physics": true, "relation": "mentions", "to": "localization based", "width": 1}, {"from": "2311.07301", "physics": true, "relation": "mentions", "to": "localization relies", "width": 1}, {"from": "geo localization", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "landmarks observable", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "trajectory estimation", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "localization based", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "localization relies", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "2404.11958", "physics": true, "relation": "belongs_to", "to": 8, "width": 1}, {"from": "2404.11958", "physics": true, "relation": "mentions", "to": "voxels easy", "width": 1}, {"from": "2404.11958", "physics": true, "relation": "mentions", "to": "hard voxels", "width": 1}, {"from": "2404.11958", "physics": true, "relation": "mentions", "to": "hard voxel", "width": 1}, {"from": "2404.11958", "physics": true, "relation": "mentions", "to": "voxel", "width": 1}, {"from": "2404.11958", "physics": true, "relation": "mentions", "to": "semantic scene", "width": 1}, {"from": "voxels easy", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "voxels easy", "relation": "is_related_to", "to": "hard voxels", "width": 1}, {"from": "voxels easy", "relation": "is_related_to", "to": "hard voxel", "width": 1}, {"from": "voxels easy", "relation": "is_related_to", "to": "voxel", "width": 1}, {"from": "hard voxels", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "hard voxels", "relation": "is_related_to", "to": "voxel", "width": 1}, {"from": "hard voxel", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "hard voxel", "relation": "is_related_to", "to": "voxel", "width": 1}, {"from": "voxel", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "semantic scene", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "2411.14158", "physics": true, "relation": "belongs_to", "to": 8, "width": 1}, {"from": "2411.14158", "physics": true, "relation": "mentions", "to": "graph convolutional", "width": 1}, {"from": "2411.14158", "physics": true, "relation": "mentions", "to": "graph convolution", "width": 1}, {"from": "2411.14158", "physics": true, "relation": "mentions", "to": "cloud denoising", "width": 1}, {"from": "2411.14158", "physics": true, "relation": "mentions", "to": "convolution networks", "width": 1}, {"from": "2411.14158", "physics": true, "relation": "mentions", "to": "point cloud concept", "width": 1}, {"from": "graph convolutional", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "graph convolution", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "cloud denoising", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "convolution networks", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "point cloud concept", "physics": true, "relation": "is_same_as", "to": "point cloud", "width": 1}, {"from": "point cloud concept", "physics": true, "relation": "is_about", "to": 8, "width": 1}, {"from": "2105.14105", "physics": true, "relation": "belongs_to", "to": 3, "width": 1}, {"from": "2105.14105", "physics": true, "relation": "mentions", "to": "learning control", "width": 1}, {"from": "2105.14105", "physics": true, "relation": "mentions", "to": "particles control", "width": 1}, {"from": "2105.14105", "physics": true, "relation": "mentions", "to": "dynamics mixing", "width": 1}, {"from": "2105.14105", "physics": true, "relation": "mentions", "to": "particle interactions", "width": 1}, {"from": "2105.14105", "physics": true, "relation": "mentions", "to": "reinforcement learning concept", "width": 1}, {"from": "learning control", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "particles control", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "dynamics mixing", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "particle interactions", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "reinforcement learning concept", "physics": true, "relation": "is_same_as", "to": "reinforcement learning", "width": 1}, {"from": "reinforcement learning concept", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "2110.14469", "physics": true, "relation": "belongs_to", "to": 3, "width": 1}, {"from": "2110.14469", "physics": true, "relation": "mentions", "to": "particle geometries", "width": 1}, {"from": "2110.14469", "physics": true, "relation": "mentions", "to": "characterize phenotypic", "width": 1}, {"from": "2110.14469", "physics": true, "relation": "mentions", "to": "phenotypic trait", "width": 1}, {"from": "2110.14469", "physics": true, "relation": "mentions", "to": "trait geometries", "width": 1}, {"from": "2110.14469", "physics": true, "relation": "mentions", "to": "geometries variation", "width": 1}, {"from": "particle geometries", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "characterize phenotypic", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "characterize phenotypic", "relation": "is_related_to", "to": "phenotypic trait", "width": 1}, {"from": "phenotypic trait", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "trait geometries", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "geometries variation", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "2411.14778", "physics": true, "relation": "belongs_to", "to": 3, "width": 1}, {"from": "2411.14778", "physics": true, "relation": "mentions", "to": "dynamics polymer", "width": 1}, {"from": "2411.14778", "physics": true, "relation": "mentions", "to": "fluctuations polymers", "width": 1}, {"from": "2411.14778", "physics": true, "relation": "mentions", "to": "polymeric systems", "width": 1}, {"from": "2411.14778", "physics": true, "relation": "mentions", "to": "dynamics chains", "width": 1}, {"from": "2411.14778", "physics": true, "relation": "mentions", "to": "active polymeric", "width": 1}, {"from": "dynamics polymer", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "fluctuations polymers", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "polymeric systems", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "dynamics chains", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "active polymeric", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "2204.07127", "physics": true, "relation": "belongs_to", "to": 3, "width": 1}, {"from": "2204.07127", "physics": true, "relation": "mentions", "to": "diffusion soft", "width": 1}, {"from": "2204.07127", "physics": true, "relation": "mentions", "to": "jamming shear", "width": 1}, {"from": "2204.07127", "physics": true, "relation": "mentions", "to": "athermal particles", "width": 1}, {"from": "2204.07127", "physics": true, "relation": "mentions", "to": "diffusion", "width": 1}, {"from": "2204.07127", "physics": true, "relation": "mentions", "to": "relaxation dynamics", "width": 1}, {"from": "diffusion soft", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "jamming shear", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "athermal particles", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "diffusion", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "diffusion", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "diffusion", "relation": "is_related_to", "to": "cross diffusion", "width": 1}, {"from": "diffusion", "relation": "is_related_to", "to": "diffusion macroscopic", "width": 1}, {"from": "relaxation dynamics", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "2309.01034", "physics": true, "relation": "belongs_to", "to": 3, "width": 1}, {"from": "2309.01034", "physics": true, "relation": "mentions", "to": "cytoskeleton discrete", "width": 1}, {"from": "2309.01034", "physics": true, "relation": "mentions", "to": "cytoskeletal filament", "width": 1}, {"from": "2309.01034", "physics": true, "relation": "mentions", "to": "filament networks", "width": 1}, {"from": "2309.01034", "physics": true, "relation": "mentions", "to": "stressed cytoskeletal", "width": 1}, {"from": "2309.01034", "physics": true, "relation": "mentions", "to": "protein filaments", "width": 1}, {"from": "cytoskeleton discrete", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "cytoskeletal filament", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "filament networks", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "stressed cytoskeletal", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "protein filaments", "physics": true, "relation": "is_about", "to": 3, "width": 1}, {"from": "2202.09609", "physics": true, "relation": "belongs_to", "to": 4, "width": 1}, {"from": "2202.09609", "physics": true, "relation": "mentions", "to": "reconstructed ct", "width": 1}, {"from": "2202.09609", "physics": true, "relation": "mentions", "to": "ct reconstruction", "width": 1}, {"from": "2202.09609", "physics": true, "relation": "mentions", "to": "cagan adversarial", "width": 1}, {"from": "2202.09609", "physics": true, "relation": "mentions", "to": "tomography ct", "width": 1}, {"from": "2202.09609", "physics": true, "relation": "mentions", "to": "ct image", "width": 1}, {"from": "reconstructed ct", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "reconstructed ct", "relation": "is_related_to", "to": "ct reconstruction", "width": 1}, {"from": "ct reconstruction", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "cagan adversarial", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "tomography ct", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "ct image", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "2409.00639", "physics": true, "relation": "belongs_to", "to": 4, "width": 1}, {"from": "2409.00639", "physics": true, "relation": "mentions", "to": "detecting bleeding", "width": 1}, {"from": "2409.00639", "physics": true, "relation": "mentions", "to": "bleeding detection", "width": 1}, {"from": "2409.00639", "physics": true, "relation": "mentions", "to": "gastrointestinal bleeding", "width": 1}, {"from": "2409.00639", "physics": true, "relation": "mentions", "to": "capsule endoscopy", "width": 1}, {"from": "2409.00639", "physics": true, "relation": "mentions", "to": "endoscopy insights", "width": 1}, {"from": "detecting bleeding", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "detecting bleeding", "relation": "is_related_to", "to": "bleeding detection", "width": 1}, {"from": "bleeding detection", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "gastrointestinal bleeding", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "capsule endoscopy", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "endoscopy insights", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "2204.03014", "physics": true, "relation": "belongs_to", "to": 4, "width": 1}, {"from": "2204.03014", "physics": true, "relation": "mentions", "to": "cnn volumetric", "width": 1}, {"from": "2204.03014", "physics": true, "relation": "mentions", "to": "cell segmentation", "width": 1}, {"from": "2204.03014", "physics": true, "relation": "mentions", "to": "volumetric cell", "width": 1}, {"from": "2204.03014", "physics": true, "relation": "mentions", "to": "cnns vision", "width": 1}, {"from": "2204.03014", "physics": true, "relation": "mentions", "to": "cnn models", "width": 1}, {"from": "cnn volumetric", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "cell segmentation", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "volumetric cell", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "cnns vision", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "cnn models", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "2212.05566", "physics": true, "relation": "belongs_to", "to": 4, "width": 1}, {"from": "2212.05566", "physics": true, "relation": "mentions", "to": "annotated segmentation", "width": 1}, {"from": "2212.05566", "physics": true, "relation": "mentions", "to": "segmentation weakly", "width": 1}, {"from": "2212.05566", "physics": true, "relation": "mentions", "to": "structure segmentation", "width": 1}, {"from": "2212.05566", "physics": true, "relation": "mentions", "to": "segmentation concept", "width": 1}, {"from": "2212.05566", "physics": true, "relation": "mentions", "to": "segmentation labels", "width": 1}, {"from": "annotated segmentation", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "segmentation weakly", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "structure segmentation", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "structure segmentation", "relation": "is_related_to", "to": "segmentation", "width": 1}, {"from": "segmentation concept", "physics": true, "relation": "is_same_as", "to": "segmentation", "width": 1}, {"from": "segmentation concept", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "segmentation labels", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "2101.01570", "physics": true, "relation": "belongs_to", "to": 4, "width": 1}, {"from": "2101.01570", "physics": true, "relation": "mentions", "to": "reconstruction deep", "width": 1}, {"from": "2101.01570", "physics": true, "relation": "mentions", "to": "mri reconstruction", "width": 1}, {"from": "2101.01570", "physics": true, "relation": "mentions", "to": "density compensated", "width": 1}, {"from": "2101.01570", "physics": true, "relation": "mentions", "to": "density compensation", "width": 1}, {"from": "2101.01570", "physics": true, "relation": "mentions", "to": "unrolled neural", "width": 1}, {"from": "reconstruction deep", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "mri reconstruction", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "density compensated", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "density compensation", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "unrolled neural", "physics": true, "relation": "is_about", "to": 4, "width": 1}, {"from": "1809.03394", "physics": true, "relation": "belongs_to", "to": 9, "width": 1}, {"from": "1809.03394", "physics": true, "relation": "mentions", "to": "symmetric quaternionic", "width": 1}, {"from": "1809.03394", "physics": true, "relation": "mentions", "to": "hermitian quaternionic", "width": 1}, {"from": "1809.03394", "physics": true, "relation": "mentions", "to": "quaternionic matrices", "width": 1}, {"from": "1809.03394", "physics": true, "relation": "mentions", "to": "pdf eigenvalues", "width": 1}, {"from": "1809.03394", "physics": true, "relation": "mentions", "to": "dual quaternionic", "width": 1}, {"from": "symmetric quaternionic", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "hermitian quaternionic", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "quaternionic matrices", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "pdf eigenvalues", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "dual quaternionic", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "1906.08060", "physics": true, "relation": "belongs_to", "to": 9, "width": 1}, {"from": "1906.08060", "physics": true, "relation": "mentions", "to": "cross diffusion", "width": 1}, {"from": "1906.08060", "physics": true, "relation": "mentions", "to": "parabolic systems", "width": 1}, {"from": "1906.08060", "physics": true, "relation": "mentions", "to": "diffusion macroscopic", "width": 1}, {"from": "1906.08060", "physics": true, "relation": "mentions", "to": "nonlinear parabolic", "width": 1}, {"from": "1906.08060", "physics": true, "relation": "mentions", "to": "diffusion", "width": 1}, {"from": "cross diffusion", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "parabolic systems", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "diffusion macroscopic", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "nonlinear parabolic", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "1910.00743", "physics": true, "relation": "belongs_to", "to": 9, "width": 1}, {"from": "1910.00743", "physics": true, "relation": "mentions", "to": "fluctuations jacobi", "width": 1}, {"from": "1910.00743", "physics": true, "relation": "mentions", "to": "point processes", "width": 1}, {"from": "1910.00743", "physics": true, "relation": "mentions", "to": "fluctuations jointly", "width": 1}, {"from": "1910.00743", "physics": true, "relation": "mentions", "to": "jointly gaussian", "width": 1}, {"from": "1910.00743", "physics": true, "relation": "mentions", "to": "gaussian explicit", "width": 1}, {"from": "fluctuations jacobi", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "point processes", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "fluctuations jointly", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "jointly gaussian", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "gaussian explicit", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "1903.10755", "physics": true, "relation": "belongs_to", "to": 9, "width": 1}, {"from": "1903.10755", "physics": true, "relation": "mentions", "to": "distribution equation", "width": 1}, {"from": "1903.10755", "physics": true, "relation": "mentions", "to": "distribution solution", "width": 1}, {"from": "1903.10755", "physics": true, "relation": "mentions", "to": "tail distribution", "width": 1}, {"from": "1903.10755", "physics": true, "relation": "mentions", "to": "law equation", "width": 1}, {"from": "1903.10755", "physics": true, "relation": "mentions", "to": "consider distribution", "width": 1}, {"from": "distribution equation", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "distribution equation", "relation": "is_related_to", "to": "distribution solution", "width": 1}, {"from": "distribution solution", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "tail distribution", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "law equation", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "consider distribution", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "1106.2717", "physics": true, "relation": "belongs_to", "to": 9, "width": 1}, {"from": "1106.2717", "physics": true, "relation": "mentions", "to": "continuum statistics", "width": 1}, {"from": "1106.2717", "physics": true, "relation": "mentions", "to": "polymer disordered", "width": 1}, {"from": "1106.2717", "physics": true, "relation": "mentions", "to": "directed polymer", "width": 1}, {"from": "1106.2717", "physics": true, "relation": "mentions", "to": "directed polymers", "width": 1}, {"from": "1106.2717", "physics": true, "relation": "mentions", "to": "polymer interpretation", "width": 1}, {"from": "continuum statistics", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "polymer disordered", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "directed polymer", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "directed polymers", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "polymer interpretation", "physics": true, "relation": "is_about", "to": 9, "width": 1}, {"from": "2310.18573", "physics": true, "relation": "belongs_to", "to": 2, "width": 1}, {"from": "2310.18573", "physics": true, "relation": "mentions", "to": "channel estimation", "width": 1}, {"from": "2310.18573", "physics": true, "relation": "mentions", "to": "channel information", "width": 1}, {"from": "2310.18573", "physics": true, "relation": "mentions", "to": "priori channel", "width": 1}, {"from": "2310.18573", "physics": true, "relation": "mentions", "to": "statistical channel", "width": 1}, {"from": "2310.18573", "physics": true, "relation": "mentions", "to": "pilot signal", "width": 1}, {"from": "channel estimation", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "channel information", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "priori channel", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "statistical channel", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "pilot signal", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "2405.11138", "physics": true, "relation": "belongs_to", "to": 2, "width": 1}, {"from": "2405.11138", "physics": true, "relation": "mentions", "to": "sampling internet", "width": 1}, {"from": "2405.11138", "physics": true, "relation": "mentions", "to": "regionalizing crowdsourced", "width": 1}, {"from": "2405.11138", "physics": true, "relation": "mentions", "to": "crowdsourced latency", "width": 1}, {"from": "2405.11138", "physics": true, "relation": "mentions", "to": "crowdsourced measurements", "width": 1}, {"from": "2405.11138", "physics": true, "relation": "mentions", "to": "crowdsourced measurement", "width": 1}, {"from": "sampling internet", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "regionalizing crowdsourced", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "crowdsourced latency", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "crowdsourced measurements", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "crowdsourced measurement", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "2212.06987", "physics": true, "relation": "belongs_to", "to": 2, "width": 1}, {"from": "2212.06987", "physics": true, "relation": "mentions", "to": "privacy b5g", "width": 1}, {"from": "2212.06987", "physics": true, "relation": "mentions", "to": "data privacy", "width": 1}, {"from": "2212.06987", "physics": true, "relation": "mentions", "to": "upgrade privacy", "width": 1}, {"from": "2212.06987", "physics": true, "relation": "mentions", "to": "privacy leakages", "width": 1}, {"from": "2212.06987", "physics": true, "relation": "mentions", "to": "current privacy", "width": 1}, {"from": "privacy b5g", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "data privacy", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "upgrade privacy", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "privacy leakages", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "current privacy", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "1902.00408", "physics": true, "relation": "belongs_to", "to": 2, "width": 1}, {"from": "1902.00408", "physics": true, "relation": "mentions", "to": "lte devices", "width": 1}, {"from": "1902.00408", "physics": true, "relation": "mentions", "to": "devices lte", "width": 1}, {"from": "1902.00408", "physics": true, "relation": "mentions", "to": "iot traffic", "width": 1}, {"from": "1902.00408", "physics": true, "relation": "mentions", "to": "lte networks", "width": 1}, {"from": "1902.00408", "physics": true, "relation": "mentions", "to": "lte supporting", "width": 1}, {"from": "lte devices", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "lte devices", "relation": "is_related_to", "to": "devices lte", "width": 1}, {"from": "lte devices", "relation": "is_related_to", "to": "lte networks", "width": 1}, {"from": "devices lte", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "devices lte", "relation": "is_related_to", "to": "lte networks", "width": 1}, {"from": "iot traffic", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "lte networks", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "lte supporting", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "2107.10294", "physics": true, "relation": "belongs_to", "to": 2, "width": 1}, {"from": "2107.10294", "physics": true, "relation": "mentions", "to": "protocol cellular", "width": 1}, {"from": "2107.10294", "physics": true, "relation": "mentions", "to": "ra protocols", "width": 1}, {"from": "2107.10294", "physics": true, "relation": "mentions", "to": "network multiple", "width": 1}, {"from": "2107.10294", "physics": true, "relation": "mentions", "to": "multiple access", "width": 1}, {"from": "2107.10294", "physics": true, "relation": "mentions", "to": "access points", "width": 1}, {"from": "protocol cellular", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "ra protocols", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "network multiple", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "multiple access", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "access points", "physics": true, "relation": "is_about", "to": 2, "width": 1}, {"from": "1902.05546", "physics": true, "relation": "belongs_to", "to": 6, "width": 1}, {"from": "1902.05546", "physics": true, "relation": "mentions", "to": "agent robotic", "width": 1}, {"from": "1902.05546", "physics": true, "relation": "mentions", "to": "modular agents", "width": 1}, {"from": "1902.05546", "physics": true, "relation": "mentions", "to": "agents learns", "width": 1}, {"from": "1902.05546", "physics": true, "relation": "mentions", "to": "primitive agents", "width": 1}, {"from": "1902.05546", "physics": true, "relation": "mentions", "to": "learns dynamically", "width": 1}, {"from": "agent robotic", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "modular agents", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "agents learns", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "primitive agents", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "learns dynamically", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "2304.10888", "physics": true, "relation": "belongs_to", "to": 6, "width": 1}, {"from": "2304.10888", "physics": true, "relation": "mentions", "to": "legged locomotion", "width": 1}, {"from": "2304.10888", "physics": true, "relation": "mentions", "to": "locomotion skills", "width": 1}, {"from": "2304.10888", "physics": true, "relation": "mentions", "to": "animal locomotion", "width": 1}, {"from": "2304.10888", "physics": true, "relation": "mentions", "to": "locomotion data", "width": 1}, {"from": "2304.10888", "physics": true, "relation": "mentions", "to": "robot legged", "width": 1}, {"from": "legged locomotion", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "locomotion skills", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "animal locomotion", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "locomotion data", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "robot legged", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "2506.10138", "physics": true, "relation": "belongs_to", "to": 6, "width": 1}, {"from": "2506.10138", "physics": true, "relation": "mentions", "to": "learned search", "width": 1}, {"from": "2506.10138", "physics": true, "relation": "mentions", "to": "rnn plays", "width": 1}, {"from": "2506.10138", "physics": true, "relation": "mentions", "to": "rnn trained", "width": 1}, {"from": "2506.10138", "physics": true, "relation": "mentions", "to": "network rnn", "width": 1}, {"from": "2506.10138", "physics": true, "relation": "mentions", "to": "function rnn", "width": 1}, {"from": "learned search", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "rnn plays", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "rnn trained", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "rnn trained", "relation": "is_related_to", "to": "network rnn", "width": 1}, {"from": "network rnn", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "function rnn", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "2410.10803", "physics": true, "relation": "belongs_to", "to": 6, "width": 1}, {"from": "2410.10803", "physics": true, "relation": "mentions", "to": "manipulation humanoid", "width": 1}, {"from": "2410.10803", "physics": true, "relation": "mentions", "to": "humanoid manipulation", "width": 1}, {"from": "2410.10803", "physics": true, "relation": "mentions", "to": "robotic teleoperation", "width": 1}, {"from": "2410.10803", "physics": true, "relation": "mentions", "to": "policies humanoid", "width": 1}, {"from": "2410.10803", "physics": true, "relation": "mentions", "to": "robot data", "width": 1}, {"from": "manipulation humanoid", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "manipulation humanoid", "relation": "is_related_to", "to": "humanoid manipulation", "width": 1}, {"from": "humanoid manipulation", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "robotic teleoperation", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "policies humanoid", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "robot data", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "2012.12209", "physics": true, "relation": "belongs_to", "to": 6, "width": 1}, {"from": "2012.12209", "physics": true, "relation": "mentions", "to": "grasping skills", "width": 1}, {"from": "2012.12209", "physics": true, "relation": "mentions", "to": "grasping tasks", "width": 1}, {"from": "2012.12209", "physics": true, "relation": "mentions", "to": "design grasping", "width": 1}, {"from": "2012.12209", "physics": true, "relation": "mentions", "to": "morphology grasping", "width": 1}, {"from": "2012.12209", "physics": true, "relation": "mentions", "to": "grasping", "width": 1}, {"from": "grasping skills", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "grasping skills", "relation": "is_related_to", "to": "grasping tasks", "width": 1}, {"from": "grasping skills", "relation": "is_related_to", "to": "grasping", "width": 1}, {"from": "grasping tasks", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "grasping tasks", "relation": "is_related_to", "to": "grasping", "width": 1}, {"from": "design grasping", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "design grasping", "relation": "is_related_to", "to": "grasping", "width": 1}, {"from": "morphology grasping", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "grasping", "physics": true, "relation": "is_about", "to": 6, "width": 1}, {"from": "2407.11745", "physics": true, "relation": "belongs_to", "to": 5, "width": 1}, {"from": "2407.11745", "physics": true, "relation": "mentions", "to": "supervised audio", "width": 1}, {"from": "2407.11745", "physics": true, "relation": "mentions", "to": "audioset", "width": 1}, {"from": "2407.11745", "physics": true, "relation": "mentions", "to": "sound separation", "width": 1}, {"from": "2407.11745", "physics": true, "relation": "mentions", "to": "methods audioset", "width": 1}, {"from": "2407.11745", "physics": true, "relation": "mentions", "to": "audio masked", "width": 1}, {"from": "supervised audio", "physics": true, "relation": "is_about", "to": 5, "width": 1}, {"from": "audioset", "physics": true, "relation": "is_about", "to": 5, "width": 1}, {"from": "audioset", "relation": "is_related_to", "to": "methods audioset", "width": 1}, {"from": "sound separation", "physics": true, "relation": "is_about", "to": 5, "width": 1}, {"from": "methods audioset", "physics": true, "relation": "is_about", "to": 5, "width": 1}, {"from": "audio masked", "physics": true, "relation": "is_about", "to": 5, "width": 1}, {"from": "1904.04100", "physics": true, "relation": "belongs_to", "to": 5, "width": 1}, {"from": "1904.04100", "physics": true, "relation": "mentions", "to": "generative adversarial", "width": 1}, {"from": "1904.04100", "physics": true, "relation": "mentions", "to": "unsupervised speech", "width": 1}, {"from": "1904.04100", "physics": true, "relation": "mentions", "to": "network gan", "width": 1}, {"from": "1904.04100", "physics": true, "relation": "mentions", "to": "recognition generative", "width": 1}, {"from": "1904.04100", "physics": true, "relation": "mentions", "to": "adversarial network", "width": 1}, {"from": "generative adversarial", "physics": true, "relation": "is_about", "to": 5, "width": 1}, {"from": "unsupervised speech", "physics": true, "relation": "is_about", "to": 5, "width": 1}, {"from": "network gan", "physics": true, "relation": "is_about", "to": 5, "width": 1}, {"from": "recognition generative", "physics": true, "relation": "is_about", "to": 5, "width": 1}, {"from": "adversarial network", "physics": true, "relation": "is_about", "to": 5, "width": 1}, {"from": "2210.17183", "physics": true, "relation": "belongs_to", "to": 5, "width": 1}, {"from": "2210.17183", "physics": true, "relation": "mentions", "to": "labeling beats", "width": 1}, {"from": "2210.17183", "physics": true, "relation": "mentions", "to": "hierarchical metrical", "width": 1}, {"from": "2210.17183", "physics": true, "relation": "mentions", "to": "supervised hierarchical", "width": 1}, {"from": "2210.17183", "physics": true, "relation": "mentions", "to": "symbolic music", "width": 1}, {"from": "2210.17183", "physics": true, "relation": "mentions", "to": "metrical labeling", "width": 1}, {"from": "labeling beats", "physics": true, "relation": "is_about", "to": 5, "width": 1}, {"from": "hierarchical metrical", "physics": true, "relation": "is_about", "to": 5, "width": 1}, {"from": "supervised hierarchical", "physics": true, "relation": "is_about", "to": 5, "width": 1}, {"from": "symbolic music", "physics": true, "relation": "is_about", "to": 5, "width": 1}, {"from": "metrical labeling", "physics": true, "relation": "is_about", "to": 5, "width": 1}, {"from": "2412.01064", "physics": true, "relation": "belongs_to", "to": 5, "width": 1}, {"from": "2412.01064", "physics": true, "relation": "mentions", "to": "portrait video", "width": 1}, {"from": "2412.01064", "physics": true, "relation": "mentions", "to": "talking portrait", "width": 1}, {"from": "2412.01064", "physics": true, "relation": "mentions", "to": "video generation", "width": 1}, {"from": "2412.01064", "physics": true, "relation": "mentions", "to": "audio driven", "width": 1}, {"from": "2412.01064", "physics": true, "relation": "mentions", "to": "generative motion", "width": 1}, {"from": "portrait video", "physics": true, "relation": "is_about", "to": 5, "width": 1}, {"from": "talking portrait", "physics": true, "relation": "is_about", "to": 5, "width": 1}, {"from": "video generation", "physics": true, "relation": "is_about", "to": 5, "width": 1}, {"from": "audio driven", "physics": true, "relation": "is_about", "to": 5, "width": 1}, {"from": "generative motion", "physics": true, "relation": "is_about", "to": 5, "width": 1}, {"from": "2310.02281", "physics": true, "relation": "belongs_to", "to": 5, "width": 1}, {"from": "2310.02281", "physics": true, "relation": "mentions", "to": "emotion annotation", "width": 1}, {"from": "2310.02281", "physics": true, "relation": "mentions", "to": "speech emotion", "width": 1}, {"from": "2310.02281", "physics": true, "relation": "mentions", "to": "emotion recognition", "width": 1}, {"from": "2310.02281", "physics": true, "relation": "mentions", "to": "conversations annotating", "width": 1}, {"from": "2310.02281", "physics": true, "relation": "mentions", "to": "conversations speech", "width": 1}, {"from": "emotion annotation", "physics": true, "relation": "is_about", "to": 5, "width": 1}, {"from": "speech emotion", "physics": true, "relation": "is_about", "to": 5, "width": 1}, {"from": "emotion recognition", "physics": true, "relation": "is_about", "to": 5, "width": 1}, {"from": "conversations annotating", "physics": true, "relation": "is_about", "to": 5, "width": 1}, {"from": "conversations speech", "physics": true, "relation": "is_about", "to": 5, "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+                    network.on("selectNode", neighbourhoodHighlight);
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
