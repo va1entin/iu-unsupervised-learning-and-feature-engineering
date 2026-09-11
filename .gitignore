@@ -1,5 +1,8 @@
 ignore/
 
+# pyvis, check if this is generated with "remote" source
+lib/
+
 # Data files
 *.json
 *.npy
